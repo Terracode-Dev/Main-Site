@@ -1,4 +1,5 @@
 import React from 'react';
+import Particles from '../ui/particles';
 
 export default function Hero() {
   return (
@@ -27,6 +28,13 @@ export default function Hero() {
           </button>
         </div>
       </div>
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+        ease={80}
+        color={"#ffffff"}
+        refresh
+      />
     </div>
   );
 }

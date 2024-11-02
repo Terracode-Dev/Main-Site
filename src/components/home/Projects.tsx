@@ -1,7 +1,12 @@
 import React from 'react'
+import Particles from '../ui/particles'
 
 export default function Projects() {
   return (
-    <div>P</div>
+    <>
+    <div>
+      <Particles />
+    </div>
+    </>
   )
 }
