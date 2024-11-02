@@ -1,14 +1,26 @@
-import './App.css'
-import { Button } from './components/ui/button'
-import { RainbowButton } from './components/ui/rainbow-button'
+
+import Navbar from './components/navbar'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/home/Home'
+
+
 
 function App() {
 
   return (
     <>
-      <div className='h-screen flex justify-center gap-10 items-center'>
-      <Button>Click me</Button>
-      <RainbowButton>Hello</RainbowButton>
+    <div>
+      <Navbar />
+      <Home />
+        {/*<Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>*/}
       </div>
     </>
   )
