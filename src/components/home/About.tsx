@@ -17,7 +17,7 @@ const About = () => {
   };*/}
 
   return (
-    <div className="flex items-center justify-center w-screen px-4 py-40 border-2 border-orange-500">
+    <div className="flex items-center justify-center w-screen px-4 py-40">
     <div className="flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
       {/* Title */}
