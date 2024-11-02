@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="flex items-center justify-between p-5 bg-white shadow-md">
+    <nav className="flex items-center justify-between px-5 py-5 bg-white lg:px-20 ">
       {/* Logo */}
       <div className="text-2xl font-bold text-gray-800">
         <span className="text-black">TERRA</span><br/>
@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden space-x-6 md:flex">
+      <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
         <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
           Services
         </ScrollLink>
@@ -39,19 +39,19 @@ const Navbar: React.FC = () => {
 
       {/* Contact Us Button */}
       <div className="hidden md:flex">
-        <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-white bg-black rounded-lg cursor-pointer hover:bg-gray-800">
+        <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-orange-600 bg-black cursor-pointer rounded-3xl hover:bg-gray-800">
           Contact Us
         </ScrollLink>
       </div>
 
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className=" md:hidden">
-        {menuOpen ? <X /> : <div className='flex items-center gap-5 p-2 bg-gray-100 rounded-md'><h2 className='font-bold text-orange-600'>Home</h2><Logs /></div>}
+        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><h2 className='text-2xl font-normal text-orange-600'>Home</h2><Logs /></div>}
       </button>
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute left-0 flex flex-col items-center w-full p-5 space-y-4 bg-white shadow-md top-16 md:hidden">
+        <div className="absolute left-0 flex flex-col items-center w-full p-5 space-y-4 bg-white top-20 md:hidden">
           <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={toggleMenu}>
             Services
           </ScrollLink>
@@ -70,7 +70,9 @@ const Navbar: React.FC = () => {
           <ScrollLink to="contact" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={toggleMenu}>
             Contact
           </ScrollLink>
-          <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-white bg-black rounded-lg cursor-pointer hover:bg-gray-800" onClick={toggleMenu}>
+
+          {/* Contact Us Button in mobile viwe */}
+          <ScrollLink to="contact" smooth={true} duration={500} className="px-10 py-2 text-orange-500 bg-black cursor-pointer rounded-xl hover:bg-gray-800" onClick={toggleMenu}>
             Contact Us
           </ScrollLink>
         </div>
