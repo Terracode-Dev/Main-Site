@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Services() {
   return (
-    <div className='h-screen flex flex-col items-center justify-center'>services</div>
+    <div className='flex flex-col items-center justify-center h-screen border-2 border-black'>services</div>
   )
 }

@@ -2,9 +2,10 @@ import React from 'react'
 
 const Work = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-      <h1>work</h1>
-    </div>
+    <>
+    <h1 className='flex flex-col items-center justify-center h-screen border-2 border-black'> dgsfggr</h1>
+    </>
+   
   )
 }
 
