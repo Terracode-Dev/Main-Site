@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="flex items-center justify-between px-5 py-5 bg-white lg:px-20 ">
       {/* Logo */}
-      <div className="text-2xl font-bold text-gray-800">
+      <div className="text-2xl font-bold ">
         <span className="text-black">TERRA</span><br/>
         <span className="text-orange-600">CODE.</span>
       </div>
