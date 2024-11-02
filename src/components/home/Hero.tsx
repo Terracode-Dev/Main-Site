@@ -32,7 +32,7 @@ export default function Hero() {
         className="absolute inset-0"
         quantity={100}
         ease={80}
-        color={"#ffffff"}
+        color={"ea580c"}
         refresh
       />
     </div>
