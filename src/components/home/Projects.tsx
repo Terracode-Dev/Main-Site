@@ -1,11 +1,44 @@
 import React from 'react'
-import Particles from '../ui/particles'
+import IconCloud from '../ui/icon-cloud';
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
 export default function Projects() {
   return (
     <>
-    <div className='flex flex-col items-center justify-center h-screen border-2 border-black'>
-      <h1>projects</h1>
+    <div className="relative flex items-center justify-center max-w-lg px-20 pt-8 pb-20 overflow-hidden border rounded-lg size-full bg-background ">
+      <IconCloud iconSlugs={slugs} />
     </div>
     </>
   )

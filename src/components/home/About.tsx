@@ -17,7 +17,7 @@ const About = () => {
   };*/}
 
   return (
-    <div className=''>
+    <div className='m-6 '>
     <div className="relative z-0 flex items-center justify-center px-4 py-40 bg-slate-100">
       {/* Blurred Background Overlay */}
       <div className="absolute inset-0 backdrop-blur-xl -z-0"></div>
