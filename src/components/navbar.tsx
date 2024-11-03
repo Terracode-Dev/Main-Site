@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       {/* Logo */}
       <div className="text-2xl font-bold ">
         <span className="text-black">TERRA</span><br/>
-        <span className="text-orange-600">CODE.</span>
+        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
       </div>
 
       {/* Desktop Menu */}
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
 
       {/* Contact Us Button */}
       <div className="hidden md:flex">
-        <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-orange-600 bg-black cursor-pointer rounded-3xl hover:bg-gray-800">
+        <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
           Contact Us
         </ScrollLink>
       </div>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           </ScrollLink>
 
           {/* Contact Us Button in mobile viwe */}
-          <ScrollLink to="contact" smooth={true} duration={500} className="px-10 py-2 text-orange-500 bg-black cursor-pointer rounded-xl hover:bg-gray-800" onClick={toggleMenu}>
+          <ScrollLink to="contact" smooth={true} duration={500} className="px-10 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-xl hover:bg-gray-800" onClick={toggleMenu}>
             Contact Us
           </ScrollLink>
         </div>
