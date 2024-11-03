@@ -41,9 +41,8 @@ const About = () => {
         {/*after uncomment use navigate handleButtonClick lesa function eka call krnd*/}
         <button
           onClick={() => setActiveButton('team')}
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg 
-            ${activeButton === 'team' ? 'bg-orange-500 text-white' : 'bg-white text-orange-500'} 
-            border border-orange-500 hover:bg-orange-500 hover:text-white`}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-orange-500 hover:text-white
+            ${activeButton === 'team' ? 'bg-orange-500 text-white' : 'bg-white text-orange-500'}`}
         >
           Meet The Team
         </button>
@@ -52,9 +51,8 @@ const About = () => {
         {/*after uncomment use navigate handleButtonClick lesa function eka call krnd*/}
         <button
           onClick={() => setActiveButton('work')}
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg 
-            ${activeButton === 'work' ? 'bg-orange-500 text-white' : 'bg-white text-orange-500'} 
-            border border-orange-500 hover:bg-orange-500 hover:text-white`}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-orange-500 hover:text-white 
+            ${activeButton === 'work' ? 'bg-orange-500 text-white' : 'bg-white text-orange-500'}`}
         >
           Let's Work Together
         </button>

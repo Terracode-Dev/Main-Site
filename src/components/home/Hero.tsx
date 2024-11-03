@@ -1,5 +1,6 @@
 import React from 'react';
 import Particles from '../ui/particles';
+import RetroGrid from '../ui/retro-grid';
 
 export default function Hero() {
   return (
@@ -28,6 +29,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
+      <RetroGrid />
       <Particles
         className="absolute inset-0"
         quantity={100}
