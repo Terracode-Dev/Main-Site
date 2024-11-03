@@ -4,7 +4,7 @@ const Faq: React.FC = () => {
       <div className="w-[896px] text-center px-6 relative">
     
         <h1 className="font-bold leading-tight relative z-0 lg:mb-[-110px] md:mb-[-95px] mb-[-50px]">
-          <span className="lg:text-[80px] md:text-[50px] font-bold text-orange-500 text-[40px]">
+          <span className="lg:text-[80px] md:text-[50px] font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Ready to Bring Your <br/> Vision to Life?
           </span>
         </h1>

@@ -9,25 +9,29 @@ export default function Services() {
       title: "App Development",
       description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
       icon: "/Vector.png",
-      image: "/App.png"
+      image: "/App.png",
+      bgColor: "bg-[#F67005]"
+    },
+    {
+      title: "AI Development",
+      description: "Unlock the power of AI with intelligent solutions that automate processes, enhance decision-making, and boost operational efficiency.",
+      icon: "/AI.png",
+      image: "/AI-1.png",
+      bgColor: "bg-[#FDA40A]"
+    },
+    {
+      title: "Entreprise Solutions",
+      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
+      icon: "/Vector 3.png",
+      image: "Enterprise.png",
+      bgColor: "bg-[#F67005]"
     },
     {
       title: "Web Development",
-      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
-      icon: "/Vector.png",
-      image: "/App.png"
-    },
-    {
-      title: "UI/UX Design",
-      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
-      icon: "/Vector.png",
-      image: "/App.png"
-    },
-    {
-      title: "Digital Marketing",
-      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
-      icon: "/Vector.png",
-      image: "/App.png"
+      description: "Our web development services deliver fast, secure, and responsive websites that are designed to engage users and drive growth.",
+      icon: "/Vector4.png",
+      image: "/Web.png",
+      bgColor: "bg-[#FDA40A]"
     }
   ];
 
@@ -35,14 +39,14 @@ export default function Services() {
     <div className='flex flex-col relative max-w-[100vw] overflow-hidden'>
       {/*title*/}
       <div className='md:text-[48px] text-[32px] ml-4 mb-8'>
-        <span className='text-orange-500'>
+        <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>
           Our Expertise
         </span>
         <span>
           Ensure Your <br /> Business Stays Competitive in the
         </span>
         <br />
-        <span className='text-orange-500'>
+        <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>
           Evolving Digital Landscape
         </span>
       </div>
@@ -56,13 +60,13 @@ export default function Services() {
         <motion.div 
           drag="x"
           dragConstraints={carouselRef}
-          className='flex flex-row gap-8 md:gap-32'
+          className='flex flex-row gap-12 md:gap-32'
         >
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className='flex flex-col md:w-[452px] md:h-[323px] w-[300px] h-[200px] bg-[#F67005] rounded-2xl relative
-                         hover:scale-[1.02] transition-transform duration-300'
+              className={`flex flex-col md:w-[452px] md:h-[323px] w-[300px] h-[200px] ${card.bgColor} rounded-2xl relative
+                         hover:scale-[1.02] transition-transform duration-300`}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
