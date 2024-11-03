@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="flex items-center">
               <span className="text-2xl font-bold md:text-4xl">
                 <span className="text-white">TERRA</span><br/>
-                <span className="text-orange-500">CODE.</span>
+                <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
               </span>
             </div>
           </div>
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="space-y-12">
               <div className="w-2/3 text-lg md:text-xl">
               <h3 >Have questions or ready  to collaborate?</h3>
-              <p >We're just a <span className="text-orange-500">message</span> away!</p>
+              <p >We're just a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">message</span> away!</p>
               </div>
               {/* Email Input */}
               <div className="flex w-1/2 gap-2">
@@ -55,7 +55,7 @@ const Footer = () => {
                   placeholder="terracodetest@gmail.com"
                   className="flex-grow px-4 py-2 text-black bg-white rounded-2xl"
                 />
-                <button className="px-4 py-2 text-white transition-colors bg-orange-500 rounded-2xl hover:bg-orange-600">
+                <button className="px-4 py-2 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-2xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
                   Copy
                 </button>
               </div>
@@ -64,13 +64,13 @@ const Footer = () => {
                 <div className="flex w-full gap-2 mt-2 sm:justify-start">
                 <div className="w-1/3">
                   <a href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-blue-500 ">
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300">
                   <Facebook className="w-auto h-6 " />
                   <span className='hidden sm:block'>Facebook</span></a>
                 </div>
                 <div className="w-1/3">
                 <a href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-pink-600">
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
                   <Instagram className="w-auto h-6 " />
                   <span className='hidden sm:block'>Instagram</span>
                 </a>
@@ -78,7 +78,7 @@ const Footer = () => {
                 <div className="w-1/3">
                 <a
                   href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-blue-500"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
                 >
                   <Linkedin className="w-auto h-6" />
                   <span className='hidden sm:block'>LinkedIn</span>

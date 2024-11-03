@@ -15,7 +15,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.11",
+<<<<<<< HEAD
     "gsap": "^3.12.5",
+=======
+>>>>>>> 3ad6bd065900391f5f6b4a1a93444c19999682d6
     "lucide-react": "^0.453.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

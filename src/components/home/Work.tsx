@@ -79,7 +79,7 @@ const Work = () => {
 
   return (
     <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-center text-orange-500">
+      <h2 className="mb-6 text-4xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
         Why work with Us?
       </h2>
 
@@ -150,7 +150,7 @@ const Work = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="px-6 py-3 text-white transition-colors bg-orange-500 rounded-3xl hover:bg-orange-500">
+        <button className="px-6 py-3 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
           Ready To Collaborate?
         </button>
       </div>
