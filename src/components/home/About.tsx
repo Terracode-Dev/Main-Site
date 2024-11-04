@@ -1,20 +1,20 @@
 import React from 'react'
 import react,{ useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
 
   const [activeButton, setActiveButton] = useState<string | null>(null);
-  {/*const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleButtonClick = (button: string) => {
     setActiveButton(button);
     if (button === 'team') {
-      navigate('/meet-the-team');
+      navigate('/aboutus');
     } else if (button === 'work') {
-      navigate('/work-together');
+      navigate('/casestudy');
     }
-  };*/}
+  };
 
   return (
     <>
@@ -51,7 +51,7 @@ const About = () => {
       <div >
         {/*after uncomment use navigate handleButtonClick lesa function eka call krnd*/}
         <button
-          onClick={() => setActiveButton('team')}
+          onClick={() => handleButtonClick('team')}
           className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white
             ${activeButton === 'team' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
         >
@@ -61,7 +61,7 @@ const About = () => {
       <div >
         {/*after uncomment use navigate handleButtonClick lesa function eka call krnd*/}
         <button
-          onClick={() => setActiveButton('work')}
+          onClick={() => handleButtonClick('work')}
           className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white 
             ${activeButton === 'work' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
         >
