@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Challange = () => {
   return (
-    <div>challange</div>
+    <div  className='flex flex-col items-center justify-center h-screen '> challange</div>
   )
 }

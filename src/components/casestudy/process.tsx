@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Process = () => {
   return (
-    <div>P</div>
+    <div  className='flex flex-col items-center justify-center h-screen '>P</div>
   )
 }
