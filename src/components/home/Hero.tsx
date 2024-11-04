@@ -26,7 +26,7 @@ export default function Hero() {
   }, [controls, inView]);
 
   return (
-    <div className="flex items-center justify-center  px-4 py-8 md:py-14">
+    <div className="z-20 flex items-center justify-center px-4 py-8 md:py-14">
       <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}

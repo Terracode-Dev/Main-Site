@@ -54,7 +54,7 @@ export default function Services() {
       {/* Cards Container */}
       <motion.div 
         ref={carouselRef}
-        className='ml-3 flex flex-nowrap gap-8 cursor-grab active:cursor-grabbing overflow-hidden'
+        className='flex gap-8 ml-3 overflow-hidden flex-nowrap cursor-grab active:cursor-grabbing'
         whileTap={{ cursor: "grabbing" }}
       >
         <motion.div 
@@ -103,11 +103,11 @@ export default function Services() {
       </motion.div>
 
       {/* Optional Scroll Indicator */}
-      <div className='flex justify-center mt-8 gap-2'>
+      <div className='flex justify-center gap-2 mt-8'>
         {[...Array(4)].map((_, index) => (
           <motion.div
             key={index}
-            className='w-2 h-2 rounded-full bg-orange-500 opacity-50'
+            className='w-2 h-2 bg-orange-500 rounded-full opacity-50'
             initial={{ scale: 0.8 }}
             whileHover={{ scale: 1.2, opacity: 1 }}
           />
