@@ -19,15 +19,15 @@ const About = () => {
   return (
     <>
     <div className='m-6 '>
-    <div className="relative z-0 flex items-center justify-center px-4 py-40 bg-slate-100">
+    <div className="relative z-0 flex items-center justify-center px-4 py-40 overflow-hidden bg-slate-100">
       {/* Blurred Background Overlay */}
       <div className="absolute inset-0 backdrop-blur-xl -z-0"></div>
        {/* Background Shapes */}
-      <div className="absolute bg-orange-400 rounded-full bottom-[60%] left-[70%] w-60 h-60 -z-10"></div>
+      <div className="absolute bg-orange-400 rounded-full bottom-[80%] left-[60%] md:bottom-[60%] md:left-[70%] w-60 h-60 -z-10"></div>
       <div className="absolute
                    border-l-[150px] border-l-transparent
                    border-r-[150px] border-r-transparent
-                   border-b-[250px] border-orange-400 top-[50%] right-[70%] -z-10 rotate-45"></div>
+                   border-b-[250px] border-orange-400 top-[80%] right-[40%] -z-10 rotate-45 md:top-[50%] md:right-[70%]"></div>
     {/* 1 section */}
     <div className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
