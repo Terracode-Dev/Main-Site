@@ -17,6 +17,7 @@ const About = () => {
   };*/}
 
   return (
+    <>
     <div className='m-6 '>
     <div className="relative z-0 flex items-center justify-center px-4 py-40 bg-slate-100">
       {/* Blurred Background Overlay */}
@@ -27,7 +28,7 @@ const About = () => {
                    border-l-[150px] border-l-transparent
                    border-r-[150px] border-r-transparent
                    border-b-[250px] border-orange-400 top-[50%] right-[70%] -z-10 rotate-45"></div>
-
+    {/* 1 section */}
     <div className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
       {/* Title */}
@@ -69,8 +70,13 @@ const About = () => {
       </div>
     </div>
     </div>
+    {/* 2 section */}
+    <div className='z-20 flex items-center justify-center h-screen border-2 border-black'>
+      <p>Design, but in a more efficient</p>
+    </div>
   </div>
   </div>
+    </>
   )
 }
 
