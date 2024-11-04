@@ -71,7 +71,7 @@ const About = () => {
     </div>
     </div>
     {/* 2 section */}
-    <div className='z-20 flex items-center justify-center h-screen border-2 border-black'>
+    <div className='z-20 items-center justify-center hidden h-screen border-2 border-black'>
       <p>Design, but in a more efficient</p>
     </div>
   </div>
