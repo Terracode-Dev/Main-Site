@@ -22,8 +22,8 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["40%", "-60%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
-    <div className="sticky top-0 h-screen flex flex-col justify-center">
+    <section ref={targetRef} className="relative h-[300vh] ">
+    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
       <div className="md:text-[48px] text-[32px] ml-4">
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
           Our Expertise
@@ -36,7 +36,7 @@ const HorizontalScrollCarousel = () => {
           Evolving Digital Landscape
         </span>
       </div>
-      <motion.div style={{ x }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
+      <motion.div style={{ x }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
