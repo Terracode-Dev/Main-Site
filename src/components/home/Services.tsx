@@ -1,13 +1,17 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Services() {
   const carouselRef = useRef(null);
+  
+  // Scroll progress for scroll-triggered animations
+  const { scrollYProgress } = useScroll();
+  const x = useTransform(scrollYProgress, [0, 1], ["50%", "-200%"]);
 
   const cards = [
     {
       title: "App Development",
-      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
+      description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
       icon: "/Vector.png",
       image: "/App.png",
       bgColor: "bg-[#F67005]"
@@ -20,8 +24,8 @@ export default function Services() {
       bgColor: "bg-[#FDA40A]"
     },
     {
-      title: "Entreprise Solutions",
-      description: "We create innovative mobile applications that are tailored to your buisness needs, ensuaring seamless user experiences across all platforms.",
+      title: "Enterprise Solutions",
+      description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
       icon: "/Vector 3.png",
       image: "Enterprise.png",
       bgColor: "bg-[#F67005]"
@@ -37,7 +41,7 @@ export default function Services() {
 
   return (
     <div className='flex flex-col relative max-w-[100vw] overflow-hidden'>
-      {/*title*/}
+      {/* Title */}
       <div className='md:text-[48px] text-[32px] ml-4 mb-8'>
         <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>
           Our Expertise
@@ -51,11 +55,12 @@ export default function Services() {
         </span>
       </div>
 
-      {/* Cards Container */}
+      {/* Cards Container with scroll-triggered animation */}
       <motion.div 
         ref={carouselRef}
         className='flex gap-8 ml-3 overflow-hidden flex-nowrap cursor-grab active:cursor-grabbing'
         whileTap={{ cursor: "grabbing" }}
+        style={{ x }}
       >
         <motion.div 
           drag="x"
@@ -73,7 +78,7 @@ export default function Services() {
               whileHover={{ scale: 1.02 }}
             >
               <div className='p-4'>
-                {/*icon*/}
+                {/* Icon */}
                 <motion.img 
                   src={card.icon}
                   alt="Icon"
@@ -81,7 +86,7 @@ export default function Services() {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 />
-                {/*title*/}
+                {/* Title */}
                 <h1 className='md:text-[34px] text-[20px] text-white mt-2'>{card.title}</h1>
                 <div className='flex items-start line-clamp-4 mt-2 w-[70%]'>
                   <p className='md:text-[16px] text-[10px] text-white'>
@@ -89,7 +94,7 @@ export default function Services() {
                   </p>
                 </div>
               </div>
-              {/*image*/}
+              {/* Image */}
               <motion.img 
                 src={card.image}
                 alt="App"
