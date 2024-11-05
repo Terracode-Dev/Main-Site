@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
 import ContactForm from "../contactus/Contact";
 
 const Faq: React.FC = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false); // State to control ContactForm visibility
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false); 
 
   const headerRef = useRef(null);
   const imageRef = useRef(null);
@@ -28,7 +28,7 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-bold leading-tight relative z-0 lg:mb-[-110px] md:mb-[-95px] mb-[-50px]"
         >
-          <span className="lg:text-[80px] md:text-[50px] font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+          <span className="lg:text-[60px] md:text-[50px] font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Ready to Bring Your <br /> Vision to Life?
           </span>
         </motion.h1>
@@ -50,7 +50,7 @@ const Faq: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isParagraphInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-[#2A2A2A] lg:text-[28.5px] md:text-[22px] text-[16px] mt-8 leading-normal"
+          className="text-[#2A2A2A] lg:text-[23px] md:text-[22px] text-[16px] mt-8 leading-normal"
         >
           If you're a business owner, reach out to us today <br />
           and discover our limited-time offer tailored for you!
@@ -61,11 +61,11 @@ const Faq: React.FC = () => {
           ref={buttonRef}
           initial={{ opacity: 0, y: 50 }}
           animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-black text-orange-500 font-medium py-3 px-8 rounded-full mt-6"
-          onClick={() => setIsContactFormOpen(true)} // Open ContactForm on click
+          className="bg-black text-orange-500 font-medium py-2 px-7 rounded-full mt-6"
+          onClick={() => setIsContactFormOpen(true)}
         >
           Reach Out
         </motion.button>
