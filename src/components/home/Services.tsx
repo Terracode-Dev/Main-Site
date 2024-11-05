@@ -82,7 +82,7 @@ const Card = ({ card }: CardProps) => {
       </div>
       <img 
         src={card.image}
-        alt="App"
+        alt={card.title}
         className={card.sty}
       />
     </div>
