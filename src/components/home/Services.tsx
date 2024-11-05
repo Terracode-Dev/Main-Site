@@ -54,6 +54,7 @@ interface CardProps {
     icon: string;
     image: string;
     bgColor: string;
+    sty: string;
   };
 }
 
@@ -83,7 +84,7 @@ const Card = ({ card }: CardProps) => {
       <img 
         src={card.image}
         alt="App"
-        className='absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+        className={card.sty}
       />
     </div>
   );
@@ -99,6 +100,7 @@ const cards = [
     image: "/App.png",
     bgColor: "bg-[#F67005]",
     id: 1,
+    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
   {
     title: "AI Development",
@@ -107,6 +109,7 @@ const cards = [
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
     id: 2,
+    sty:'absolute md:right-[-125px] right-[-78px] md:top-1 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
   {
     title: "Enterprise Solutions",
@@ -115,6 +118,7 @@ const cards = [
     image: "Enterprise.png",
     bgColor: "bg-[#F67005]",
     id: 3,
+    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
   {
     title: "Web Development",
@@ -123,6 +127,7 @@ const cards = [
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
+    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
 ];
 
