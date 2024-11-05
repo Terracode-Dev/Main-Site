@@ -7,7 +7,6 @@ const Example = () => {
   return (
     
     <div className="">
-      
       <HorizontalScrollCarousel />
     </div>
   );
@@ -19,7 +18,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["40%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] ">
@@ -109,7 +108,7 @@ const cards = [
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
     id: 2,
-    sty:'absolute md:right-[-125px] right-[-78px] md:top-1 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+    sty:'absolute md:right-[-125px] right-[-78px] md:top-1 top-0 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
   {
     title: "Enterprise Solutions",
