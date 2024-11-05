@@ -1,13 +1,16 @@
+// src/components/Faq.tsx
+
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
+import ContactForm from "../contactus/Contact";
 
 const Faq: React.FC = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false); // State to control ContactForm visibility
 
   const headerRef = useRef(null);
   const imageRef = useRef(null);
   const paragraphRef = useRef(null);
   const buttonRef = useRef(null);
-
 
   const isHeaderInView = useInView(headerRef, { once: false });
   const isImageInView = useInView(imageRef, { once: false });
@@ -17,7 +20,6 @@ const Faq: React.FC = () => {
   return (
     <div className="flex items-center justify-center bg-white min-h-screen">
       <div className="w-[896px] text-center px-6 relative">
-      
         {/* Header animation */}
         <motion.h1
           ref={headerRef}
@@ -39,7 +41,7 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative mt-6"
         >
-          <img src='/CTA 1.png' alt="Team image" />
+          <img src="/CTA 1.png" alt="Team image" />
         </motion.div>
 
         {/* Paragraph animation */}
@@ -54,7 +56,7 @@ const Faq: React.FC = () => {
           and discover our limited-time offer tailored for you!
         </motion.p>
 
-        {/* Button animation */}
+        {/* Button animation and contact form trigger */}
         <motion.button
           ref={buttonRef}
           initial={{ opacity: 0, y: 50 }}
@@ -63,9 +65,13 @@ const Faq: React.FC = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="bg-black text-orange-500 font-medium py-3 px-8 rounded-full mt-6"
+          onClick={() => setIsContactFormOpen(true)} // Open ContactForm on click
         >
           Reach Out
         </motion.button>
+
+        {/* Render ContactForm */}
+        <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
       </div>
     </div>
   );
