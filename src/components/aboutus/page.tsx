@@ -1,14 +1,16 @@
 import React from 'react'
 import Team from './team'
 import Reachout from './reachout'
-import { Hero } from './hero'
 import Footer2 from './footer'
+import Hero2 from './hero'
+
+
 
 const Aboutus_page = () => {
   return (
     <div>
         <section id="" >
-        <Hero />
+        <Hero2 />
       </section>
       <section id="" >
         <Team />

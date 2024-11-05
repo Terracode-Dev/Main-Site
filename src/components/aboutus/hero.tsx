@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-export const Hero = () => {
+export default function Hero2 (){
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: false,
