@@ -12,7 +12,7 @@ export default function Projects() {
           </h1>
         </div>
         {/* Icon Cloud */}
-        <div className="w-full px-10 rounded-lg xl:w-1/2">
+        <div className="w-full px-2 rounded-lg xl:w-1/2">
           <AnimatedBeamDemo />
         </div>
       </div>
