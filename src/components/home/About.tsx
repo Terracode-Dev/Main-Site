@@ -32,10 +32,10 @@ const HorizontalScrollCarousel = () => {
         <div className="relative z-0 flex flex-col items-center justify-center px-4 py-40 overflow-hidden bg-slate-100 rounded-3xl h-[700px]">
           
           {/* <div className="absolute bg-orange-400 rounded-full bottom-[80%] left-[60%] md:bottom-[60%] md:left-[70%] w-60 h-60 -z-10"></div> */}
-          <motion.div style={{ y: yDown }} className="absolute -left-32 sm:left-20 cursor-grab active:cursor-grabbing hidden sm:block">
+          <motion.div style={{ y: yDown }} className="absolute hidden -left-32 sm:left-20 cursor-grab active:cursor-grabbing sm:block">
           <Triangle   />
           </motion.div>
-          <motion.div style={{ y: yUp }} className="absolute -right-32 sm:right-16 cursor-grab active:cursor-grabbing hidden sm:block">
+          <motion.div style={{ y: yUp }} className="absolute hidden -right-32 sm:right-16 cursor-grab active:cursor-grabbing sm:block">
               <Circle   />
           </motion.div>
           {/* mobile view */}
@@ -84,15 +84,7 @@ const HorizontalScrollCarousel = () => {
           </div>
         </motion.div>
 
-
-
-
         {/* Second section */}
-
-
-
-
-
         <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
               {/* Title */}
@@ -102,32 +94,8 @@ const HorizontalScrollCarousel = () => {
 
               {/* Paragraph */}
               <div className=" md:px-10 xl:w-1/2">
-                <img src="/Group 1.png" alt="Terracode" className="w-[800px]"/>
+                <img src="/Group 1.png" alt="Terracode" className="w-[200px] sm:w-[400px] xl:w-[800px]"/>
               </div>
-
-              {/* Buttons */}
-              {/* <div className="flex flex-col gap-1 sm:gap-4 sm:flex-row sm:justify-center">
-              <div >
-                after uncomment use navigate handleButtonClick lesa function eka call krnd
-                <button
-                  onClick={() => handleButtonClick('team')}
-                  className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white
-                    ${activeButton === 'team' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
-                >
-                  Meet The Team
-                </button>
-              </div>
-              <div >
-                after uncomment use navigate handleButtonClick lesa function eka call krnd
-                <button
-                  onClick={() => handleButtonClick('work')}
-                  className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white 
-                    ${activeButton === 'work' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
-                >
-                  Let's Work Together
-                </button>
-              </div>
-              </div> */}
               </motion.div>
         
         
