@@ -20,35 +20,8 @@ const HorizontalScrollCarousel = () => {
 
 
   return (
-<<<<<<< HEAD
-    <section ref={targetRef} className="relative h-[300vh]">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        <div className="md:text-[48px] text-[32px] ml-4 relative">
-          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            Our Expertise
-          </span>
-          <span>
-            Ensure Your <br /> Business Stays Competitive in the
-          </span>
-          <div className="flex items-center gap-4">
-            <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-              Evolving Digital Landscape
-            </span>
-          </div>
-          <button className="border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-28 right-10 mt-8 mr-4">
-            Learn More
-          </button>
-        </div>
-        <motion.div style={{ x }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
-          {cards.map((card) => (
-            <Card card={card} key={card.id} />
-          ))}
-        </motion.div>
-      </div>
-    </section>
-=======
     <section ref={targetRef} className="relative h-[300vh] ">
-    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden sm:hidden">
+    <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden sm:hidden">
       <div className="md:text-[48px] text-[32px] ml-4">
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
           Our Expertise
@@ -61,14 +34,14 @@ const HorizontalScrollCarousel = () => {
           Evolving Digital Landscape
         </span>
       </div>
-      <motion.div style={{ x:xhos1 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
+      <motion.div style={{ x:xhos1 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
       </motion.div>
     </div>
     {/* mobile view */}
-    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden hidden sm:block">
+    <div className="sticky top-0 flex flex-col justify-center hidden h-screen overflow-hidden sm:block">
       <div className="md:text-[48px] text-[32px] ml-4">
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
           Our Expertise
@@ -81,14 +54,13 @@ const HorizontalScrollCarousel = () => {
           Evolving Digital Landscape
         </span>
       </div>
-      <motion.div style={{ x:xhos2 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
+      <motion.div style={{ x:xhos2 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
       </motion.div>
     </div>
   </section>
->>>>>>> cf5718971a66f7f9b2d4d6e0cbd2e5f4cdd33291
   );
 };
 

@@ -84,15 +84,7 @@ const HorizontalScrollCarousel = () => {
           </div>
         </motion.div>
 
-
-
-
         {/* Second section */}
-
-
-
-
-
         <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
               {/* Title */}
@@ -102,32 +94,8 @@ const HorizontalScrollCarousel = () => {
 
               {/* Paragraph */}
               <div className=" md:px-10 xl:w-1/2">
-                <img src="/Group 1.png" alt="Terracode" className="w-[600px] sm:w-[800px]"/>
+                <img src="/Group 1.png" alt="Terracode" className="w-[200px] sm:w-[800px]"/>
               </div>
-
-              {/* Buttons */}
-              {/* <div className="flex flex-col gap-1 sm:gap-4 sm:flex-row sm:justify-center">
-              <div >
-                after uncomment use navigate handleButtonClick lesa function eka call krnd
-                <button
-                  onClick={() => handleButtonClick('team')}
-                  className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white
-                    ${activeButton === 'team' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
-                >
-                  Meet The Team
-                </button>
-              </div>
-              <div >
-                after uncomment use navigate handleButtonClick lesa function eka call krnd
-                <button
-                  onClick={() => handleButtonClick('work')}
-                  className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white 
-                    ${activeButton === 'work' ? 'bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white' : 'bg-white text-orange-500'}`}
-                >
-                  Let's Work Together
-                </button>
-              </div>
-              </div> */}
               </motion.div>
         
         
