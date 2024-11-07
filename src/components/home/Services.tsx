@@ -18,49 +18,57 @@ const HorizontalScrollCarousel = () => {
   const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-40%"]);
 
-
   return (
-    <section ref={targetRef} className="relative h-[300vh] ">
-    <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden sm:hidden">
-      <div className="md:text-[48px] text-[32px] ml-4">
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-          Our Expertise
-        </span>
-        <span>
-          Ensure Your <br /> Business Stays Competitive in the
-        </span>
-        <br />
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-          Evolving Digital Landscape
-        </span>
+    <section ref={targetRef} className="relative h-[300vh]">
+      {/* Desktop view */}
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden sm:hidden">
+        <div className="md:text-[48px] text-[32px] ml-4">
+          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            Our Expertise
+          </span>
+          <span>
+            Ensure Your <br /> Business Stays Competitive in the
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            Evolving Digital Landscape
+          </span>
+          {/* Learn More Button */}
+          <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute md:top-32 md:right-10 right-3 top-[355px] mt-8 mr-4">
+            Learn More
+          </button>
+        </div>
+        <motion.div style={{ x: xhos1 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
+          ))}
+        </motion.div>
       </div>
-      <motion.div style={{ x:xhos1 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
-        {cards.map((card) => (
-          <Card card={card} key={card.id} />
-        ))}
-      </motion.div>
-    </div>
-    {/* mobile view */}
-    <div className="sticky top-0 flex flex-col justify-center hidden h-screen overflow-hidden sm:block">
-      <div className="md:text-[48px] text-[32px] ml-4">
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-          Our Expertise
-        </span>
-        <span>
-          Ensure Your <br /> Business Stays Competitive in the
-        </span>
-        <br />
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-          Evolving Digital Landscape
-        </span>
+      {/* Mobile view */}
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden hidden sm:block">
+        <div className="md:text-[48px] text-[32px] ml-4">
+          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            Our Expertise
+          </span>
+          <span>
+            Ensure Your <br /> Business Stays Competitive in the
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            Evolving Digital Landscape
+          </span>
+          {/* Learn More Button for Mobile */}
+          <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-[100px] lg:top-[125px] sm:top-[74px] sm:right-4 md:top[150px] right-10 mt-8 mr-4">
+            Learn More
+          </button>
+        </div>
+        <motion.div style={{ x: xhos2 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
+          ))}
+        </motion.div>
       </div>
-      <motion.div style={{ x:xhos2 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
-        {cards.map((card) => (
-          <Card card={card} key={card.id} />
-        ))}
-      </motion.div>
-    </div>
-  </section>
+    </section>
   );
 };
 
@@ -83,26 +91,16 @@ const Card = ({ card }: CardProps) => {
       className={`flex flex-col md:w-[452px] md:h-[323px] w-[300px] h-[200px] ${card.bgColor} rounded-2xl relative
                          hover:scale-[1.02] transition-transform duration-300`}
     >
-      <div className='p-4'>
+      <div className="p-4">
         {/* Icon */}
-        <img 
-          src={card.icon}
-          alt="Icon"
-          className='md:w-[69px] w-[28px] md:mt-7 mt-2'
-        />
+        <img src={card.icon} alt="Icon" className="md:w-[69px] w-[28px] md:mt-7 mt-2" />
         {/* Title */}
-        <h1 className='md:text-[34px] text-[20px] text-white mt-2'>{card.title}</h1>
-        <div className='flex items-start line-clamp-4 mt-2 w-[70%]'>
-          <p className='md:text-[16px] text-[10px] text-white'>
-            {card.description}
-          </p>
+        <h1 className="md:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
+        <div className="flex items-start line-clamp-4 mt-2 w-[70%]">
+          <p className="md:text-[16px] text-[10px] text-white">{card.description}</p>
         </div>
       </div>
-      <img 
-        src={card.image}
-        alt={card.title}
-        className={card.sty}
-      />
+      <img src={card.image} alt={card.title} className={card.sty} />
     </div>
   );
 };
@@ -117,7 +115,7 @@ const cards = [
     image: "/App.png",
     bgColor: "bg-[#F67005]",
     id: 1,
-    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "AI Development",
@@ -126,7 +124,7 @@ const cards = [
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
     id: 2,
-    sty:'absolute md:right-[-125px] right-[-78px] md:top-1 top-0 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+    sty: "absolute md:right-[-125px] right-[-78px] md:top-1 top-0 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "Enterprise Solutions",
@@ -135,7 +133,7 @@ const cards = [
     image: "Enterprise.png",
     bgColor: "bg-[#F67005]",
     id: 3,
-    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "Web Development",
@@ -144,6 +142,6 @@ const cards = [
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
-    sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
+    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
   },
 ];
