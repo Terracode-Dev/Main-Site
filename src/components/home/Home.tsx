@@ -14,10 +14,10 @@ const Home = () => {
       <section id="hero" >
         <Hero />
       </section>
-      <section id="services" >
+      <section id="services" className='px-5 xl:p-20' >
         <Services />
       </section>
-      <section id="about" >
+      <section id="about "className='xl:p-20' >
         <Aboutus />
       </section>
       <section id="work" >
@@ -26,10 +26,10 @@ const Home = () => {
       {/*<section id="benitits" >
         <Benifits />
       </section>*/}
-      <section id="projects" >
+      <section id="projects" className='xl:p-20' >
         <Projects />
       </section>
-      <section id="faqs" >
+      <section id="faqs" className='border-2 xl:p-20' >
         <Faq /> 
       </section>
       <section id="contact" >
