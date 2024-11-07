@@ -18,7 +18,7 @@ const Faq: React.FC = () => {
   const isButtonInView = useInView(buttonRef, { once: false });
 
   return (
-    <div className="flex items-center justify-center bg-white min-h-screen">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="w-[896px] text-center px-6 relative">
         {/* Header animation */}
         <motion.h1
@@ -64,7 +64,7 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-black text-orange-500 font-medium py-2 px-7 rounded-full mt-6"
+          className="py-2 mt-6 font-medium text-orange-500 bg-black rounded-full px-7"
           onClick={() => setIsContactFormOpen(true)}
         >
           Reach Out
