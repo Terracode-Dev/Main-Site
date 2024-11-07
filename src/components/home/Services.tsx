@@ -18,11 +18,13 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
+  const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
+  const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-40%"]);
+
 
   return (
     <section ref={targetRef} className="relative h-[300vh] ">
-    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden sm:hidden">
       <div className="md:text-[48px] text-[32px] ml-4">
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
           Our Expertise
@@ -35,7 +37,27 @@ const HorizontalScrollCarousel = () => {
           Evolving Digital Landscape
         </span>
       </div>
-      <motion.div style={{ x }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
+      <motion.div style={{ x:xhos1 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
+        {cards.map((card) => (
+          <Card card={card} key={card.id} />
+        ))}
+      </motion.div>
+    </div>
+    {/* mobile view */}
+    <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden hidden sm:block">
+      <div className="md:text-[48px] text-[32px] ml-4">
+        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+          Our Expertise
+        </span>
+        <span>
+          Ensure Your <br /> Business Stays Competitive in the
+        </span>
+        <br />
+        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+          Evolving Digital Landscape
+        </span>
+      </div>
+      <motion.div style={{ x:xhos2 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
