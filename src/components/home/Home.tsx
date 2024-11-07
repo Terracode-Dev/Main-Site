@@ -3,10 +3,10 @@ import Hero from './Hero'
 import Services from './Services'
 import Projects from './Projects'
 import Footer from './Footer'
-import About from './About'
 import Work from './Work'
-import Benifits from './Benifits'
 import Faq from './Faq'
+
+import Aboutus from './About'
 
 const Home = () => {
   return (
@@ -18,14 +18,14 @@ const Home = () => {
         <Services />
       </section>
       <section id="about" >
-        <About />
+        <Aboutus />
       </section>
       <section id="work" >
         <Work />
       </section>
-      <section id="benitits" >
+      {/*<section id="benitits" >
         <Benifits />
-      </section>
+      </section>*/}
       <section id="projects" >
         <Projects />
       </section>

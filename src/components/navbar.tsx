@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           Work
         </ScrollLink>
         <ScrollLink to="projects" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
-          Projects
+          Tech Stack
         </ScrollLink>
         <ScrollLink to="faqs" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
           FAQs
