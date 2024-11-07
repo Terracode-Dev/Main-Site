@@ -21,6 +21,8 @@ const HorizontalScrollCarousel = () => {
   const yDown = useTransform(scrollYProgress, [0, 1], ["-70%", "40%"]);
   const yUp2 = useTransform(scrollYProgress, [0, 1], ["50%", "-200%"]);
   const yUp3 = useTransform(scrollYProgress, [0, 1], ["200%", "-50%"]);
+  const yUp1 = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
+  const yDown2 = useTransform(scrollYProgress, [0, 1], ["-150%", "120%"]);
   
 
   return (
@@ -30,10 +32,17 @@ const HorizontalScrollCarousel = () => {
         <div className="relative z-0 flex flex-col items-center justify-center px-4 py-40 overflow-hidden bg-slate-100 rounded-3xl h-[700px]">
           
           {/* <div className="absolute bg-orange-400 rounded-full bottom-[80%] left-[60%] md:bottom-[60%] md:left-[70%] w-60 h-60 -z-10"></div> */}
-          <motion.div style={{ y: yDown }} className="absolute -left-32 sm:left-20 cursor-grab active:cursor-grabbing">
+          <motion.div style={{ y: yDown }} className="absolute -left-32 sm:left-20 cursor-grab active:cursor-grabbing hidden sm:block">
           <Triangle   />
           </motion.div>
-          <motion.div style={{ y: yUp }} className="absolute -right-32 sm:right-16 cursor-grab active:cursor-grabbing ">
+          <motion.div style={{ y: yUp }} className="absolute -right-32 sm:right-16 cursor-grab active:cursor-grabbing hidden sm:block">
+              <Circle   />
+          </motion.div>
+          {/* mobile view */}
+          <motion.div style={{ y: yDown2 }} className="absolute -left-28 sm:left-20 cursor-grab active:cursor-grabbing sm:hidden">
+          <Triangle   />
+          </motion.div>
+          <motion.div style={{ y: yUp1 }} className="absolute -right-28 sm:right-16 cursor-grab active:cursor-grabbing sm:hidden">
               <Circle   />
           </motion.div>
           <div className="absolute inset-0 backdrop-blur-xl -z-0"></div>
