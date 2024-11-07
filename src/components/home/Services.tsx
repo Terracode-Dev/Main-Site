@@ -58,7 +58,7 @@ const HorizontalScrollCarousel = () => {
             Evolving Digital Landscape
           </span>
           {/* Learn More Button for Mobile */}
-          <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-[100px] lg:top-[125px] sm:top-[74px] sm:right-4 md:top[150px] right-10 mt-8 mr-4">
+          <button className="border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-[100px] lg:top-[125px] sm:top-[74px] sm:right-4 md:top[150px] right-10 mt-8 mr-4">
             Learn More
           </button>
         </div>
