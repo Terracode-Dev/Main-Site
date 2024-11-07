@@ -29,7 +29,7 @@ const Home = () => {
       <section id="projects" className='xl:p-20' >
         <Projects />
       </section>
-      <section id="faqs" className='border-2 xl:p-20' >
+      <section id="faqs" className=' xl:p-20' >
         <Faq /> 
       </section>
       <section id="contact" >
