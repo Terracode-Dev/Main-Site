@@ -23,9 +23,9 @@ const Home = () => {
       <section id="work" >
         <Work />
       </section>
-      {/*<section id="benitits" >
+      <section id="benitits" >
         <Benifits />
-      </section>*/}
+      </section>
       <section id="projects" >
         <Projects />
       </section>
