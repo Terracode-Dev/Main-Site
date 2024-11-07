@@ -1,11 +1,8 @@
-
-
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 const Example = () => {
   return (
-    
     <div className="">
       <HorizontalScrollCarousel />
     </div>
@@ -23,6 +20,33 @@ const HorizontalScrollCarousel = () => {
 
 
   return (
+<<<<<<< HEAD
+    <section ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <div className="md:text-[48px] text-[32px] ml-4 relative">
+          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            Our Expertise
+          </span>
+          <span>
+            Ensure Your <br /> Business Stays Competitive in the
+          </span>
+          <div className="flex items-center gap-4">
+            <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+              Evolving Digital Landscape
+            </span>
+          </div>
+          <button className="border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-28 right-10 mt-8 mr-4">
+            Learn More
+          </button>
+        </div>
+        <motion.div style={{ x }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing ">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+=======
     <section ref={targetRef} className="relative h-[300vh] ">
     <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden sm:hidden">
       <div className="md:text-[48px] text-[32px] ml-4">
@@ -64,6 +88,7 @@ const HorizontalScrollCarousel = () => {
       </motion.div>
     </div>
   </section>
+>>>>>>> cf5718971a66f7f9b2d4d6e0cbd2e5f4cdd33291
   );
 };
 
@@ -81,13 +106,12 @@ interface CardProps {
 
 const Card = ({ card }: CardProps) => {
   return (
-    
     <div
       key={card.id}
       className={`flex flex-col md:w-[452px] md:h-[323px] w-[300px] h-[200px] ${card.bgColor} rounded-2xl relative
                          hover:scale-[1.02] transition-transform duration-300`}
     >
-        <div className='p-4'>
+      <div className='p-4'>
         {/* Icon */}
         <img 
           src={card.icon}
@@ -151,4 +175,3 @@ const cards = [
     sty:'absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]'
   },
 ];
-
