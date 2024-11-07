@@ -94,7 +94,7 @@ const HorizontalScrollCarousel = () => {
 
               {/* Paragraph */}
               <div className=" md:px-10 xl:w-1/2">
-                <img src="/Group 1.png" alt="Terracode" className="w-[200px] sm:w-[800px]"/>
+                <img src="/Group 1.png" alt="Terracode" className="w-[200px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[800px]"/>
               </div>
               </motion.div>
         
