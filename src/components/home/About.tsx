@@ -35,7 +35,7 @@ const HorizontalScrollCarousel = () => {
           <motion.div style={{ y: yDown }} className="absolute hidden -left-32 md:-left-20 lg:left-20 cursor-grab active:cursor-grabbing md:block">
           <Triangle   />
           </motion.div>
-          <motion.div style={{ y: yUp }} className="absolute hidden -right-32 md:-right-16 lg:right-16  cursor-grab active:cursor-grabbing md:block">
+          <motion.div style={{ y: yUp }} className="absolute hidden -right-32 md:-right-16 lg:right-16 cursor-grab active:cursor-grabbing md:block">
               <Circle   />
           </motion.div>
           {/* mobile view */}
@@ -64,7 +64,7 @@ const HorizontalScrollCarousel = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-row gap-1 sm:gap-4 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-1 sm:gap-4 sm:flex-row sm:justify-center">
             <div >
               <Link to="/aboutus" >
         <button

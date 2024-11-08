@@ -20,9 +20,9 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
-      {/* Desktop view */}
-      <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden sm:hidden">
-        <div className="md:text-[48px] text-[32px] ml-4">
+      {/* mobile view */}
+      <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
+        <div className="md:text-[48px] text-[32px] ml-4 ">
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Our Expertise
           </span>
@@ -32,8 +32,10 @@ const HorizontalScrollCarousel = () => {
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Evolving Digital Landscape
           </span>
-          {/* Learn More Button */}
-          <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute md:top-32 md:right-10 right-3 top-[355px] mt-8 mr-4">
+        </div>
+        <div className="">
+           {/* Learn More Button */}
+           <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}>
             Learn More
           </button>
         </div>
@@ -43,8 +45,8 @@ const HorizontalScrollCarousel = () => {
           ))}
         </motion.div>
       </div>
-      {/* Mobile view */}
-      <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 sm:block">
+      {/* desktop view */}
+      <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
         <div className="md:text-[48px] text-[32px] ml-4">
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Our Expertise
@@ -56,11 +58,13 @@ const HorizontalScrollCarousel = () => {
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Evolving Digital Landscape
           </span>
-          {/* Learn More Button for Mobile */}
-          <button className="border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute top-[100px] lg:top-[125px] sm:top-[74px] sm:right-4 md:top[150px] right-10 mt-8 mr-4">
+        </div>
+        <div className="">
+           {/* Learn More Button */}
+           <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute md:top-32 md:right-10 right-3 top-[355px] mt-8 mr-4">
             Learn More
           </button>
-        </div>
+          </div>
         <motion.div style={{ x: xhos2 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
           {cards.map((card) => (
             <Card card={card} key={card.id} />

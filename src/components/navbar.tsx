@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className=" md:hidden">
-        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><h2 className='text-2xl font-normal text-orange-600'>Home</h2><Logs /></div>}
+        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><Logs /></div>}
       </button>
 
       {/* Mobile Dropdown Menu */}
