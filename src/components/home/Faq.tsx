@@ -30,7 +30,7 @@ const Faq: React.FC = () => {
             <img
               src="/CTA 1.png"
               alt="Team image"
-              className="object-cover w-full h-full scale-125 md:scale-[1.4]"
+              className="object-cover w-full h-full scale-120 md:scale-[1.4]"
             />
           </div>
         </motion.div>
