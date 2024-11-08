@@ -45,10 +45,10 @@ const HorizontalScrollCarousel = () => {
         </motion.div>
       </div>
       {/* Mobile view */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden hidden sm:block">
+      <div className="sticky top-24 flex flex-col justify-center overflow-hidden hidden sm:block">
         <div className="md:text-[48px] text-[32px] ml-4">
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            Our Expertise
+            {"Our Expertise "}
           </span>
           <span>
             Ensure Your <br /> Business Stays Competitive in the
@@ -113,7 +113,7 @@ const cards = [
     description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
     icon: "/Vector.png",
     image: "/App.png",
-    bgColor: "bg-[#F67005]",
+    bgColor: "bg-[#F67005] bg",
     id: 1,
     sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
   },

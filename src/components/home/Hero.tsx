@@ -55,12 +55,12 @@ export default function Hero() {
           </button>
         </div>
       </motion.div>
-      <RetroGrid />
+      {/* <RetroGrid /> */}
       <Particles
         className="absolute inset-0"
         quantity={100}
         ease={80}
-        color={"ea580c"}
+        color={"fa542f"}
         refresh
       />
     </div>
