@@ -17,7 +17,7 @@ const Faq: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-white px-4 md:px-8">
-      <div className="w-full max-w-[1024px] flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-24">
+      <div className="w-full max-w-[1024px] flex flex-col md:flex-row items-center space-y-16 md:space-y-0 md:space-x-36">
         {/* Left Side - Image */}
         <motion.div
           ref={imageRef}
@@ -36,7 +36,7 @@ const Faq: React.FC = () => {
         </motion.div>
 
         {/* Right Side - Content */}
-        <div className="w-full md:w-[45%] flex flex-col items-center justify-center space-y-8 md:space-y-10">
+        <div className="w-full md:w-[45%] flex flex-col items-center justify-center space-y-3 md:space-y-10">
           {/* Animated Header */}
           <motion.h1
             ref={headerRef}
@@ -45,7 +45,7 @@ const Faq: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-bold leading-tight text-center"
           >
-            <span className="text-[30px] md:text-[40px] lg:text-[50px] font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+            <span className="text-[30px] md:text-[40px] lg:text-[40px] font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
               Ready to Bring Your Vision to Life?
             </span>
           </motion.h1>
@@ -70,7 +70,7 @@ const Faq: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7"
+            className="py-2 font-medium text-orange-500 bg-black rounded-full px-7"
             onClick={() => setIsContactFormOpen(true)}
           >
             Reach Out
