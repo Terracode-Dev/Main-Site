@@ -16,7 +16,7 @@ const Faq: React.FC = () => {
   const isButtonInView = useInView(buttonRef, { once: false });
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white px-4 md:px-8">
+    <div className="flex items-center justify-center  bg-white px-4 md:px-8">
       <div className="w-full max-w-[1024px] flex flex-col md:flex-row items-center space-y-16 md:space-y-0 md:space-x-36">
         {/* Left Side - Image */}
         <motion.div
