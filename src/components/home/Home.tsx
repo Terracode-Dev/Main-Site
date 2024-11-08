@@ -11,7 +11,7 @@ import Aboutus from './About'
 const Home = () => {
   return (
     <div>
-      <section id="hero" className='border-2' >
+      <section id="hero" className='' >
         <Hero />
       </section>
       <section id="services" className='' >
@@ -26,9 +26,9 @@ const Home = () => {
       {/*<section id="benitits" >
         <Benifits />
       </section>*/}
-      <section id="projects" className='xl:p-20' >
+      {/* <section id="projects" className='xl:p-20' >
         <Projects />
-      </section>
+      </section> */}
       <section id="faqs" className=' xl:p-20' >
         <Faq /> 
       </section>
