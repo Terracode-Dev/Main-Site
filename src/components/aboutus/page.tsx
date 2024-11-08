@@ -11,7 +11,7 @@ const Aboutus_page = () => {
     <> <Hero2 />
     
     
-    <Team />
+    {/* <Team /> */}
   
     <Reachout />
   

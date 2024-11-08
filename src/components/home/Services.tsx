@@ -1,5 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import GradualSpacing from "../ui/gradual-spacing";
 
 const Example = () => {
   return (
@@ -17,6 +18,21 @@ const HorizontalScrollCarousel = () => {
 
   const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
+  const title: JSX.Element = (
+    <>
+      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+        {"Our Expertise "}
+      </span>
+      <span>
+        Ensure Your <br /> Business Stays Competitive in the
+      </span>
+      <br />
+      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+        Evolving Digital Landscape
+      </span>
+    </>
+  );
+  
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
@@ -48,16 +64,7 @@ const HorizontalScrollCarousel = () => {
       {/* desktop view */}
       <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
         <div className="md:text-[48px] text-[32px] ml-4">
-          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            {"Our Expertise "}
-          </span>
-          <span>
-            Ensure Your <br /> Business Stays Competitive in the
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            Evolving Digital Landscape
-          </span>
+       {title}
         </div>
         <div className="">
            {/* Learn More Button */}
