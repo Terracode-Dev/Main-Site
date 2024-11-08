@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="flex items-center justify-between px-5 py-5 shadow-md bg-slate-50 lg:px-20 shadow-slate-100">
+    <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20">
       {/* Logo */}
       <div className="text-2xl font-bold ">
         <span className="text-black">TERRA</span><br/>

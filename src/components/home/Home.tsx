@@ -11,13 +11,13 @@ import Aboutus from './About'
 const Home = () => {
   return (
     <div>
-      <section id="hero" >
+      <section id="hero" className='' >
         <Hero />
       </section>
-      <section id="services" className='px-5 xl:p-20' >
+      <section id="services" className='' >
         <Services />
       </section>
-      <section id="about "className='xl:p-20' >
+      <section id="about"className='xl:p-20' >
         <Aboutus />
       </section>
       <section id="work" >
@@ -26,9 +26,9 @@ const Home = () => {
       {/*<section id="benitits" >
         <Benifits />
       </section>*/}
-      <section id="projects" className='xl:p-20' >
+      {/* <section id="projects" className='xl:p-20' >
         <Projects />
-      </section>
+      </section> */}
       <section id="faqs" className=' xl:p-20' >
         <Faq /> 
       </section>
