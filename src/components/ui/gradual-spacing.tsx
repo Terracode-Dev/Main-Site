@@ -1,11 +1,10 @@
-"use client";
-
 import { AnimatePresence, motion, Variants } from "framer-motion";
-
+import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 interface GradualSpacingProps {
-  text: string;
+  text: ReactNode; // Accepts JSX content
   duration?: number;
   delayMultiple?: number;
   framerProps?: Variants;
@@ -14,29 +13,32 @@ interface GradualSpacingProps {
 
 export default function GradualSpacing({
   text,
-  duration = 0.5,
+  duration = 2,
   delayMultiple = 0.04,
   framerProps = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 80 },
   },
   className,
 }: GradualSpacingProps) {
+  // Convert JSX content to an array of child elements
+  const children = React.Children.toArray(text);
+
   return (
-    <div className="flex justify-center space-x-1">
+    <div className="flex ">
       <AnimatePresence>
-        {text.split("").map((char, i) => (
-          <motion.h1
+        {children.map((child, i) => (
+          <motion.span
             key={i}
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={framerProps}
             transition={{ duration, delay: i * delayMultiple }}
-            className={cn("drop-shadow-sm ", className)}
+            className={cn("drop-shadow-sm", className)}
           >
-            {char === " " ? <span>&nbsp;</span> : char}
-          </motion.h1>
+            {child}
+          </motion.span>
         ))}
       </AnimatePresence>
     </div>

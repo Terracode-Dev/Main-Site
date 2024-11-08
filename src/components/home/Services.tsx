@@ -39,17 +39,10 @@ const HorizontalScrollCarousel = () => {
       {/* mobile view */}
       <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
         <div className="md:text-[48px] text-[32px] ml-4 ">
-          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            Our Expertise
-          </span>
-          <span> Ensure Your<br /> Business Stays Competitive in the
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-            Evolving Digital Landscape
-          </span>
+
+        {title}
         </div>
-        <div className="">
+        <div className="ml-4">
            {/* Learn More Button */}
            <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}>
             Learn More
@@ -63,8 +56,9 @@ const HorizontalScrollCarousel = () => {
       </div>
       {/* desktop view */}
       <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
-        <div className="md:text-[48px] text-[32px] ml-4">
-       {title}
+      <div className="md:text-[48px] text-[32px] ml-4 ">
+
+        {title}
         </div>
         <div className="">
            {/* Learn More Button */}
