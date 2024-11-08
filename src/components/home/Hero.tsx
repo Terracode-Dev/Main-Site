@@ -4,6 +4,7 @@ import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import Meteors from '../ui/meteors';
 
 
 export default function Hero() {
@@ -26,12 +27,12 @@ export default function Hero() {
   }, [controls, inView]);
 
   return (
-    <div className="z-20 flex items-center justify-center px-4 py-8 md:py-14">
+    <div className="z-0 flex justify-center px-2 py-10 sm:h-screen">
       <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={controls}
-       className="flex flex-col items-center space-y-10 text-center md:space-y-16 lg:space-y-20">
+       className="flex flex-col items-center space-y-10 text-center md:space-y-16 lg:space-y-10">
         {/* Title */}
         <div className="text-5xl font-medium text-transparent bg-gradient-to-r from-black to-green-700 bg-clip-text sm:text-6xl md:text-7xl lg:text-8xl">
           <span>Build your business</span>
@@ -55,7 +56,8 @@ export default function Hero() {
           </button>
         </div>
       </motion.div>
-      <RetroGrid />
+     {/* <RetroGrid />*/}
+     {/* <Meteors /> */}
       <Particles
         className="absolute inset-0"
         quantity={100}

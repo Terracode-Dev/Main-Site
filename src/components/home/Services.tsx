@@ -21,13 +21,12 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       {/* Desktop view */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden sm:hidden">
+      <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden sm:hidden">
         <div className="md:text-[48px] text-[32px] ml-4">
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Our Expertise
           </span>
-          <span>
-            Ensure Your <br /> Business Stays Competitive in the
+          <span> Ensure Your<br /> Business Stays Competitive in the
           </span>
           <br />
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
@@ -38,14 +37,14 @@ const HorizontalScrollCarousel = () => {
             Learn More
           </button>
         </div>
-        <motion.div style={{ x: xhos1 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
+        <motion.div style={{ x: xhos1 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
           {cards.map((card) => (
             <Card card={card} key={card.id} />
           ))}
         </motion.div>
       </div>
       {/* Mobile view */}
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden hidden sm:block">
+      <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 sm:block">
         <div className="md:text-[48px] text-[32px] ml-4">
           <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
             Our Expertise
@@ -62,7 +61,7 @@ const HorizontalScrollCarousel = () => {
             Learn More
           </button>
         </div>
-        <motion.div style={{ x: xhos2 }} className="flex gap-40 ml-3 mt-8 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
+        <motion.div style={{ x: xhos2 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
           {cards.map((card) => (
             <Card card={card} key={card.id} />
           ))}

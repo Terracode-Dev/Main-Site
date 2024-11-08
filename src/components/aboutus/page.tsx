@@ -8,20 +8,16 @@ import Hero2 from './hero'
 
 const Aboutus_page = () => {
   return (
-    <div>
-        <section id="" >
-        <Hero2 />
-      </section>
-      <section id="" >
-        <Team />
-      </section>
-      <section id="" >
-        <Reachout />
-      </section>
-      <section id="" >
-        <Footer2 />
-      </section>
-    </div>
+    <> <Hero2 />
+    
+    
+    <Team />
+  
+    <Reachout />
+  
+    <Footer2 /></>
+        
+
   )
 }
 
