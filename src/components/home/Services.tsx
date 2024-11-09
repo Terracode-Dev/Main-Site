@@ -18,7 +18,7 @@ const HorizontalScrollCarousel = () => {
 
   const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
-  const title: JSX.Element = (
+  const our: JSX.Element = (
     <>
       <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
         {"Our Expertise "}
@@ -26,12 +26,15 @@ const HorizontalScrollCarousel = () => {
       <span>
         Ensure Your <br /> Business Stays Competitive in the
       </span>
-      <br />
+    </>);
+  const ev: JSX.Element = (<>
+    <span>
       <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
         Evolving Digital Landscape
       </span>
-    </>
-  );
+    </span>
+    </>);
+      
   
 
   return (
@@ -40,7 +43,9 @@ const HorizontalScrollCarousel = () => {
       <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
         <div className="md:text-[48px] text-[32px] ml-4 ">
 
-        {title}
+        <GradualSpacing text={our} />
+          
+          <GradualSpacing text={ev} />
         </div>
         <div className="ml-4">
            {/* Learn More Button */}
@@ -57,8 +62,10 @@ const HorizontalScrollCarousel = () => {
       {/* desktop view */}
       <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
       <div className="md:text-[48px] text-[32px] ml-4 ">
-
-        {title}
+          <GradualSpacing text={our} />
+          
+          <GradualSpacing text={ev} />
+       
         </div>
         <div className="">
            {/* Learn More Button */}
