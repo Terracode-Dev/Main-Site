@@ -23,7 +23,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
   return (
     <figure
       className={cn(
-        "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl h-[100px] border-2",
+        "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl h-[100px]",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
