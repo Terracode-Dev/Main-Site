@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -15,6 +15,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
     { id: 'ai', label: 'AI Development' }
   ];
 
+  useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [onClose]);
+
   const toggleService = (serviceId: string) => {
     setSelectedServices(prev =>
       prev.includes(serviceId)
@@ -23,15 +37,28 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
     );
   };
 
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0  backdrop-blur-md bg-black/60 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl p-6 md:p-8 w-full max-w-md relative">
+    <div 
+      className="fixed inset-0 backdrop-blur-md bg-black/60 flex items-center justify-center p-4"
+      onClick={handleOverlayClick}
+    >
+      <div 
+        className="bg-white rounded-2xl p-6 md:p-8 w-full max-w-md relative"
+        onClick={e => e.stopPropagation()}
+      >
         {/* Close button */}
         <button 
           onClick={onClose} 
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          aria-label="Close form"
         >
           ✕
         </button>
@@ -65,7 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                   <button
                     key={service.id}
                     onClick={() => toggleService(service.id)}
-                    className={`px-4 py-2 rounded-full border-2 transition-colors
+                    className={`px-4 py-2 rounded-full border-2 transition-colors text-sm md:text-base
                       ${selectedServices.includes(service.id)
                         ? 'bg-[#FF4500] text-white border-[#FF4500]'
                         : 'border-[#FF4500] text-[#FF4500] hover:bg-[#FF4500] hover:text-white'
