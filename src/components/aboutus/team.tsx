@@ -72,8 +72,8 @@ const TeamCards: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-2 py-8">
-      <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-2 gap-5 gap-x-1 ml-11">
+    <div className="container mx-auto px-2 xl:py-8 ">
+      <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1  xl:gap-x-0 xl:ml-11 p-4">
         {teamMembers.map((member) => (
           <div key={member.id} className="relative">
             {member.img ? (
@@ -85,16 +85,16 @@ const TeamCards: React.FC = () => {
             ) : (
               <div className="aspect-square bg-gray-200 rounded-lg"></div> 
             )}
-            <div className="absolute bottom-3 left-2 right-2 bg-white rounded-lg p-2 shadow-md w-56 h-fit">
+            <div className="absolute bottom-3 md:left-2 md:right-2 left-1 right-1 bg-white rounded-lg p-2 shadow-md md:w-56 h-fit w-35">
               <div className="flex justify-between items-center">
                 <div className='flex flex-col justify-center  '>
-                  <h3 className="font-semibold text-sm text-gray-900">{member.name}</h3>
-                  <p className="text-[10px] text-gray-600">{member.desc}</p>
+                  <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">{member.name}</h3>
+                  <p className="md:text-[8px] text-[8px] text-gray-600">{member.desc}</p>
                 </div>
                 
                 <div className="flex gap-2">
                   {member.linkedin && (
-                    <a href={member.linkedin} target='_blank' className="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
+                    <a href={member.linkedin} target='_blank' className="text-gray-600 hover:text-gray-900"  rel="noopener noreferrer">
                       {SocialIcons.linkedin}
                     </a>
                   )}
