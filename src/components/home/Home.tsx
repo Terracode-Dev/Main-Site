@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from './Hero'
 import Services from './Services'
 import Projects from './Projects'
-import Footer from './Footer'
 import Work from './Work'
 import Faq from './Faq'
 
@@ -26,14 +25,11 @@ const Home = () => {
       {/*<section id="benitits" >
         <Benifits />
       </section>*/}
-      {/* <section id="projects" className='xl:p-20' >
+      <section id="projects" className='' >
         <Projects />
-      </section> */}
+      </section>
       <section id="faqs" className=' xl:p-20' >
         <Faq /> 
-      </section>
-      <section id="contact" >
-       <Footer />
       </section>
     </div>
   )

@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './components/home/Home'
 import { Casestudy_page } from './components/casestudy/page'
 import Aboutus_page from './components/aboutus/page'
+import Footer from './components/footer'
 
 
 
@@ -24,6 +25,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />*/}
         </Routes>
+        
+        <Footer />
       </div>
     </>
   )

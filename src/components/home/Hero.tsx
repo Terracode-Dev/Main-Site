@@ -5,6 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Meteors from '../ui/meteors';
+import FlipText from "../ui/flip-text";
+import { FaRust } from "react-icons/fa6";
 
 
 export default function Hero() {
@@ -26,6 +28,14 @@ export default function Hero() {
     }
   }, [controls, inView]);
 
+  const our1: JSX.Element = (
+    <>
+      <span className=''>Build your business</span>
+          <br />
+          <span>
+            for the<span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent"> future.</span>
+          </span>
+    </>);
   return (
     <div className="flex items-center justify-center px-2 py-10">
       <motion.div
@@ -35,11 +45,7 @@ export default function Hero() {
        className="flex flex-col items-center space-y-10 text-center md:space-y-16 ">
         {/* Title */}
         <div className="text-5xl font-medium text-transparent bg-gradient-to-r from-black to-green-700 bg-clip-text sm:text-6xl md:text-7xl lg:text-8xl">
-          <span>Build your business</span>
-          <br />
-          <span>
-            for the<span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent"> future.</span>
-          </span>
+        {our1}
          </div>
 
         {/* Paragraph */}
