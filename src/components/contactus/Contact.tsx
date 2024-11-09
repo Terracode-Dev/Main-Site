@@ -46,17 +46,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 backdrop-blur-md bg-black/60 flex items-center justify-center p-4"
       onClick={handleOverlayClick}
     >
-      <div 
-        className="bg-white rounded-2xl p-6 md:p-8 w-full max-w-md relative"
+      <div
+        className="bg-white rounded-2xl p-6 md:p-8 w-full max-w-3xl relative shadow-2xl" // Added shadow-2xl
         onClick={e => e.stopPropagation()}
       >
         {/* Close button */}
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
           aria-label="Close form"
         >
@@ -74,7 +74,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               placeholder="Name"
               className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500]"
             />
-            
+
             <input
               type="email"
               placeholder="E-mail address"
@@ -86,7 +86,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                 Select the Services<br />
                 that Fit Your Needs
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {services.map(service => (
                   <button
