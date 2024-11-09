@@ -1,18 +1,12 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
-  const links = [
-    "Use this section for Links 1",
-    "Use this section for Links 2", 
-    "Use this section for Links 3",
-    "Use this section for Links 4"
-  ];
-
   return (
     <footer className="mt-8 text-white bg-black">
-      <div className="px-4 py-20 mx-auto max-w-7xl sm:px-6 ">
+      <div className="px-4 pt-20 mx-auto max-w-7xl sm:px-6 ">
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 
           {/* Logo Section */}
@@ -28,16 +22,18 @@ const Footer = () => {
           {/* Links Section */}
           <div className="mb-4 space-y-4">
             <ul className="space-y-2">
-              {links.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-gray-300 transition-colors hover:text-orange-400"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li >
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+              </li>
+              <li >
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+              </li>
+              <li >
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+              </li>
+              <li >
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+              </li>
             </ul>
           </div>
 
@@ -63,25 +59,34 @@ const Footer = () => {
               {/* Social Links */}
                 <div className="flex w-full gap-2 mt-2 sm:justify-start">
                 <div className="w-1/3">
-                  <a href="#"
+                  <a 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.facebook.com/terracodedev?mibextid=LQQJ4d"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300">
                   <Facebook className="w-auto h-6 " />
-                  <span className='hidden sm:block'>Facebook</span></a>
+                  <button className='hidden sm:block'>Facebook</button></a>
                 </div>
                 <div className="w-1/3">
-                <a href="#"
+                <a 
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/terracodedev"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
                   <Instagram className="w-auto h-6 " />
-                  <span className='hidden sm:block'>Instagram</span>
+                  <button className='hidden sm:block'>Instagram</button>
                 </a>
                 </div>
                 <div className="w-1/3">
                 <a
-                  href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                  href="https://www.linkedin.com/company/terracodedev/⁣
+"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
                 >
                   <Linkedin className="w-auto h-6" />
-                  <span className='hidden sm:block'>LinkedIn</span>
+                  <button className='hidden sm:block'>LinkedIn</button>
                 </a>
               </div>
             </div>

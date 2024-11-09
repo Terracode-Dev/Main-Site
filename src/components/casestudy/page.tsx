@@ -6,7 +6,6 @@ import { Solutions } from './solutions'
 import { Process } from './process'
 import { Timeline } from './timeline'
 import Reachout from './reachout'
-import Footer2 from '../aboutus/footer'
 
 export const Casestudy_page = () => {
   return (
@@ -31,9 +30,6 @@ export const Casestudy_page = () => {
       </section>
       <section id="faqs" >
         <Reachout /> 
-      </section>
-      <section id="contact" >
-       <Footer2 />
       </section>
     </div>
   )
