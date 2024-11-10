@@ -69,7 +69,7 @@ const HorizontalScrollCarousel = () => {
             <div >
               <Link to="/aboutus" >
         <button
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl text-orange-400 sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}
         >
           Meet The Team
         </button></Link>
@@ -77,7 +77,7 @@ const HorizontalScrollCarousel = () => {
             <div >
             <Link to="/casestudy" >
         <button
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white `}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl text-orange-400 sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white `}
         >
           Let's Work Together
         </button></Link>

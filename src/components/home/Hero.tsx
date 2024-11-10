@@ -57,7 +57,7 @@ export default function Hero() {
 
         {/* Button */}
         <div>
-          <button className="px-6 py-3 mt-4 text-sm text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] sm:text-base md:text-lg rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
+          <button className="z-[999] px-6 py-3 mt-4 text-sm text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] sm:text-base md:text-lg rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
             Discover More
           </button>
         </div>
