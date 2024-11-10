@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
+
+
 
 interface webInterface {
   id: number;
@@ -59,7 +61,6 @@ const TeamCards: React.FC = () => {
     setOpenDropdown(openDropdown === memberId ? null : memberId);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => setOpenDropdown(null);
     document.addEventListener('click', handleClickOutside);
@@ -68,82 +69,105 @@ const TeamCards: React.FC = () => {
 
   return (
     <div className="container mx-auto px-2 xl:py-8">
-      <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-0 xl:ml-11 p-4">
+      <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] xl:ml-11 p-4">
         {teamMembers.map((member) => (
-          <div key={member.id} className="relative">
-            {member.img ? (
-              <img
-                src={member.img}
-                alt={member.name}
-                className="md:w-60 h-full object-cover rounded-lg"
-              />
-            ) : (
-              <div className="aspect-square bg-gray-200 rounded-lg"></div>
-            )}
-            <div className="absolute bottom-1 md:bottom-3 md:left-2 md:right-2 left-1 right-1 bg-white rounded-lg p-2 shadow-md md:w-54 lg:w-56 h-fit w-35">
-              <div className="flex justify-between items-center">
-                <div className="flex flex-col justify-center">
-                  <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">{member.name}</h3>
-                  <p className="md:text-[8px] text-[8px] text-gray-600">{member.desc}</p>
-                </div>
+          <div key={member.id} className="relative rounded-lg overflow-hidden">
+            <div className="relative h-full">
+              {member.img ? (
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gray-200" />
+              )}
+              
+              {/* Info and Social Media Box - Now inside the image container */}
+              <div className="relative h-full">
+                <div className="absolute inset-x-2 bottom-2 bg-white rounded-lg p-2 shadow-md">
+                  <div className="flex justify-between items-center">
+                    <div className="flex flex-col justify-center">
+                      <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
+                        {member.name}
+                      </h3>
+                      <p className="md:text-[8px] text-[8px] text-gray-600">
+                        {member.desc}
+                      </p>
+                    </div>
 
-                {/* Desktop View - All icons visible */}
-                <div className="hidden md:flex gap-2">
-                  {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" className="text-gray-600 hover:text-gray-900" rel="noopener noreferrer">
-                      {SocialIcons.linkedin}
-                    </a>
-                  )}
-                  {member.github && (
-                    <a href={member.github} target="_blank" className="text-gray-600 hover:text-gray-900" rel="noopener noreferrer">
-                      {SocialIcons.github}
-                    </a>
-                  )}
-                </div>
-
-                {/* Mobile View - Dropdown */}
-                <div className="md:hidden relative">
-                  <button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleDropdown(member.id);
-                    }}
-                    className="text-gray-600 hover:text-gray-900 p-1"
-                  >
-                    <MoreVertical size={10} />
-                  </button>
-                  
-                  {openDropdown === member.id && (
-                    <div className="absolute right-0 bottom-full mb-1 bg-white rounded-lg shadow-lg p-2 z-10">
+                    {/* Desktop View - Social Icons */}
+                    <div className="hidden md:flex gap-2">
                       {member.linkedin && (
                         <a
                           href={member.linkedin}
                           target="_blank"
-                          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                          className="text-gray-600 hover:text-gray-900"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           {SocialIcons.linkedin}
-                          <span className="text-xs">LinkedIn</span>
                         </a>
                       )}
                       {member.github && (
                         <a
                           href={member.github}
                           target="_blank"
-                          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                          className="text-gray-600 hover:text-gray-900"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           {SocialIcons.github}
-                          <span className="text-xs">GitHub</span>
                         </a>
                       )}
                     </div>
-                  )}
+
+                    {/* Mobile View - Dropdown */}
+                    <div className="md:hidden relative">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleDropdown(member.id);
+                        }}
+                        className="text-gray-600 hover:text-gray-900 p-1"
+                      >
+                        <MoreVertical size={10} />
+                      </button>
+                      
+                      {openDropdown === member.id && (
+                        <div className="absolute right-0 bottom-full mb-1 bg-white rounded-lg shadow-lg p-2 z-10">
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {SocialIcons.linkedin}
+                              <span className="text-xs">LinkedIn</span>
+                            </a>
+                          )}
+                          {member.github && (
+                            <a
+                              href={member.github}
+                              target="_blank"
+                              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {SocialIcons.github}
+                              <span className="text-xs">GitHub</span>
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            
+            {/* Set a fixed aspect ratio for the card */}
+            <div className="pb-[100%]" /> {/* Creates a 1:1 aspect ratio */}
           </div>
         ))}
       </div>
