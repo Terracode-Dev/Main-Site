@@ -1,6 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaFlag } from "react-icons/fa";
 
 const Aboutus = () => {
   return (
@@ -58,7 +59,7 @@ const HorizontalScrollCarousel = () => {
               <p className="text-xl text-gray-600 sm:text-2xl md:text-3xl">
               "We’re a passionate team of 
               <span className='text-orange-500'> designers</span> and 
-              <span className='text-orange-500'> developers,</span> based in Sri Lanka, committed to building  
+              <span className='text-orange-500'> developers,</span> based in Sri Lanka , committed to building  
               <span className='text-orange-500'> forward-thinking solutions.</span>"
               </p>
             </div>

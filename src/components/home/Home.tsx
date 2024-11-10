@@ -10,7 +10,7 @@ import Aboutus from './About'
 const Home = () => {
   return (
     <div>
-      <section id="hero" className='' >
+      <section id="hero" className='min-h-screen' >
         <Hero />
       </section>
       <section id="services" className='' >
