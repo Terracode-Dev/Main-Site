@@ -6,15 +6,23 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaGolang } from "react-icons/fa6";
 import { FaRust } from "react-icons/fa6";
 import { SiFlutter } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { FaLaravel } from "react-icons/fa";
+import { SiPhp } from "react-icons/si";
+import { FaPython } from "react-icons/fa";
 
 
 const reviews = [
-  { name: "Jack", username: "@jack", img: <IoLogoJavascript /> ,color:"hover:text-yellow-400" },
-  { name: "Jill", username: "@jill", img: <FaReact />,color:"hover:text-blue-700"  },
-  { name: "John", username: "@john", img: <RiNextjsFill /> ,color:"hover:text-slate-950" },
-  { name: "Jane", username: "@jane", img: <FaGolang /> ,color:"hover:text-blue-700" },
-  { name: "Jenny", username: "@jenny", img: <FaRust /> ,color:"hover:text-fuchsia-700" },
-  { name: "James", username: "@james",img: <SiFlutter />,color:"hover:text-lime-500"  },
+  { username: "javascript", img: <IoLogoJavascript /> ,color:"hover:text-yellow-400" },
+  { username: "react", img: <FaReact />,color:"hover:text-blue-700"  },
+  { username: "nextjs", img: <RiNextjsFill /> ,color:"hover:text-slate-950" },
+  { username: "golang", img: <FaGolang /> ,color:"hover:text-blue-700" },
+  { username: "Rust", img: <FaRust /> ,color:"hover:text-orange-500" },
+  { sername: "Flutter",img: <SiFlutter />,color:"hover:text-blue-500"  },
+  { sername: "typescript",img: <SiTypescript />,color:"hover:text-blue-500"  },
+  { sername: "laravel",img: <FaLaravel />,color:"hover:text-red-500"  },
+  { sername: "php",img: <SiPhp />,color:"hover:text-blue-500"  },
+  { sername: "python",img:<FaPython />,color:"hover:text-blue-400"  },
 ];
  
 const firstRow = reviews.slice(0, reviews.length);
