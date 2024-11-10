@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-
+import ContactForm from "./contactus/Contact";
 import { Logs , X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   return (
     <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20">
@@ -38,11 +39,15 @@ const Navbar: React.FC = () => {
 
       {/* Contact Us Button */}
       <div className="hidden md:flex">
-        <ScrollLink to="contact" smooth={true} duration={500} className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
+        <button
+      onClick={() => setIsContactFormOpen(true)} className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
           Talk with Us
-        </ScrollLink>
+          </button>
       </div>
+      {/* Render ContactForm */}
+      <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
 
+        
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className=" md:hidden">
         {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><Logs /></div>}
@@ -69,9 +74,12 @@ const Navbar: React.FC = () => {
         </ScrollLink>
 
           {/* Contact Us Button in mobile viwe */}
-          <ScrollLink to="contact" smooth={true} duration={500} className="px-10 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-xl hover:bg-gray-800" onClick={toggleMenu}>
-            Talk with Us
-          </ScrollLink>
+          <button
+      onClick={() => setIsContactFormOpen(true)} className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
+          Talk with Us
+          </button>
+          {/* Render ContactForm */}
+      <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
         </div>
       )}
     </nav>
