@@ -44,7 +44,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
 export function MarqueeDemo() {
   return (
     <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-      <Marquee pauseOnHover className="[--duration:20s] ">
+      <Marquee pauseOnHover className="[--duration:20s] text-gray-400">
         {firstRow.map((review) => (
           <div className={review.color}>
             <ReviewCard key={review.username} {...review} /></div>
