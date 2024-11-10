@@ -96,7 +96,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                     className={`px-4 py-2 rounded-full border transition-colors text-sm md:text-base
                       ${selectedServices.includes(service.id)
                         ? 'bg-orange-500 text-white border-orange-500'
-                        : ' text-orange-400 sm:text-base md:text-lg border-orange-400 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white'
+                        : ' text-orange-400  border-orange-400 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white'
                       }`}
                   >
                     {service.label}
