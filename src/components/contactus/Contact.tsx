@@ -66,7 +66,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold text-left md:text-3xl">
-            Send a <span className="text-[#FFA500]">Message</span>
+            Send a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Message</span>
           </h2>
 
           <div className="space-y-4">
@@ -111,9 +111,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500] resize-none"
             />
 
-            <button className="w-full px-8 py-3 rounded-full  text-orange-400 sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white">
-              Submit
-            </button>
+              <div className="flex justify-start mt-4">
+                <button className="px-8 py-2 rounded-full text-orange-400 sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white transition-colors">
+                  Submit
+                </button>
+              </div>
+
+
           </div>
         </div>
       </div>
