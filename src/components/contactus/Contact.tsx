@@ -48,7 +48,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center p-4 backdrop-blur-md bg-black/60"
+      className="fixed inset-0 flex items-center justify-center p-4 backdrop-blur-md bg-black/60 z-50"
       onClick={handleOverlayClick}
     >
       <div

@@ -3,8 +3,6 @@ import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
 
-
-
 interface webInterface {
   id: number;
   name: string;
@@ -68,7 +66,7 @@ const TeamCards: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-2 xl:py-8">
+    <div className="min-h-screen container mx-auto px-2 xl:py-8">
       <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] xl:ml-11 p-4">
         {teamMembers.map((member) => (
           <div key={member.id} className="relative rounded-lg overflow-hidden">
@@ -83,7 +81,6 @@ const TeamCards: React.FC = () => {
                 <div className="absolute inset-0 bg-gray-200" />
               )}
               
-              {/* Info and Social Media Box - Now inside the image container */}
               <div className="relative h-full">
                 <div className="absolute inset-x-2 bottom-2 bg-white rounded-lg p-2 shadow-md">
                   <div className="flex justify-between items-center">
@@ -96,7 +93,6 @@ const TeamCards: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Desktop View - Social Icons */}
                     <div className="hidden md:flex gap-2">
                       {member.linkedin && (
                         <a
@@ -120,7 +116,6 @@ const TeamCards: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Mobile View - Dropdown */}
                     <div className="md:hidden relative">
                       <button 
                         onClick={(e) => {
@@ -166,8 +161,7 @@ const TeamCards: React.FC = () => {
               </div>
             </div>
             
-            {/* Set a fixed aspect ratio for the card */}
-            <div className="pb-[100%]" /> {/* Creates a 1:1 aspect ratio */}
+            <div className="pb-[100%]" />
           </div>
         ))}
       </div>
