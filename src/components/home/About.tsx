@@ -92,7 +92,7 @@ const HorizontalScrollCarousel = () => {
                 <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px] md:w-[300px]"/>
               </div>
               {/* Title */}
-               <div className="w-1/2 xl:w-1/4" >
+               <div className="lg:w-2/3 xl:w-1/4" >
                 <h1 className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-3xl md:text-6xl lg:text-4xl">Terracode</h1>
 
               {/* Paragraph */}

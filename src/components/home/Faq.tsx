@@ -112,7 +112,7 @@ const Faq: React.FC = () => {
   const isOverlappingInView = useInView(overlappingRef, { once: false });
   
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center bg-white">
       <div className="w-full max-w-[896px] text-center px-6 relative">
         {/* Header animation */}
         <motion.h1
@@ -127,7 +127,7 @@ const Faq: React.FC = () => {
           </span>
 
           {/* mobile version */}
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px]   font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden">
             Ready to Bring Your <br /> Vision to <br /> Life?
           </span>
         </motion.h1>
