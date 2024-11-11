@@ -112,7 +112,7 @@ const Faq: React.FC = () => {
   const isOverlappingInView = useInView(overlappingRef, { once: false });
   
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white">
+    <div className="flex items-center justify-center bg-white xl:min-h-screen">
       <div className="w-full max-w-[896px] text-center px-6 relative">
         {/* Header animation */}
         <motion.h1
