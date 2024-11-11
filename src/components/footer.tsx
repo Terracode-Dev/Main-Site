@@ -1,18 +1,12 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
-  const links = [
-    "Use this section for Links 1",
-    "Use this section for Links 2", 
-    "Use this section for Links 3",
-    "Use this section for Links 4"
-  ];
-
   return (
     <footer className="mt-8 text-white bg-black">
-      <div className="px-4 py-20 mx-auto max-w-7xl sm:px-6 ">
+      <div className="px-4 pt-20 mx-auto max-w-7xl sm:px-6 ">
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 
           {/* Logo Section */}
@@ -20,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center">
               <span className="text-2xl font-bold md:text-4xl">
                 <span className="text-white">TERRA</span><br/>
-                <span className="text-orange-500">CODE.</span>
+                <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
               </span>
             </div>
           </div>
@@ -28,16 +22,18 @@ const Footer = () => {
           {/* Links Section */}
           <div className="mb-4 space-y-4">
             <ul className="space-y-2">
-              {links.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-gray-300 transition-colors hover:text-orange-400"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li >
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+              </li>
+              <li >
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+              </li>
+              <li >
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+              </li>
+              <li >
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+              </li>
             </ul>
           </div>
 
@@ -46,7 +42,7 @@ const Footer = () => {
             <div className="space-y-12">
               <div className="w-2/3 text-lg md:text-xl">
               <h3 >Have questions or ready  to collaborate?</h3>
-              <p >We're just a <span className="text-orange-500">message</span> away!</p>
+              <p >We're just a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">message</span> away!</p>
               </div>
               {/* Email Input */}
               <div className="flex w-1/2 gap-2">
@@ -55,7 +51,7 @@ const Footer = () => {
                   placeholder="terracodetest@gmail.com"
                   className="flex-grow px-4 py-2 text-black bg-white rounded-2xl"
                 />
-                <button className="px-4 py-2 text-white transition-colors bg-orange-500 rounded-2xl hover:bg-orange-600">
+                <button className="px-4 py-2 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-2xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
                   Copy
                 </button>
               </div>
@@ -63,25 +59,34 @@ const Footer = () => {
               {/* Social Links */}
                 <div className="flex w-full gap-2 mt-2 sm:justify-start">
                 <div className="w-1/3">
-                  <a href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-blue-500 ">
+                  <a 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.facebook.com/terracodedev?mibextid=LQQJ4d"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300">
                   <Facebook className="w-auto h-6 " />
-                  <span className='hidden sm:block'>Facebook</span></a>
+                  <button className='hidden sm:block'>Facebook</button></a>
                 </div>
                 <div className="w-1/3">
-                <a href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-pink-600">
+                <a 
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/terracodedev"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
                   <Instagram className="w-auto h-6 " />
-                  <span className='hidden sm:block'>Instagram</span>
+                  <button className='hidden sm:block'>Instagram</button>
                 </a>
                 </div>
                 <div className="w-1/3">
                 <a
-                  href="#"
-                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-blue-500"
+                target="_blank"
+                rel="noopener noreferrer"
+                  href="https://www.linkedin.com/company/terracodedev/⁣
+"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-gray-900 transition-colors bg-white rounded-md hover:text-white hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
                 >
                   <Linkedin className="w-auto h-6" />
-                  <span className='hidden sm:block'>LinkedIn</span>
+                  <button className='hidden sm:block'>LinkedIn</button>
                 </a>
               </div>
             </div>

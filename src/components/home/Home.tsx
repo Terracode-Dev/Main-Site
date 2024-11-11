@@ -2,35 +2,34 @@ import React from 'react'
 import Hero from './Hero'
 import Services from './Services'
 import Projects from './Projects'
-import Footer from './Footer'
-import About from './About'
 import Work from './Work'
-import Benifits from './Benifits'
 import Faq from './Faq'
+
+import Aboutus from './About'
 
 const Home = () => {
   return (
     <div>
-      <section id="hero" >
+      <section id="hero" className='min-h-screen' >
         <Hero />
       </section>
-      <section id="services" >
+      <section id="services" className='' >
         <Services />
       </section>
-      <section id="about" >
-        <About />
+      <section id="about"className='xl:p-20' >
+        <Aboutus />
       </section>
       <section id="work" >
         <Work />
       </section>
-      <section id="benefits" >
+      {/*<section id="benitits" >
         <Benifits />
+      </section>*/}
+      <section id="projects" className='' >
+        <Projects />
       </section>
-      <section id="faqs" >
+      <section id="faqs" className=' xl:p-20' >
         <Faq /> 
-      </section>
-      <section id="contact" >
-       <Footer />
       </section>
     </div>
   )

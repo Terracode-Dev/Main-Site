@@ -15,32 +15,32 @@ const Work = () => {
     {
       title: 'Innovation',
       description: <p>'We use powerful technologies like <span className='font-bold text-black'>Go, Rust, AI, and other industry standards</span> to create cutting-edge solutions that keep your business ahead in the digital world.'</p>,
-      icon: <Rocket className="w-6 h-6 text-orange-500" />,
+      icon: <Rocket className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Security',
       description: <p>'Our solutions, built with <span className='font-bold text-black'>Go, Rust, and other trusted technologies,</span> ensure that your business and data are always secure.'</p>,
-      icon: <Shield className="w-6 h-6 text-orange-500" />,
+      icon: <Shield className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Collaboration',
       description: 'We work closely with your team to understand your needs and deliver solutions that align with your goals.',
-      icon: <Users className="w-6 h-6 text-orange-500" />,
+      icon: <Users className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Customization',
       description: 'Each project is tailor-made using the best tools and technologies, ensuring the perfect fit for your specific requirements.',
-      icon: <Settings className="w-6 h-6 text-orange-500" />,
+      icon: <Settings className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Scalability',
       description: 'Our solutions are designed to grow with your business, handling increased demand as your company expands.',
-      icon: <Scale className="w-6 h-6 text-orange-500" />,
+      icon: <Scale className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Efficiency',
       description: 'We focus on streamlining processes, delivering high-performance solutions that save you time and resources.',
-      icon: <Clock className="w-6 h-6 text-orange-500" />,
+      icon: <Clock className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
   ];
 
@@ -79,7 +79,7 @@ const Work = () => {
 
   return (
     <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-center text-orange-500">
+      <h2 className="mb-6 text-4xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
         Why work with Us?
       </h2>
 
@@ -150,7 +150,7 @@ const Work = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="px-6 py-3 text-white transition-colors bg-orange-500 rounded-3xl hover:bg-orange-500">
+        <button className="px-6 py-3 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
           Ready To Collaborate?
         </button>
       </div>
