@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -23,16 +23,16 @@ const Footer = () => {
           <div className="mb-4 space-y-4">
             <ul className="space-y-2">
               <li >
-                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">aboutus page</Link>
               </li>
               <li >
-                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">casestudies page</Link>
               </li>
               <li >
-                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">go to the aboutus page</Link>
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">aboutus page</Link>
               </li>
               <li >
-                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">go to the casestudies page</Link>
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">casestudies page</Link>
               </li>
             </ul>
           </div>
