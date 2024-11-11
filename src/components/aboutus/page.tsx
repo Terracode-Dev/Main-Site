@@ -1,4 +1,3 @@
-import React from 'react'
 import Team from './team'
 import Reachout from './reachout'
 import Hero2 from './hero'
