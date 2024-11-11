@@ -1,6 +1,7 @@
 
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import EmailCopySection from './home/copyemail';
 
 const Footer = () => {
 
@@ -32,7 +33,7 @@ const Footer = () => {
                 <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
               <li >
-                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>n
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>
               </li>
             </ul>
           </div>
@@ -44,17 +45,8 @@ const Footer = () => {
               <h3 >Have questions or ready  to collaborate?</h3>
               <p >We're just a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">message</span> away!</p>
               </div>
-              {/* Email Input */}
-              <div className="flex w-1/2 gap-2">
-                <input
-                  type="email"
-                  placeholder="terracodetest@gmail.com"
-                  className="flex-grow px-4 py-2 text-black bg-white rounded-2xl"
-                />
-                <button className="px-4 py-2 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-2xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
-                  Copy
-                </button>
-              </div>
+              {/* Email copy section */}
+              <EmailCopySection />
 
               {/* Social Links */}
                 <div className="flex w-full gap-2 mt-2 sm:justify-start">
