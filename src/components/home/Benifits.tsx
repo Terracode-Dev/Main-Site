@@ -1,20 +1,6 @@
-import React from 'react'
-import react,{ useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const About = () => {
-
-  const [activeButton, setActiveButton] = useState<string | null>(null);
-  const navigate = useNavigate();
-
-  const handleButtonClick = (button: string) => {
-    setActiveButton(button);
-    if (button === 'team') {
-      navigate('/aboutus');
-    } else if (button === 'work') {
-      navigate('/casestudy');
-    }
-  };
 
   return (
     <>

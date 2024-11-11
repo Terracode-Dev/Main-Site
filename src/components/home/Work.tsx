@@ -85,7 +85,7 @@ const Work = () => {
 
       {/* Desktop Grid */}
       <div className="hidden gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
+        {features.map((feature) => (
           <div
             key={feature.title}
             className="p-6"

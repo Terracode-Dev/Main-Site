@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';

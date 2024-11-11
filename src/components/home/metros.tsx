@@ -1,5 +1,5 @@
 import Meteors from "../ui/meteors";
-import Particles from '../ui/particles';
+
 
 export function MeteorDemo() {
   return (

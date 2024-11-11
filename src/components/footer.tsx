@@ -23,16 +23,16 @@ const Footer = () => {
           <div className="mb-4 space-y-4">
             <ul className="space-y-2">
               <li >
-                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">aboutus page</Link>
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
               <li >
-                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">casestudies page</Link>
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>
               </li>
               <li >
-                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">aboutus page</Link>
+                <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
               <li >
-                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">casestudies page</Link>
+                <Link to={"/casestudy"} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>n
               </li>
             </ul>
           </div>

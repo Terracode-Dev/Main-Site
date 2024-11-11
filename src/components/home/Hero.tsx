@@ -1,13 +1,9 @@
-import React from 'react';
+
 import Particles from '../ui/particles';
 import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import Meteors from '../ui/meteors';
-import FlipText from "../ui/flip-text";
-import { FaRust } from "react-icons/fa6";
-
 
 export default function Hero() {
   const controls = useAnimation();
