@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
+import lottie from 'lottie-web';
+import loadingAnimation from '@/loading.json';
 
 interface webInterface {
   id: number;
@@ -15,6 +17,7 @@ interface webInterface {
 const TeamCards: React.FC = () => {
   const [teamMembers, setTeamMembers] = useState<webInterface[]>([]);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchTeamMembers = async () => {
@@ -34,13 +37,28 @@ const TeamCards: React.FC = () => {
         }) as webInterface[];
 
         setTeamMembers(teamData);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching team members:", error);
+        setIsLoading(false);
       }
     };
 
     fetchTeamMembers();
   }, []);
+
+  useEffect(() => {
+    if (isLoading) {
+      const container = document.getElementById('loading-animation');
+      lottie.loadAnimation({
+        container: container!,
+        animationData: loadingAnimation,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+      });
+    }
+  }, [isLoading]);
 
   const SocialIcons = {
     linkedin: (
@@ -67,110 +85,118 @@ const TeamCards: React.FC = () => {
 
   return (
     <div className="min-h-screen container mx-auto px-2 xl:py-8">
-      <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] xl:ml-11 p-4">
-        {teamMembers.map((member) => (
-          <div key={member.id} className="relative rounded-lg overflow-hidden">
-            <div className="relative h-full">
-              {member.img ? (
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-gray-200" />
-              )}
-              
+      {isLoading ? (
+        <div className="flex justify-center items-center h-screen">
+          <div id="loading-animation" className="w-64 h-64"></div>
+        </div>
+      ) : (
+        <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] xl:ml-11 p-4">
+          {teamMembers.map((member) => (
+            <div
+              key={member.id}
+              className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
               <div className="relative h-full">
-                <div className="absolute inset-x-2 bottom-2 bg-white rounded-lg p-2 shadow-md">
-                  <div className="flex justify-between items-center">
-                    <div className="flex flex-col justify-center">
-                      <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
-                        {member.name}
-                      </h3>
-                      <p className="md:text-[8px] text-[8px] text-gray-600">
-                        {member.desc}
-                      </p>
-                    </div>
+                {member.img ? (
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gray-200" />
+                )}
+                
+                <div className="relative h-full">
+                  <div className="absolute inset-x-2 bottom-2 bg-white rounded-lg p-2 shadow-md">
+                    <div className="flex justify-between items-center">
+                      <div className="flex flex-col justify-center">
+                        <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
+                          {member.name}
+                        </h3>
+                        <p className="md:text-[8px] text-[8px] text-gray-600">
+                          {member.desc}
+                        </p>
+                      </div>
 
-                    <div className="hidden md:flex gap-2">
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          className="text-gray-600 hover:text-gray-900"
-                          rel="noopener noreferrer"
-                        >
-                          {SocialIcons.linkedin}
-                        </a>
-                      )}
-                      {member.github && (
-                        <a
-                          href={member.github}
-                          target="_blank"
-                          className="text-gray-600 hover:text-gray-900"
-                          rel="noopener noreferrer"
-                        >
-                          {SocialIcons.github}
-                        </a>
-                      )}
-                    </div>
+                      <div className="hidden md:flex gap-2">
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            className="text-gray-600 hover:text-gray-900"
+                            rel="noopener noreferrer"
+                          >
+                            {SocialIcons.linkedin}
+                          </a>
+                        )}
+                        {member.github && (
+                          <a
+                            href={member.github}
+                            target="_blank"
+                            className="text-gray-600 hover:text-gray-900"
+                            rel="noopener noreferrer"
+                          >
+                            {SocialIcons.github}
+                          </a>
+                        )}
+                      </div>
 
-                    <div className="md:hidden relative">
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleDropdown(member.id);
-                        }}
-                        className="text-gray-600 hover:text-gray-900 p-1"
-                      >
-                        <MoreVertical size={10} />
-                      </button>
-                      
-                      {openDropdown === member.id && (
-                        <div className="absolute right-0 bottom-full mb-1 bg-white rounded-lg shadow-lg p-2 z-10">
-                          {member.linkedin && (
-                            <a
-                              href={member.linkedin}
-                              target="_blank"
-                              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              {SocialIcons.linkedin}
-                              <span className="text-xs">LinkedIn</span>
-                            </a>
-                          )}
-                          {member.github && (
-                            <a
-                              href={member.github}
-                              target="_blank"
-                              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              {SocialIcons.github}
-                              <span className="text-xs">GitHub</span>
-                            </a>
-                          )}
-                        </div>
-                      )}
+                      <div className="md:hidden relative">
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleDropdown(member.id);
+                          }}
+                          className="text-gray-600 hover:text-gray-900 p-1"
+                        >
+                          <MoreVertical size={10} />
+                        </button>
+                        
+                        {openDropdown === member.id && (
+                          <div className="absolute right-0 bottom-full mb-1 bg-white rounded-lg shadow-lg p-2 z-10">
+                            {member.linkedin && (
+                              <a
+                                href={member.linkedin}
+                                target="_blank"
+                                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {SocialIcons.linkedin}
+                                <span className="text-xs">LinkedIn</span>
+                              </a>
+                            )}
+                            {member.github && (
+                              <a
+                                href={member.github}
+                                target="_blank"
+                                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {SocialIcons.github}
+                                <span className="text-xs">GitHub</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              <div className="pb-[100%]" />
             </div>
-            
-            <div className="pb-[100%]" />
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default TeamCards;
-
 
 
 
