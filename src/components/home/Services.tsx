@@ -1,6 +1,5 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import GradualSpacing from "../ui/gradual-spacing";
 
 const Example = () => {
   return (
@@ -42,10 +41,8 @@ const HorizontalScrollCarousel = () => {
       {/* mobile view */}
       <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
         <div className="md:text-[48px] text-[32px] ml-4 ">
-
-        <GradualSpacing text={our} />
-          
-          <GradualSpacing text={ev} />
+        {our}<br/>
+        {ev}
         </div>
         <div className="ml-4">
            {/* Learn More Button */}
@@ -62,10 +59,8 @@ const HorizontalScrollCarousel = () => {
       {/* desktop view */}
       <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
       <div className="md:text-[48px] text-[32px] ml-4 ">
-          <GradualSpacing text={our} />
-          
-          <GradualSpacing text={ev} />
-       
+          {our}<br />
+          {ev}
         </div>
         <div className="">
            {/* Learn More Button */}
