@@ -13,7 +13,7 @@ export default function Projects() {
           </h1>
         </div>
         {/* paragraf */}
-        <div className='flex items-center justify-center w-1/2 text-center h-1/3'>
+        <div className='flex items-center justify-center w-3/4 text-center xl:w-1/2 h-1/3'>
           <p className='text-xl md:text-2xl'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum commodi, totam fugit similique blanditiis est ut nisi ab sint?hsdi jdhf comming soon .</p>
         </div>
         {/* Icon Cloud */}

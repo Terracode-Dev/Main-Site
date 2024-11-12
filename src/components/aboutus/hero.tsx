@@ -41,7 +41,7 @@ export default function Hero2 (){
       </div>
       {/*image*/}
       <div className='w-2/3 h-[300px] md:h-[500px] bg-gray-400 rounded-xl'>
-        <img src='/team.jpg' alt="Team image" className='object-fill w-full h-full rounded-xl'/>
+        <img src='/team.jpg' alt="Team image" className='object-cover w-full h-full rounded-xl'/>
       </div>
     </motion.div>
     </>
