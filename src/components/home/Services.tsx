@@ -37,7 +37,7 @@ const HorizontalScrollCarousel = () => {
   
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[300vh] ">
       {/* mobile view */}
       <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
         <div className="md:text-[48px] text-[32px] ml-4 ">

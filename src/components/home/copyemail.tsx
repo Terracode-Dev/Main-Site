@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 
 const EmailCopySection = () => {
@@ -9,10 +9,7 @@ const EmailCopySection = () => {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
-
-      // Show an alert
-      alert('Email copied to clipboard!');
-
+      
       // Reset the copied state after 2 seconds
       setTimeout(() => {
         setCopied(false);

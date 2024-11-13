@@ -4,8 +4,8 @@ import { MarqueeDemo } from './techstack';
 
 export default function Projects() {
   return (
-    <div className='container flex items-center justify-center mx-auto'>
-      <div className='flex flex-col items-center justify-center w-full gap-8 py-8 xl:space-y-8'>
+    <div className='container flex items-center justify-center mx-auto md:h-screen'>
+      <div className='flex flex-col items-center justify-center w-full gap-8 py-8 xl:gap-14 xl:space-y-8'>
         {/* Title */}
         <div className='flex items-center justify-center w-2/3 text-center h-1/3'>
           <h1 className='text-4xl md:text-6xl '>

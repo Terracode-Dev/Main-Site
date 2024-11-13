@@ -33,14 +33,14 @@ export default function Hero() {
           </span>
     </>);
   return (
-    <div className="flex items-center justify-center px-2 py-10">
+    <div className="flex items-center justify-center px-2  h-[90vh]">
       <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={controls}
-       className="flex flex-col items-center space-y-10 text-center md:space-y-16 ">
+       className="flex flex-col items-center justify-center text-center md:space-y-16">
         {/* Title */}
-        <div className="text-5xl font-medium text-transparent bg-gradient-to-r from-black to-green-700 bg-clip-text sm:text-6xl md:text-7xl lg:text-8xl">
+        <div className="text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
         {our1}
          </div>
 

@@ -40,7 +40,7 @@ export default function Hero2 (){
           </p>
       </div>
       {/*image*/}
-      <div className='w-2/3 h-[300px] md:h-[500px] bg-gray-400 rounded-xl'>
+      <div className='w-2/3 h-[300px] md:h-[500px] bg-gray-400 rounded-xl bg-cover'>
         <img src='/team.jpg' alt="Team image" className='object-cover w-full h-full rounded-xl'/>
       </div>
     </motion.div>

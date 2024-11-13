@@ -18,7 +18,8 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
+      <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex ">
+       
         <Link to={"/"} className="text-gray-600 cursor-pointer hover:text-orange-600">Home</Link>
         <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
           Services
@@ -35,6 +36,7 @@ const Navbar: React.FC = () => {
         <ScrollLink to="faqs" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
           FAQs
         </ScrollLink>
+
       </div>
 
       {/* Contact Us Button */}
