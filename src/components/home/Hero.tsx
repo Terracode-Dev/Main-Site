@@ -33,12 +33,12 @@ export default function Hero() {
           </span>
     </>);
   return (
-    <div className="flex items-center justify-center px-2  h-[90vh]">
+    <div className="flex items-center justify-center px-2 h-[60vh] xl:h-[90vh]">
       <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={controls}
-       className="flex flex-col items-center justify-center text-center md:space-y-16">
+       className="flex flex-col items-center justify-center space-y-12 text-center md:space-y-16">
         {/* Title */}
         <div className="text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
         {our1}
@@ -60,13 +60,13 @@ export default function Hero() {
       </motion.div>
       <RetroGrid />
      {/* <Meteors />  */}
-      <Particles
+       <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={80}
         ease={80}
         color={"fa542f"}
         refresh
-      />
+      /> 
     </div>
   );
 }
