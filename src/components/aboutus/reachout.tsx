@@ -69,7 +69,7 @@ const Faq: React.FC = () => {
           ref={paragraphRef}
           initial={{ opacity: 0, y: 50 }}
           animate={isParagraphInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[20px] sm:-mt-5 md:-mt-12  mt-2 leading-normal"
         >
           If you're a business owner, reach out to us today <br />
@@ -81,7 +81,7 @@ const Faq: React.FC = () => {
           ref={buttonRef}
           initial={{ opacity: 0, y: 50 }}
           animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7"
