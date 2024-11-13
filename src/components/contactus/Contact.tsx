@@ -13,9 +13,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   const [message, setMessage] = useState("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [notification, setNotification] = useState<string | null>(null);
-  const [isError, setIsError] = useState(false);
+  const [nameError, setNameError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [serviceError, setServiceError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const services = [
     { id: 'enterprise', label: 'Enterprise Solutions' },
@@ -67,15 +69,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = async () => {
-    if (!name || !email || selectedServices.length === 0) {
-      setIsError(true);
-      setNotification("Please fill in all fields and select at least one service.");
-      setTimeout(() => setNotification(null), 3000);
-      return;
+    // Reset error messages
+    setNameError(null);
+    setEmailError(null);
+    setServiceError(null);
+
+    // Validate each field
+    let hasError = false;
+
+    if (!name) {
+      setNameError("Name is required.");
+      hasError = true;
     }
 
+    if (!email) {
+      setEmailError("Email is required.");
+      hasError = true;
+    }
+
+    if (selectedServices.length === 0) {
+      setServiceError("Please select at least one service.");
+      hasError = true;
+    }
+
+    if (hasError) return;
+
     setIsSubmitting(true);
-    setIsError(false);
     try {
       await addDoc(collection(db, "orders"), {
         nameData: name,
@@ -84,19 +103,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
         services: selectedServices,
         createdAt: Timestamp.now()
       });
-      setNotification("Your inquiry has been submitted successfully!");
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSelectedServices([]);
+      
+      setShowSuccess(true);
+      
+      // Wait 2 seconds before resetting and closing
       setTimeout(() => {
-        setNotification(null);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSelectedServices([]);
+        setShowSuccess(false);
         handleClose();
-      }, 3000);
+      }, 2000);
+      
     } catch (error) {
       console.error("Error adding document: ", error);
-      setNotification("Failed to submit form.");
-      setIsError(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -115,6 +136,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
           ${mounted ? 'opacity-60 backdrop-blur-md' : 'opacity-0'}`}
         onClick={handleOverlayClick}
       />
+
+      {/* Success Message */}
+      {showSuccess && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-6 py-3 rounded-lg z-50 shadow-lg">
+          Your inquiry has been submitted successfully!
+        </div>
+      )}
 
       {/* Modal */}
       <div className="flex items-center justify-center min-h-screen p-4">
@@ -136,16 +164,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               Send a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Message</span>
             </h2>
 
-            {notification && (
-              <div
-                className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 rounded-lg text-center text-white ${
-                  isError ? 'bg-red-500' : 'bg-green-500'
-                }`}
-              >
-                {notification}
-              </div>
-            )}
-
             <div className="space-y-4">
               <input
                 type="text"
@@ -155,6 +173,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                 onChange={(e) => setName(e.target.value)}
                 disabled={isSubmitting}
               />
+              {nameError && <p className="text-red-500 text-sm">{nameError}</p>}
 
               <input
                 type="email"
@@ -164,6 +183,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isSubmitting}
               />
+              {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
 
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-left md:text-3xl">
@@ -187,6 +207,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                     </button>
                   ))}
                 </div>
+                {serviceError && <p className="text-red-500 text-sm">{serviceError}</p>}
               </div>
 
               <textarea
