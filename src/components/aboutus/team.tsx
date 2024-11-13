@@ -84,9 +84,9 @@ const TeamCards: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen container mx-auto px-2 xl:py-8">
+    <div className="container min-h-screen px-2 mx-auto xl:py-8">
       {isLoading ? (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex items-center justify-center h-screen">
           <div id="loading-animation" className="w-64 h-64"></div>
         </div>
       ) : (
@@ -94,22 +94,22 @@ const TeamCards: React.FC = () => {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="relative overflow-hidden transition-shadow duration-300 rounded-lg hover:shadow-lg"
             >
               <div className="relative h-full">
                 {member.img ? (
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 object-cover w-full h-full"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-gray-200" />
                 )}
                 
                 <div className="relative h-full">
-                  <div className="absolute inset-x-2 bottom-2 bg-white rounded-lg p-2 shadow-md">
-                    <div className="flex justify-between items-center">
+                  <div className="absolute p-2 bg-white rounded-lg shadow-md inset-x-2 bottom-2">
+                    <div className="flex items-center justify-between">
                       <div className="flex flex-col justify-center">
                         <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
                           {member.name}
@@ -119,7 +119,7 @@ const TeamCards: React.FC = () => {
                         </p>
                       </div>
 
-                      <div className="hidden md:flex gap-2">
+                      <div className="hidden gap-2 md:flex">
                         {member.linkedin && (
                           <a
                             href={member.linkedin}
@@ -142,24 +142,24 @@ const TeamCards: React.FC = () => {
                         )}
                       </div>
 
-                      <div className="md:hidden relative">
+                      <div className="relative md:hidden">
                         <button 
                           onClick={(e) => {
                             e.stopPropagation();
                             toggleDropdown(member.id);
                           }}
-                          className="text-gray-600 hover:text-gray-900 p-1"
+                          className="p-1 text-gray-600 hover:text-gray-900"
                         >
                           <MoreVertical size={10} />
                         </button>
                         
                         {openDropdown === member.id && (
-                          <div className="absolute right-0 bottom-full mb-1 bg-white rounded-lg shadow-lg p-2 z-10">
+                          <div className="absolute right-0 z-10 p-2 mb-1 bg-white rounded-lg shadow-lg bottom-full">
                             {member.linkedin && (
                               <a
                                 href={member.linkedin}
                                 target="_blank"
-                                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                                className="flex items-center gap-2 p-2 text-gray-600 hover:text-gray-900"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
                               >
@@ -171,7 +171,7 @@ const TeamCards: React.FC = () => {
                               <a
                                 href={member.github}
                                 target="_blank"
-                                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 p-2"
+                                className="flex items-center gap-2 p-2 text-gray-600 hover:text-gray-900"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
                               >
@@ -283,16 +283,16 @@ export default TeamCards;
 //   };
 
 //   return (
-//     <div className="container mx-auto px-4 py-8">
-//       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+//     <div className="container px-4 py-8 mx-auto">
+//       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
 //         {teamMembers.map((member) => (
 //           <div key={member.id} className="relative">
 //             {/* Gray background square */}
-//             <div className="aspect-square bg-gray-200 rounded-lg"></div>
+//             <div className="bg-gray-200 rounded-lg aspect-square"></div>
             
 //             {/* Info bar */}
-//             <div className="absolute bottom-4 left-4 right-4 bg-white rounded-lg p-3 shadow-md">
-//               <div className="flex justify-between items-center">
+//             <div className="absolute p-3 bg-white rounded-lg shadow-md bottom-4 left-4 right-4">
+//               <div className="flex items-center justify-between">
 //                 <div>
 //                   <h3 className="font-medium text-gray-900">{member.name}</h3>
 //                   <p className="text-sm text-gray-600">{member.role}</p>
