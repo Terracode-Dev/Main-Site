@@ -40,7 +40,7 @@ export default function Hero() {
       animate={controls}
        className="flex flex-col items-center justify-center text-center md:space-y-16">
         {/* Title */}
-        <div className="text-5xl font-medium text-transparent bg-gradient-to-r from-black to-green-700 bg-clip-text sm:text-6xl md:text-7xl lg:text-8xl">
+        <div className="text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
         {our1}
          </div>
 

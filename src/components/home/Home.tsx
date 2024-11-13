@@ -18,7 +18,7 @@ const Home = () => {
       <section id="about"className='xl:p-20' >
         <Aboutus />
       </section>
-      <section id="work" >
+      <section id="work" className='' >
         <Work />
       </section>
       {/*<section id="benitits" >

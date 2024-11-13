@@ -78,13 +78,13 @@ const Work = () => {
   };
 
   return (
-    <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <h2 className="mb-6 text-4xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+    <div className="grid items-center justify-center px-4 py-16 mx-auto md:h-screen 3xl:gap-10 max-w-7xl sm:px-6 lg:px-8">
+      <h2 className="md:mb-6 text-4xl 2xl:text-5xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent h-20 ">
         Why work with Us?
       </h2>
 
       {/* Desktop Grid */}
-      <div className="hidden gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature) => (
           <div
             key={feature.title}
@@ -100,7 +100,7 @@ const Work = () => {
       </div>
 
       {/* Mobile Carousel */}
-      <div className="relative md:hidden">
+      <div className="relative grid md:hidden">
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
