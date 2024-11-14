@@ -37,10 +37,10 @@ const HorizontalScrollCarousel = () => {
   
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] ">
+    <section ref={targetRef} className="relative h-[200vh] ">
       {/* mobile view */}
       <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
-        <div className="md:text-[48px] text-[32px] ml-4 ">
+        <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
         </div>
@@ -57,7 +57,7 @@ const HorizontalScrollCarousel = () => {
         </motion.div>
       </div>
       {/* desktop view */}
-      <div className="sticky flex flex-col justify-center hidden overflow-hidden top-24 lg:block">
+      <div className="sticky flex flex-col justify-center hidden h-screen overflow-hidden top-24 lg:block">
       <div className="md:text-[48px] text-[32px] ml-4 ">
           {our}<br />
           {ev}
@@ -94,16 +94,16 @@ const Card = ({ card }: CardProps) => {
   return (
     <div
       key={card.id}
-      className={`flex flex-col md:w-[452px] md:h-[323px] w-[300px] h-[200px] ${card.bgColor} rounded-2xl relative
+      className={`flex flex-col xl:w-[452px] xl:h-[323px] w-[250px] h-[190px] ${card.bgColor} rounded-2xl relative
                          hover:scale-[1.02] transition-transform duration-300`}
     >
       <div className="p-4">
         {/* Icon */}
-        <img src={card.icon} alt="Icon" className="md:w-[69px] w-[28px] md:mt-7 mt-2" />
+        <img src={card.icon} alt="Icon" className="xl:w-[69px] w-[28px] xl:mt-7 mt-2" />
         {/* Title */}
-        <h1 className="md:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
+        <h1 className="xl:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
         <div className="flex items-start line-clamp-4 mt-2 w-[70%]">
-          <p className="md:text-[16px] text-[10px] text-white">{card.description}</p>
+          <p className="xl:text-[16px] text-[10px] text-white">{card.description}</p>
         </div>
       </div>
       <img src={card.image} alt={card.title} className={card.sty} />
@@ -121,7 +121,7 @@ const cards = [
     image: "/App.png",
     bgColor: "bg-[#F67005] bg",
     id: 1,
-    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "AI Development",
@@ -130,7 +130,7 @@ const cards = [
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
     id: 2,
-    sty: "absolute md:right-[-125px] right-[-78px] md:top-1 top-0 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-1 top-0 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "Enterprise Solutions",
@@ -139,7 +139,7 @@ const cards = [
     image: "Enterprise.png",
     bgColor: "bg-[#F67005]",
     id: 3,
-    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] lg:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
   {
     title: "Web Development",
@@ -148,6 +148,6 @@ const cards = [
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
-    sty: "absolute md:right-[-125px] right-[-78px] md:top-8 top-4 md:w-[320px] md:h-[320px] w-[200px] h-[200px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
 ];

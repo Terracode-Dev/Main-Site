@@ -12,7 +12,7 @@ const Home = () => {
       <section id="hero" className='' >
         <Hero />
       </section>
-      <section id="services" className='' >
+      <section id="services" className='border-2' >
         <Services />
       </section>
       <section id="about"className='xl:p-20' >
