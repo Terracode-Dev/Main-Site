@@ -17,24 +17,54 @@ const HorizontalScrollCarousel = () => {
 
   const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const our: JSX.Element = (
     <>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+      <motion.span 
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        className="animate-gradient duration-5 bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent"
+      >
         {"Our Expertise "}
-      </span>
-      <span>
+      </motion.span>
+      <motion.span
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        transition={{ delay: 0.3 }}
+      >
         Ensure Your <br /> Business Stays Competitive in the
-      </span>
-    </>);
-  const ev: JSX.Element = (<>
-    <span>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-        Evolving Digital Landscape
-      </span>
-    </span>
-    </>);
-      
-  
+      </motion.span>
+    </>
+  );
+
+  const ev: JSX.Element = (
+    <>
+      <motion.span
+        initial="hidden"
+        animate="visible"
+        variants={textVariants}
+        transition={{ delay: 0.6 }}
+      >
+        <span className="animate-gradient duration-1 bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+          Evolving Digital Landscape
+        </span>
+      </motion.span>
+    </>
+  );
 
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
@@ -92,26 +122,55 @@ interface CardProps {
 
 const Card = ({ card }: CardProps) => {
   return (
-    <div
+    <motion.div
       key={card.id}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: card.id * 0.2 }}
       className={`flex flex-col xl:w-[452px] xl:h-[323px] w-[250px] h-[190px] ${card.bgColor} rounded-2xl relative
                          hover:scale-[1.02] transition-transform duration-300`}
     >
       <div className="p-4">
         {/* Icon */}
-        <img src={card.icon} alt="Icon" className="xl:w-[69px] w-[28px] xl:mt-7 mt-2" />
+        <motion.img 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: card.id * 0.3 }}
+          src={card.icon} 
+          alt="Icon" 
+          className="xl:w-[69px] w-[28px] xl:mt-7 mt-2" 
+        />
         {/* Title */}
-        <h1 className="xl:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
+        <motion.h1 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: card.id * 0.4 }}
+          className="xl:text-[34px] text-[20px] text-white mt-2"
+        >
+          {card.title}
+        </motion.h1>
         <div className="flex items-start line-clamp-4 mt-2 w-[70%]">
-          <p className="xl:text-[16px] text-[10px] text-white">{card.description}</p>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: card.id * 0.5 }}
+            className="xl:text-[16px] text-[10px] text-white"
+          >
+            {card.description}
+          </motion.p>
         </div>
       </div>
-      <img src={card.image} alt={card.title} className={card.sty} />
-    </div>
+      <motion.img 
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: card.id * 0.3 }}
+        src={card.image} 
+        alt={card.title} 
+        className={card.sty} 
+      />
+    </motion.div>
   );
 };
-
-export default Example;
 
 const cards = [
   {
@@ -151,3 +210,5 @@ const cards = [
     sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
 ];
+
+export default Example;
