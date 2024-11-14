@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import ContactForm from "./contactus/Contact";
 import { Logs, X } from 'lucide-react';
@@ -6,11 +6,31 @@ import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // Function to close the menu
+  // Toggle the menu open/close
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  
+  // Close the menu
   const closeMenu = () => setMenuOpen(false);
+
+  // Close menu when clicking outside the mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    // Add event listener when the menu is open
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Clean up event listener when the menu is closed
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   return (
     <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20">
@@ -22,7 +42,7 @@ const Navbar: React.FC = () => {
 
       {/* Desktop Menu */}
       <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
-        <Link to={"/"} className="text-gray-600 cursor-pointer hover:text-orange-600">Home</Link>
+        <Link to="/" className="text-gray-600 cursor-pointer hover:text-orange-600">Home</Link>
         <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
           Services
         </ScrollLink>
@@ -48,7 +68,6 @@ const Navbar: React.FC = () => {
           Talk with Us
         </button>
       </div>
-      {/* Render ContactForm */}
       <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
 
       {/* Mobile Menu Button */}
@@ -58,57 +77,26 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute left-0 z-50 flex flex-col items-center w-full h-[350px] p-5 space-y-4 bg-white top-20 md:hidden">
-          <Link
-            to={"/"}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+        <div
+          ref={mobileMenuRef}
+          className="absolute left-0 z-50 flex flex-col items-center w-full h-[500px] p-5 space-y-4 bg-white top-20 md:hidden"
+        >
+          <Link to="/" className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             Home
           </Link>
-          <ScrollLink
-            to="services"
-            smooth={true}
-            duration={500}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+          <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             Services
           </ScrollLink>
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+          <ScrollLink to="about" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             About
           </ScrollLink>
-          <ScrollLink
-            to="work"
-            smooth={true}
-            duration={500}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+          <ScrollLink to="work" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             Work
           </ScrollLink>
-          <ScrollLink
-            to="projects"
-            smooth={true}
-            duration={500}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+          <ScrollLink to="projects" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             Tech Stack
           </ScrollLink>
-          <ScrollLink
-            to="faqs"
-            smooth={true}
-            duration={500}
-            className="text-gray-600 cursor-pointer hover:text-orange-600"
-            onClick={closeMenu} // Close menu on click
-          >
+          <ScrollLink to="faqs" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             FAQs
           </ScrollLink>
 
@@ -116,7 +104,7 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => {
               setIsContactFormOpen(true);
-              closeMenu(); // Close menu on button click
+              closeMenu();
             }}
             className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
             Talk with Us
