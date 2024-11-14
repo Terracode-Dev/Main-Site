@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20">
       {/* Logo */}
-      <div className="text-2xl font-bold">
+      <div className="text-xl font-bold md:text-2xl">
         <span className="text-black">TERRA</span><br />
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
       </div>
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute left-0 flex flex-col items-center w-full p-5 space-y-4 bg-white top-20 md:hidden">
+        <div className="absolute left-0 z-50 flex flex-col items-center w-full h-[500px] p-5 space-y-4 bg-white top-20 md:hidden">
           <Link
             to={"/"}
             className="text-gray-600 cursor-pointer hover:text-orange-600"
