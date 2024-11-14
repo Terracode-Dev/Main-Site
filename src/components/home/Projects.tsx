@@ -3,7 +3,7 @@ import { MarqueeDemo } from './techstack';
 export default function Projects() {
   return (
     <div className='flex items-center justify-center px-4 mx-auto xl:h-screen'>
-      <div className='flex flex-col items-center justify-center w-full gap-8 py-8 border-2 xl:gap-14'>
+      <div className='flex flex-col items-center justify-center w-full gap-8 py-8 xl:gap-14'>
         {/* Title */}
         <div className='flex items-center justify-center w-2/3 px-4 text-center'>
           <h1 className='text-2xl font-semibold leading-tight sm:text-3xl md:text-5xl xl:text-6xl'>
