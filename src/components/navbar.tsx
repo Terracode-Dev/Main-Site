@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute left-0 z-50 flex flex-col items-center w-full h-[500px] p-5 space-y-4 bg-white top-20 md:hidden">
+        <div className="absolute left-0 z-50 flex flex-col items-center w-full h-[350px] p-5 space-y-4 bg-white top-20 md:hidden">
           <Link
             to={"/"}
             className="text-gray-600 cursor-pointer hover:text-orange-600"
