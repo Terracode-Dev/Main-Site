@@ -60,7 +60,7 @@ export default function Hero() {
             bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
             hover:scale-105
             sm:text-base md:text-lg rounded-3xl 
-            transition-all duration-300 
+            transition-all duration-500 
             animate-shimmer
             hover:shadow-lg hover:shadow-[#EF3D00]/50
             before:absolute before:inset-0
