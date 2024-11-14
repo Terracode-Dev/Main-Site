@@ -115,16 +115,17 @@ export default Example;
 
 const cards = [
   {
-    title: "App Development",
-    description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
-    icon: "/Vector.png",
-    image: "/App.png",
-    bgColor: "bg-[#F67005] bg",
-    id: 1,
-    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
+    title: "Business Applications",
+    description: "Unlock your business potential with tailored software designed specifically for you. We specialize in crafting custom systems that streamline operations and enhance efficiency—whether you need a comprehensive ERP to manage large company workflows, an IMS for your retail store, or a CRM to strengthen customer relationships. Let us help you transform your business with solutions that fit your unique needs, ensuring seamless experiences across all platforms.",
+    icon: "/Vector 3.png",
+    image: "Enterprise.png",
+    bgColor: "bg-[#F67005]",
+    id: 3,
+    sty: "absolute xl:right-[-125px] right-[-78px] lg:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
+  
   {
-    title: "AI Development",
+    title: "Smart Automation Solutions",
     description: "Unlock the power of AI with intelligent solutions that automate processes, enhance decision-making, and boost operational efficiency.",
     icon: "/AI.png",
     image: "/AI-1.png",
@@ -133,21 +134,21 @@ const cards = [
     sty: "absolute xl:right-[-125px] right-[-78px] xl:top-1 top-0 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
   {
-    title: "Enterprise Solutions",
-    description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
-    icon: "/Vector 3.png",
-    image: "Enterprise.png",
-    bgColor: "bg-[#F67005]",
-    id: 3,
-    sty: "absolute xl:right-[-125px] right-[-78px] lg:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
-  },
-  {
     title: "Web Development",
     description: "Our web development services deliver fast, secure, and responsive websites that are designed to engage users and drive growth.",
     icon: "/Vector4.png",
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
+  },
+  {
+    title: "App Development",
+    description: "We create innovative mobile applications that are tailored to your business needs, ensuring seamless user experiences across all platforms.",
+    icon: "/Vector.png",
+    image: "/App.png",
+    bgColor: "bg-[#F67005] bg",
+    id: 1,
     sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[320px] w-[200px] h-[200px]",
   },
 ];
