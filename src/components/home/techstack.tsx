@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import Marquee from "../ui/marquee";
-import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaGolang } from "react-icons/fa6";
