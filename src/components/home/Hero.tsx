@@ -4,6 +4,7 @@ import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Hero() {
   const controls = useAnimation();
@@ -54,7 +55,9 @@ export default function Hero() {
         {/* Button */}
         <div>
           <button className="z-[999] px-6 py-3 mt-4 text-sm text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] sm:text-base md:text-lg rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
-            Discover More
+          <ScrollLink to="services" smooth={true} duration={500}>
+          Discover more
+        </ScrollLink>
           </button>
         </div>
       </motion.div>
