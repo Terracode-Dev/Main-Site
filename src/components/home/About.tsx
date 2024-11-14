@@ -89,7 +89,7 @@ const HorizontalScrollCarousel = () => {
             {/*logo*/} 
             <div className="flex flex-col items-center justify-center space-y-6 xl:flex-row md:space-x-10 md:space-y-10 lg:space-y-16">
               <div className=" md:px-10 xl:w-1/4">
-                <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px]"/>
+                <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px] xl:w-[250px]"/>
               </div>
               {/* Title */}
                <div className="space-y-6 lg:w-2/3 xl:w-1/4 " >
@@ -97,7 +97,7 @@ const HorizontalScrollCarousel = () => {
 
               {/* Paragraph */}
               
-              <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, minus dolore? Sunt dolore quod praesentium porro, cupiditate facilis reiciendis tenetur quisquam voluptas nemo voluptatum voluptate soluta corporis libero consequuntur error.</p>
+              <p className="">"Boasting a strong team of skilled engineers, we are dedicated to building exceptional software products that cater precisely to your business needs. Our commitment is to work closely with you, understanding your unique challenges and opportunities, to deliver solutions that not only streamline processes but also enhance efficiency and exceed expectations. Let’s collaborate to drive remarkable results and propel your business forward."</p>
             </div>
             </div>
               </motion.div>
