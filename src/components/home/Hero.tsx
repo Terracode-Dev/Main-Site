@@ -40,15 +40,15 @@ export default function Hero() {
         ref={ref}
         initial={{ opacity: 0, y: 30 }}
         animate={controls}
-        className="flex flex-col items-center justify-center space-y-6 text-center md:space-y-8 lg:space-y-14"
+        className="flex flex-col items-center justify-center space-y-6 text-center lg:space-y-14"
       >
         {/* Title */}
-        <div className="text-3xl font-medium sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+        <div className="text-3xl font-medium sm:text-4xl lg:text-7xl xl:text-8xl">
           {our1}
         </div>
 
         {/* Paragraph */}
-        <div className="w-11/12 px-3 sm:w-3/4 md:w-2/3 lg:w-1/2">
+        <div className="w-11/12 px-3 sm:w-3/4 lg:w-1/2">
           <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl">
             We make sure your business is ready for the future with powerful, smart & A.I. solutions powered by the latest technologies.
           </p>
