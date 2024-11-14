@@ -14,7 +14,8 @@ export default function Projects() {
         {/* Paragraph */}
         <div className='flex items-center justify-center w-full px-4 text-center sm:w-11/12 md:w-4/5 xl:w-2/5'>
           <p className='text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl lg:text-2xl'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum commodi, totam fugit similique blanditiis est ut nisi ab sint? Coming soon.
+          Our solutions leverage advanced technology to build secure, robust, and scalable applications. Let us guide you through the digital landscape with solutions that innovate, optimize, and expand your business operations.
+
           </p>
         </div>
 
