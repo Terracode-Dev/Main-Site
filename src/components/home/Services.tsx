@@ -19,7 +19,7 @@ const HorizontalScrollCarousel = () => {
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+      <span className="animate-gradient  bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
         {"Our Expertise "}
       </span>
       <span>
@@ -28,7 +28,7 @@ const HorizontalScrollCarousel = () => {
     </>);
   const ev: JSX.Element = (<>
     <span>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+      <span className="animate-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
         Evolving Digital Landscape
       </span>
     </span>
