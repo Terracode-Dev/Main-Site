@@ -17,7 +17,7 @@ export default function Hero2 (){
         transition: { duration: 1, ease: "easeOut", delay: 0.2 },
       });
     } else {
-      controls.start({ opacity: 0, y: 100 });
+      controls.start({ opacity: 0, y: -100 });
     }
   }, [controls, inView]);
 

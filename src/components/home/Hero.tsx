@@ -4,6 +4,7 @@ import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Hero() {
   const controls = useAnimation();
@@ -20,7 +21,7 @@ export default function Hero() {
         transition: { duration: 1, ease: "easeOut", delay: 0.2 },
       });
     } else {
-      controls.start({ opacity: 0, y: 100 });
+      controls.start({ opacity: 0, y: -100 });
     }
   }, [controls, inView]);
 
@@ -33,12 +34,12 @@ export default function Hero() {
           </span>
     </>);
   return (
-    <div className="flex items-center justify-center px-2  h-[90vh]">
+    <div className="flex items-center justify-center px-2 h-[60vh] xl:h-[90vh]">
       <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={controls}
-       className="flex flex-col items-center justify-center text-center md:space-y-16">
+       className="flex flex-col items-center justify-center space-y-12 text-center md:space-y-16">
         {/* Title */}
         <div className="text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
         {our1}
@@ -54,19 +55,21 @@ export default function Hero() {
         {/* Button */}
         <div>
           <button className="z-[999] px-6 py-3 mt-4 text-sm text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] sm:text-base md:text-lg rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
-            Discover More
+          <ScrollLink to="services" smooth={true} duration={500}>
+          Discover more
+        </ScrollLink>
           </button>
         </div>
       </motion.div>
       <RetroGrid />
      {/* <Meteors />  */}
-      <Particles
+       <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={80}
         ease={80}
         color={"fa542f"}
         refresh
-      />
+      /> 
     </div>
   );
 }
