@@ -85,14 +85,14 @@ const HorizontalScrollCarousel = () => {
         </motion.div>
 
         {/* Second section */}
-        <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
+        <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center text-center ">
             {/*logo*/} 
-            <div className="flex flex-col items-center justify-center xl:flex-row md:space-x-10">
+            <div className="flex flex-col items-center justify-center space-y-6 xl:flex-row md:space-x-10 md:space-y-10 lg:space-y-16">
               <div className=" md:px-10 xl:w-1/4">
-                <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px] md:w-[300px]"/>
+                <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px]"/>
               </div>
               {/* Title */}
-               <div className="lg:w-2/3 xl:w-1/4" >
+               <div className="space-y-6 lg:w-2/3 xl:w-1/4 " >
                 <h1 className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-3xl md:text-6xl lg:text-4xl">Terracode</h1>
 
               {/* Paragraph */}

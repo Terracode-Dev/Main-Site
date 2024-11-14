@@ -9,7 +9,7 @@ import Aboutus from './About'
 const Home = () => {
   return (
     <div>
-      <section id="hero" className='xl:min-h-[90vh]' >
+      <section id="hero" className='' >
         <Hero />
       </section>
       <section id="services" className='' >
