@@ -161,7 +161,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-left md:text-3xl">
-              Send a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Message</span>
+              Send us a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Message</span>
             </h2>
 
             <div className="space-y-4">

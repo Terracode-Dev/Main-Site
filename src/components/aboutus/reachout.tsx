@@ -82,8 +82,8 @@ const Faq: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.3 }}
+          whileTap={{ scale: 1 }}
           className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7"
           onClick={() => setIsContactFormOpen(true)}
         >

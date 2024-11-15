@@ -178,11 +178,14 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7"
+          className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7 group"
           onClick={() => setIsContactFormOpen(true)}
         >
-          Reach Out
+          <span className="relative inline-block transition-transform duration-300 ease-in-out group-hover:translate-y-[-3px]">
+            Reach Out
+          </span>
         </motion.button>
+
         
         {/* Render ContactForm */}
         <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
