@@ -1,49 +1,51 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Team from './team';
 import Reachout from './reachout';
 import Hero2 from './hero';
 
-const Aboutus_page = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulating loading time and checking if all content is loaded
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 10000); // 10 seconds loading time
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="fixed inset-0 bg-white z-50">
-        <div className="flex flex-col items-center justify-center h-screen">
-          {/* Main loader circle */}
-          <div className="relative">
-            <div className="w-24 h-24 rounded-full border-t-4 border-b-4 border-[#FDA40A] animate-spin"></div>
-          </div>
-          
-          {/* Loading text */}
-          <div className="mt-8 text-center">
-            <p className="text-xl font-semibold text-[#FDA40A]">Loading</p>
-            {/* Bouncing dots */}
-            <div className="flex justify-center gap-1 mt-2">
-              <div className="w-2 h-2 bg-[#FDA40A] rounded-full animate-bounce"></div>
-              <div className="w-2 h-2 bg-[#FDA40A] rounded-full animate-bounce [animation-delay:0.2s]"></div>
-              <div className="w-2 h-2 bg-[#FDA40A] rounded-full animate-bounce [animation-delay:0.4s]"></div>
-            </div>
-          </div>
+const LoadingAnimation = () => (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+    <div className="relative">
+      <div className="w-16 h-16 border-[3px] border-orange-500 relative animate-[loader_2s_linear_infinite]">
+        <div className="absolute w-full h-full border-[3px] border-orange-200" 
+             style={{ 
+               transform: 'rotate(45deg)',
+               animation: 'loaderInner 1s linear infinite'
+             }}>
         </div>
       </div>
-    );
-  }
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-sm font-medium text-gray-500">Loading</span>
+      </div>
+    </div>
+    <style>{`
+      @keyframes loader {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes loaderInner {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(-360deg); }
+      }
+    `}</style>
+  </div>
+);
+
+const Aboutus_page = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleAllImagesLoaded = () => {
+    setIsLoading(false);
+  };
 
   return (
     <>
-      <Hero2 />
-      <Team />
-      <Reachout />
+      {isLoading && <LoadingAnimation />}
+      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
+        <Hero2 />
+        <Team onAllImagesLoaded={handleAllImagesLoaded} />
+        <Reachout />
+      </div>
     </>
   );
 };
