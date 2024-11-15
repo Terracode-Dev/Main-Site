@@ -19,19 +19,17 @@ const HorizontalScrollCarousel = () => {
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="animate-gradient  bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
-        {"Our Expertise "}
-      </span>
-      <span>
-        Ensure Your <br /> Business Stays Competitive in the
-      </span>
+      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+    Our Expertise
+  </span>
+  <span>
+    Ensure Your <br /> Business Stays Competitive in the
+  </span>
     </>);
   const ev: JSX.Element = (<>
-    <span>
-      <span className="animate-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
-        Evolving Digital Landscape
-      </span>
-    </span>
+    <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+    Evolving Digital Landscape
+  </span>
     </>);
       
   
@@ -126,7 +124,7 @@ const cards = [
   
   {
     title: "Smart Automations",
-    description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analitics & proactive customer interaction tools.",
+    description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analitics and proactive customer interaction tools.",
     icon: "/AI.png",
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
