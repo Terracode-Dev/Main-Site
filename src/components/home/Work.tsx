@@ -79,9 +79,10 @@ const Work = () => {
 
   return (
     <div className="grid items-center justify-center px-4 py-16 mx-auto xl:h-screen 3xl:gap-10 max-w-7xl sm:px-6 lg:px-8">
-      <h2 className="md:mb-6 text-4xl 2xl:text-5xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent h-20 ">
+      <h2 className="md:mb-6 text-5xl 2xl:text-5xl font-bold text-center animate-gradient-flow bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%_200%] bg-clip-text text-transparent h-20">
         Why work with Us?
       </h2>
+
 
       {/* Desktop Grid */}
       <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">

@@ -20,17 +20,17 @@ const HorizontalScrollCarousel = () => {
   const our: JSX.Element = (
     <>
       <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
-    Our Expertise
-  </span>
-  <span>
-    Ensure Your <br /> Business Stays Competitive in the
-  </span>
-    </>);
-  const ev: JSX.Element = (<>
-    <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
-    Evolving Digital Landscape
-  </span>
-    </>);
+        Our Expertise 
+      </span>
+      <span>
+          Ensure Your <br /> Business Stays Competitive in the
+      </span>
+        </>);
+      const ev: JSX.Element = (<>
+        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+        Evolving Digital Landscape
+      </span>
+        </>);
       
   
 
@@ -147,7 +147,7 @@ const cards = [
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
-    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px] scale-100 md:scale-150",
   },
   
 ];

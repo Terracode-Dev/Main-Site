@@ -68,6 +68,7 @@ export default {
 		  gradient: 'shine 3s linear infinite',
 		  shimmer: 'shimmer 3s linear infinite',
 		  'flowing-gradient': 'flowing-gradient 3s ease-in-out infinite',
+		  'gradient-flow': 'gradientFlow 5s ease-in-out infinite',
 		},
 		keyframes: {
 		  rainbow: {
@@ -99,6 +100,11 @@ export default {
 			'100%': { 'background-position': '-200% 0' },
 		  },
 		  'flowing-gradient': {
+			'0%': { 'background-position': '0% 50%' },
+			'50%': { 'background-position': '100% 50%' },
+			'100%': { 'background-position': '0% 50%' },
+		  },
+		  gradientFlow: {
 			'0%': { 'background-position': '0% 50%' },
 			'50%': { 'background-position': '100% 50%' },
 			'100%': { 'background-position': '0% 50%' },

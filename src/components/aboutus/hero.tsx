@@ -29,9 +29,14 @@ export default function Hero2 (){
     animate={controls} 
     className='flex flex-col items-center h-auto p-6 space-y-5 text-center md:space-y-8 lg:space-y-10'>
       {/* Title */}
-      <div className='text-4xl font-medium sm:text-6xl md:text-7xl lg:text-8xl'>
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Meet the People</span><br />
-        <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Behind TerraCode</span>
+      <div className="text-4xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
+        <span className="animate-gradient-flow bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+          Meet the People
+        </span>
+        <br />
+        <span className="animate-gradient-flow bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+          Behind TerraCode
+        </span>
       </div>
       {/* Paragraph */}
       <div className="w-full px-5 xl:px-40 sm:w-2/3">

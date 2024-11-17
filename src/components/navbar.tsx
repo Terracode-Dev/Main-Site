@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
               setIsContactFormOpen(true);
               closeMenu();
             }}
-            className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950">
+            className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950 z-20">
             Talk with Us
           </button>
         </div>
