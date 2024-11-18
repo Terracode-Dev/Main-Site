@@ -139,7 +139,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >
-      <style jsx global>{`
+      <style>{`
         .hide-scrollbar {
           scrollbar-width: none;
           -ms-overflow-style: none;
