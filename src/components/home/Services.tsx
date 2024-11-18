@@ -19,20 +19,18 @@ const HorizontalScrollCarousel = () => {
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
-        {"Our Expertise "}
+      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+        Our Expertise 
       </span>
       <span>
-        Ensure Your <br /> Business Stays Competitive in the
+          Ensure Your <br /> Business Stays Competitive in the
       </span>
-    </>);
-  const ev: JSX.Element = (<>
-    <span>
-      <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+        </>);
+      const ev: JSX.Element = (<>
+        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
         Evolving Digital Landscape
       </span>
-    </span>
-    </>);
+        </>);
       
   
 
@@ -126,7 +124,7 @@ const cards = [
   
   {
     title: "Smart Automations",
-    description: "Elevate your business with AI automation that streamlines operations and enhances service through intelligent resource management and proactive customer interaction tools. Discover simplified solutions for complex challenges.",
+    description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analitics and proactive customer interaction tools.",
     icon: "/AI.png",
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
@@ -149,7 +147,7 @@ const cards = [
     image: "/Web.png",
     bgColor: "bg-[#FDA40A]",
     id: 4,
-    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
+    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px] scale-100 md:scale-150",
   },
   
 ];

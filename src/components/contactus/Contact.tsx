@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '@/firbase';
+import React, { useState, useEffect } from "react";
+import { db } from "@/firbase"; 
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 interface ContactFormProps {
@@ -20,32 +20,40 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const services = [
-    { id: 'enterprise', label: 'Enterprise Solutions' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'app', label: 'App Development' },
-    { id: 'ai', label: 'AI Developments' },
-    { id: 'other', label: 'Other Development' },
+    { id: "enterprise", label: "Enterprise Solutions" },
+    { id: "web", label: "Web Development" },
+    { id: "app", label: "App Development" },
+    { id: "ai", label: "AI Developments" },
+    { id: "other", label: "Other" },
   ];
 
   useEffect(() => {
     if (isOpen) {
       setMounted(true);
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.scrollbarGutter = "stable";
+      document.body.classList.add('hide-scrollbar');
     }
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.scrollbarGutter = "auto";
+      document.body.classList.remove('hide-scrollbar');
+    };
   }, [isOpen]);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         handleClose();
       }
     };
 
-    window.addEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
 
     return () => {
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
-  }, [onClose]);
+  }, []);
 
   const handleClose = () => {
     setMounted(false);
@@ -54,10 +62,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
     }, 300);
   };
 
-  const toggleService = (serviceId: string) => {
-    setSelectedServices(prev =>
+  const handleServiceSelect = (
+    serviceId: string,
+    event: React.MouseEvent | React.TouchEvent
+  ) => {
+    event.preventDefault();
+    setSelectedServices((prev) =>
       prev.includes(serviceId)
-        ? prev.filter(id => id !== serviceId)
+        ? prev.filter((id) => id !== serviceId)
         : [...prev, serviceId]
     );
   };
@@ -69,12 +81,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = async () => {
-    // Reset error messages
     setNameError(null);
     setEmailError(null);
     setServiceError(null);
 
-    // Validate each field
     let hasError = false;
 
     if (!name) {
@@ -101,12 +111,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
         emailData: email,
         messageData: message,
         services: selectedServices,
-        createdAt: Timestamp.now()
+        createdAt: Timestamp.now(),
       });
-      
+
       setShowSuccess(true);
-      
-      // Wait 2 seconds before resetting and closing
+
       setTimeout(() => {
         setName("");
         setEmail("");
@@ -115,7 +124,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
         setShowSuccess(false);
         handleClose();
       }, 2000);
-      
     } catch (error) {
       console.error("Error adding document: ", error);
     } finally {
@@ -127,43 +135,70 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[120] transition-opacity duration-300 ease-in-out
-        ${mounted ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed inset-0 z-[120] transition-opacity duration-300 ease-in-out ${
+        mounted ? "opacity-100" : "opacity-0"
+      }`}
     >
-      {/* Backdrop */}
-      <div 
-        className={`absolute inset-0 bg-black transition-opacity duration-300 ease-in-out
-          ${mounted ? 'opacity-60 backdrop-blur-md' : 'opacity-0'}`}
+      <style>{`
+        .hide-scrollbar {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .modal-content {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        
+        .modal-content::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+
+      <div
+        className={`absolute inset-0 bg-black transition-opacity duration-300 ease-in-out ${
+          mounted ? "opacity-60 backdrop-blur-md" : "opacity-0"
+        }`}
         onClick={handleOverlayClick}
       />
 
-      {/* Success Message */}
       {showSuccess && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white px-6 py-3 rounded-lg z-50 shadow-lg">
           Your inquiry has been submitted successfully!
         </div>
       )}
 
-      {/* Modal */}
       <div className="flex items-center justify-center min-h-screen p-4">
         <div
-          className={`relative w-full max-w-3xl p-6 bg-white shadow-2xl rounded-2xl md:p-8 transition-all duration-300 ease-out
-            ${mounted ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
-          onClick={e => e.stopPropagation()}
+          className={`relative w-full max-w-3xl bg-white shadow-2xl rounded-2xl transition-all duration-300 ease-out max-h-[90vh] overflow-y-auto modal-content ${
+            mounted
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-8 scale-95"
+          }`}
+          onClick={(e) => e.stopPropagation()}
         >
-          <button
-            onClick={handleClose}
-            className="absolute text-gray-500 top-4 right-4 hover:text-gray-700"
-            aria-label="Close form"
-          >
-            ✕
-          </button>
+          <div className="sticky top-0 bg-white z-10 p-6 md:p-8 border-b">
+            <button
+              onClick={handleClose}
+              className="absolute text-gray-500 top-4 right-4 hover:text-gray-700"
+              aria-label="Close form"
+            >
+              ✕
+            </button>
 
-          <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-left md:text-3xl">
-              Send a <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Message</span>
+              Send us a{" "}
+              <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">
+                Message
+              </span>
             </h2>
+          </div>
 
+          <div className="p-6 md:p-8 space-y-6">
             <div className="space-y-4">
               <input
                 type="text"
@@ -186,28 +221,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
 
               <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-left md:text-3xl">
+                <h3 className="text-xl font-semibold text-left md:text-2xl">
                   Select the Services<br />
                   that Fit Your Needs
                 </h3>
 
-                <div className="flex flex-wrap gap-3">
-                  {services.map(service => (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {services.map((service) => (
                     <button
                       key={service.id}
-                      onClick={() => toggleService(service.id)}
-                      className={`px-4 py-2 rounded-full border transition-colors text-sm md:text-base
-                        ${selectedServices.includes(service.id)
-                          ? 'bg-orange-500 text-white border-orange-500'
-                          : 'text-orange-400 border-orange-400 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white'
-                        }`}
+                      onClick={(e) => handleServiceSelect(service.id, e)}
+                      className={`px-4 py-2 rounded-full border transition-colors text-xs leading-tight text-center max-w-xs ${
+                        selectedServices.includes(service.id)
+                          ? "bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white border-none"
+                          : "text-orange-400 border-orange-400 hover:bg-gray-100"
+                      } ${
+                        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                      }`}
                       disabled={isSubmitting}
                     >
                       {service.label}
                     </button>
                   ))}
                 </div>
-                {serviceError && <p className="text-red-500 text-sm">{serviceError}</p>}
+                {serviceError && (
+                  <p className="text-red-500 text-sm">{serviceError}</p>
+                )}
               </div>
 
               <textarea
@@ -222,9 +261,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               <div className="flex justify-start mt-4">
                 <button
                   onClick={handleSubmit}
-                  className={`px-8 py-2 rounded-full sm:text-base md:text-lg border transition-colors
-                    ${isSubmitting ? 'bg-gray-400 text-white' : 'text-orange-400 border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white'}
-                  `}
+                  className={`px-8 py-2 rounded-full sm:text-base md:text-lg border transition-colors ${
+                    isSubmitting
+                      ? "bg-gray-400 text-white"
+                      : "text-orange-400 border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white"
+                  }`}
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}

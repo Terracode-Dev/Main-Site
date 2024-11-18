@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
-import lottie from 'lottie-web';
-import loadingAnimation from '@/loading.json';
 
 interface webInterface {
   id: number;
@@ -14,10 +12,15 @@ interface webInterface {
   linkedin: string;
 }
 
-const TeamCards: React.FC = () => {
+interface TeamCardsProps {
+  onAllImagesLoaded: () => void;
+}
+
+const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
   const [teamMembers, setTeamMembers] = useState<webInterface[]>([]);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const fetchTeamMembers = async () => {
@@ -48,17 +51,14 @@ const TeamCards: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoading) {
-      const container = document.getElementById('loading-animation');
-      lottie.loadAnimation({
-        container: container!,
-        animationData: loadingAnimation,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-      });
+    if (!isLoading && teamMembers.length > 0 && loadedImages.size === teamMembers.length) {
+      onAllImagesLoaded();
     }
-  }, [isLoading]);
+  }, [loadedImages, isLoading, teamMembers, onAllImagesLoaded]);
+
+  const handleImageLoad = (imgUrl: string) => {
+    setLoadedImages(prev => new Set(prev).add(imgUrl));
+  };
 
   const SocialIcons = {
     linkedin: (
@@ -73,7 +73,8 @@ const TeamCards: React.FC = () => {
     )
   };
 
-  const toggleDropdown = (memberId: number) => {
+  const toggleDropdown = (memberId: number, event: React.MouseEvent) => {
+    event.stopPropagation();
     setOpenDropdown(openDropdown === memberId ? null : memberId);
   };
 
@@ -83,32 +84,48 @@ const TeamCards: React.FC = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="relative w-20 h-20">
+          <div className="absolute w-full h-full border-8 border-gray-200 rounded-lg"></div>
+          <div className="absolute w-full h-full border-8 border-blue-500 rounded-lg animate-[spin_3s_linear_infinite]"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container min-h-screen px-2 mx-auto xl:py-8">
-      {isLoading ? (
-        <div className="flex items-center justify-center h-screen">
-          <div id="loading-animation" className="w-64 h-64"></div>
-        </div>
-      ) : (
-        <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] xl:ml-11 p-4">
+      <div className="flex justify-center">
+        <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] p-4 max-w-[1400px] w-full justify-items-center">
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="relative overflow-hidden transition-shadow duration-300 rounded-lg hover:shadow-lg"
+              className="relative overflow-hidden transition-all duration-300 rounded-lg group w-full max-w-[280px]
+                hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
+                hover:-translate-y-2 
+                hover:scale-105"
             >
               <div className="relative h-full">
-                {member.img ? (
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="absolute inset-0 object-cover w-full h-full"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gray-200" />
+                {member.img && (
+                  <>
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-300 ${
+                        loadedImages.has(member.img) ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => handleImageLoad(member.img)}
+                    />
+                    {!loadedImages.has(member.img) && (
+                      <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                    )}
+                  </>
                 )}
                 
                 <div className="relative h-full">
-                  <div className="absolute p-2 bg-white rounded-lg shadow-md inset-x-2 bottom-2">
+                  <div className="absolute p-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-md inset-x-2 bottom-2">
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col justify-center">
                         <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
@@ -124,7 +141,7 @@ const TeamCards: React.FC = () => {
                           <a
                             href={member.linkedin}
                             target="_blank"
-                            className="text-gray-600 hover:text-gray-900"
+                            className="text-gray-600 transition-all duration-200 hover:text-blue-600 hover:scale-110 transform"
                             rel="noopener noreferrer"
                           >
                             {SocialIcons.linkedin}
@@ -134,7 +151,7 @@ const TeamCards: React.FC = () => {
                           <a
                             href={member.github}
                             target="_blank"
-                            className="text-gray-600 hover:text-gray-900"
+                            className="text-gray-600 transition-all duration-200 hover:text-gray-900 hover:scale-110 transform"
                             rel="noopener noreferrer"
                           >
                             {SocialIcons.github}
@@ -144,22 +161,19 @@ const TeamCards: React.FC = () => {
 
                       <div className="relative md:hidden">
                         <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleDropdown(member.id);
-                          }}
-                          className="p-1 text-gray-600 hover:text-gray-900"
+                          onClick={(e) => toggleDropdown(member.id, e)}
+                          className="p-1 text-gray-600 transition-colors duration-200 hover:text-gray-900"
                         >
-                          <MoreVertical size={10} />
+                          <MoreVertical size={16} />
                         </button>
                         
                         {openDropdown === member.id && (
-                          <div className="absolute right-0 z-10 p-2 mb-1 bg-white rounded-lg shadow-lg bottom-full">
+                          <div className="absolute right-0 z-20 p-2 mb-1 bg-white rounded-lg shadow-lg bottom-full">
                             {member.linkedin && (
                               <a
                                 href={member.linkedin}
                                 target="_blank"
-                                className="flex items-center gap-2 p-2 text-gray-600 hover:text-gray-900"
+                                className="flex items-center gap-2 p-2 text-gray-600 transition-all duration-200 hover:text-blue-600 hover:scale-105"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
                               >
@@ -171,7 +185,7 @@ const TeamCards: React.FC = () => {
                               <a
                                 href={member.github}
                                 target="_blank"
-                                className="flex items-center gap-2 p-2 text-gray-600 hover:text-gray-900"
+                                className="flex items-center gap-2 p-2 text-gray-600 transition-all duration-200 hover:text-gray-900 hover:scale-105"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
                               >
@@ -191,13 +205,12 @@ const TeamCards: React.FC = () => {
             </div>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 export default TeamCards;
-
 
 
 

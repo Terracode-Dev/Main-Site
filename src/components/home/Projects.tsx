@@ -7,7 +7,7 @@ export default function Projects() {
         {/* Title */}
         <div className='flex items-center justify-center w-2/3 px-4 text-center'>
           <h1 className='text-2xl font-semibold leading-tight sm:text-3xl md:text-5xl xl:text-6xl'>
-            Build Your Applications with <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>Robust, Scalable,</span> and <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>Secure</span> Technology
+            Build Your Applications with <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent"> Robust, Scalable</span>and <span className='animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent'>Secure</span> Technology
           </h1>
         </div>
         
