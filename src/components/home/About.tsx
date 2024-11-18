@@ -85,19 +85,19 @@ const HorizontalScrollCarousel = () => {
         </motion.div>
 
         {/* Second section */}
-        <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center text-center ">
+        <motion.div style={{y: yUp3}} className="z-20 flex flex-col items-center text-center">
             {/*logo*/} 
-            <div className="flex flex-col items-center justify-center space-y-6 xl:flex-row md:space-x-10 md:space-y-10 lg:space-y-16">
-              <div className=" md:px-10 xl:w-1/4">
+            <div className="flex flex-col items-center justify-center space-y-6 xl:flex-row md:space-x-10 " >
+              <div className="md:px-10 xl:w-1/4">
                 <img src="/Group 1.png" alt="Terracode" className="w-[150px] sm:w-[200px] xl:w-[250px]"/>
               </div>
               {/* Title */}
-               <div className="space-y-6 lg:w-2/3 xl:w-1/4 " >
-                <h1 className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-3xl md:text-6xl lg:text-4xl">Terracode</h1>
+               <div className="lg:w-2/3 xl:w-1/4" >
+                {/* <h1 className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-3xl md:text-6xl lg:text-4xl">Terracode</h1> */}
 
               {/* Paragraph */}
               
-              <p className="">"Boasting a strong team of skilled engineers, we are dedicated to building exceptional software products that cater precisely to your business needs. Our commitment is to work closely with you, understanding your unique challenges and opportunities, to deliver solutions that not only streamline processes but also enhance efficiency and exceed expectations. Let’s collaborate to drive remarkable results and propel your business forward."</p>
+              <p className="text-justify">"Boasting a strong team of engineers, we are dedicated to building exceptional software products that cater precisely to your business needs. Our commitment is to work closely with you, understanding your unique challenges, to deliver solutions that not only streamline processes but also enhance efficiency and exceed expectations. Let’s collaborate to drive remarkable results and propel your business forward."</p>
             </div>
             </div>
               </motion.div>
