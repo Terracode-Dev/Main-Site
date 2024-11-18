@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "../ui/marquee";
-import { FaReact } from "react-icons/fa";
+import { FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { FaGolang } from "react-icons/fa6";
 import { FaRust } from "react-icons/fa6";
@@ -12,7 +12,7 @@ import { FaPython } from "react-icons/fa";
 
 
 const reviews = [
-  { username: "javascript", img: "/js.png" ,color:"hover:text-yellow-400" },
+  { username: "javascript", img: <FaJs /> ,color:"hover:text-yellow-400" },
   { username: "react", img: <FaReact />,color:"hover:text-blue-700"  },
   { username: "nextjs", img: <RiNextjsFill /> ,color:"hover:text-slate-950" },
   { username: "golang", img: <FaGolang /> ,color:"hover:text-blue-700" },
@@ -51,7 +51,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
 export function MarqueeDemo() {
   return (
     <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-      <Marquee pauseOnHover className="[--duration:20s] text-gray-900">
+      <Marquee pauseOnHover className="[--duration:20s] text-gray-600">
         {firstRow.map((review) => (
           <div className={review.color}>
             <ReviewCard key={review.username} {...review} /></div>
