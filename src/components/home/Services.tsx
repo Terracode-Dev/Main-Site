@@ -19,15 +19,15 @@ const HorizontalScrollCarousel = () => {
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
-        Our Expertise 
+      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium ">
+        Our {"Expertise"} 
       </span>
-      <span>
-          Ensure Your <br /> Business Stays Competitive in the
+      <span className="font-medium">
+          Ensure Your <br/> Business Stays Competitive in the
       </span>
         </>);
       const ev: JSX.Element = (<>
-        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
+        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium ">
         Evolving Digital Landscape
       </span>
         </>);
@@ -56,7 +56,7 @@ const HorizontalScrollCarousel = () => {
       </div>
       {/* desktop view */}
       <div className="sticky flex flex-col justify-center hidden h-screen overflow-hidden top-24 lg:block">
-      <div className="md:text-[48px] text-[32px] ml-4 ">
+      <div className="md:text-[48px] text-[32px] pl-16">
           {our}<br />
           {ev}
         </div>
