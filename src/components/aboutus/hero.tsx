@@ -27,7 +27,7 @@ export default function Hero2 (){
     ref={ref}
     initial={{ opacity: 0, y: 30 }}
     animate={controls} 
-    className='flex flex-col items-center h-auto py-20 md:py-28 xl:py-36 space-y-5 text-center md:space-y-8 lg:space-y-10'>
+    className='flex flex-col items-center h-auto xl:py-20 py-10 space-y-5 text-center md:space-y-8 lg:space-y-10'>
       {/* Title */}
       <div className="text-4xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
         <span className="animate-gradient-flow bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent">
