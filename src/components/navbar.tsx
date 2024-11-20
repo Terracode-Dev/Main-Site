@@ -3,6 +3,8 @@ import { Link as ScrollLink } from 'react-scroll';
 import ContactForm from "./contactus/Contact";
 import { Logs, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import '../App.css';
+
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,20 +44,20 @@ const Navbar: React.FC = () => {
 
       {/* Desktop Menu */}
       <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
-        <Link to="/" className="text-gray-600 cursor-pointer hover:text-orange-600">Home</Link>
-        <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
+        <Link to="/" className="nav-link">Home</Link>
+        <ScrollLink to="services" smooth={true} duration={500} className="nav-link">
           Services
         </ScrollLink>
-        <ScrollLink to="about" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
+        <ScrollLink to="about" smooth={true} duration={500} className="nav-link">
           About
         </ScrollLink>
-        <ScrollLink to="work" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
+        <ScrollLink to="work" smooth={true} duration={500} className="nav-link">
           Work
         </ScrollLink>
-        <ScrollLink to="projects" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
+        <ScrollLink to="projects" smooth={true} duration={500} className="nav-link">
           Tech Stack
         </ScrollLink>
-        <ScrollLink to="faqs" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600">
+        <ScrollLink to="faqs" smooth={true} duration={500} className="nav-link">
           FAQs
         </ScrollLink>
       </div>
