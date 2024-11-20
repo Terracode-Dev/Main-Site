@@ -5,6 +5,7 @@
     color: #4a4a4a; /* Default color */
     font-size: 1rem;
     transition: color 0.3s ease;
+    cursor: pointer
   }
   
   /* Hover effect: change color and show dot under text */
@@ -22,5 +23,6 @@
     height: 6px;  /* Size of the dot */
     border-radius: 50%;  /* Make it circular */
     background-color:orange;  /* Dot color */
+    cursor: pointer;
   }
   
