@@ -87,13 +87,13 @@ export default function Hero() {
       <RetroGrid />
 
       {/* Optional Particles for Background */}
-      <Particles
+      {/* <Particles
         className="absolute inset-0"
         quantity={80}
         ease={80}
         color={"fa542f"}
         refresh
-      />
+      /> */}
     </div>
   );
 }
