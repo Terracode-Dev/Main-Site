@@ -5,6 +5,7 @@ import { Casestudy_page } from "./components/casestudy/page";
 import Aboutus_page from "./components/aboutus/page";
 import Footer from "./components/footer";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import ScrollToTop from "./components/scroll";
 
 function App() {
   const globalSchemaMarkup = {
@@ -35,7 +36,7 @@ function App() {
         </Helmet>
 
         <Navbar />
-
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />

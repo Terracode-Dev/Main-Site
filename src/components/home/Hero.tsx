@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Link as ScrollLink } from 'react-scroll';
 import WordRotate from '../ui/word-rotate';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const controls = useAnimation();
