@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20 absolute w-full">
+    <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20 relative w-full">
       {/* Logo */}
       <div className="flex flex-col -space-y-2 text-xl font-bold md:text-2xl">
         <span className="text-black">TERRA</span>

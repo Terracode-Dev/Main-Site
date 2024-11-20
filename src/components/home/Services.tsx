@@ -20,7 +20,7 @@ const HorizontalScrollCarousel = () => {
   const our: JSX.Element = (
     <>
       <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium ">
-        Our {"Expertise"} 
+        Our {"Expertise "} 
       </span>
       <span className="font-medium">
           Ensure Your <br/> Business Stays Competitive in the
