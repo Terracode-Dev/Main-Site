@@ -151,8 +151,21 @@ const Work = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="px-6 py-3 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
-          Ready To Collaborate?
+      <button className="z-[100] px-6 py-3 text-sm text-white relative overflow-hidden group
+          bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
+          hover:scale-105
+          sm:text-base md:text-lg rounded-3xl 
+          transition-all duration-500 
+          animate-shimmer
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#FDA40A] before:to-[#EF3D00]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100"
+        >
+          <span className="relative z-10 block">
+            Ready To Collaborate?
+          </span>
         </button>
       </div>
     </div>
