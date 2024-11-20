@@ -38,7 +38,7 @@ export default function Hero() {
     </>
   );
   return (
-    <div className="relative flex items-center justify-center p-8 mb-[6%] h-screen ">
+    <div className="relative flex items-center justify-center p-8 mb-[6%]  ">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 30 }}
