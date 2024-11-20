@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Link as ScrollLink } from 'react-scroll';
+import WordRotate from '../ui/word-rotate';
 
 export default function Hero() {
   const controls = useAnimation();
@@ -23,17 +24,18 @@ export default function Hero() {
       controls.start({ opacity: 0, y: -100 });
     }
   }, [controls, inView]);
-
   const our1: JSX.Element = (
     <>
-      <span className=''>Build your business</span>
+      <span className=''>Build your business for</span>
       <br />
-      <span>
-        for the <span className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent">future.</span>
-      </span>
+      <div className="flex justify-center">
+        <WordRotate
+          words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opertunities"]}
+          className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent"
+        />
+      </div>
     </>
   );
-
   return (
     <div className="relative flex items-center justify-center p-8 mb-[6%] h-screen">
       <motion.div
