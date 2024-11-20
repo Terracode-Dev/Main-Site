@@ -27,12 +27,12 @@ export default function Hero() {
   }, [controls, inView]);
   const our1: JSX.Element = (
     <>
-      <span className=''>Build your business for</span>
+      <span className='inter'>Build your business for</span>
       <br />
       <div className="flex justify-center">
         <WordRotate
           words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opertunities"]}
-          className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent pb-4"
+          className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent pb-4 inter"
         />
       </div>
     </>
@@ -53,14 +53,14 @@ export default function Hero() {
         {/* Paragraph */}
         <div className="w-11/12 px-3 sm:w-3/4 lg:w-1/2">
         {/* i use font this method you can find this class index.css */}
-          <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl inter-inter">
+          <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl inter">
             We make sure your business is ready for the future with powerful, smart & A.I. solutions powered by the latest technologies.
           </p>
         </div>
 
         {/* Animated Button */}
         <div>
-          <button className="z-[100] px-5 py-3 mt-4 text-sm text-white relative overflow-hidden group
+          <button className="z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
             bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
             hover:scale-105
             sm:text-base md:text-lg rounded-3xl 
