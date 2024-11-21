@@ -57,7 +57,7 @@ const HorizontalScrollCarousel = () => {
       </div>
       </div>
       {/* desktop view */}
-      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -my-[4%] hidden lg:block">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -mt-[9%]  hidden lg:block">
       <div className="flex flex-col justify-center h-screen overflow-hidden  ">
       <div className="md:text-[48px] text-[32px] pl-16">
           {our}<br />
