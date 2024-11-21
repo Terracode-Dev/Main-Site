@@ -15,7 +15,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
+  const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-82%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
@@ -37,8 +37,8 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
       {/* mobile view */}
-      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -my-[30%] lg:hidden">
-      <div className=" flex flex-col justify-center h-screen overflow-hidden ">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -mt-[5%] mb-[10%] lg:hidden">
+      <div className=" flex flex-col justify-center  h-[50vh] overflow-hidden ">
         <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
