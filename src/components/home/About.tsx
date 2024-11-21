@@ -74,7 +74,7 @@ const HorizontalScrollCarousel = () => {
                   "We’re a passionate team of
                   <span className="text-orange-500"> designers</span> and
                   <span className="text-orange-500"> developers</span>, based in
-                  Sri Lanka, committed to building
+                  Sri Lanka<img src='/sri-lanka.webp' alt="srilanka" className='object-cover w-5 h-5'/>, committed to building
                   <span className="text-orange-500"> forward-thinking solutions.</span>"
                 </p>
               </div>
