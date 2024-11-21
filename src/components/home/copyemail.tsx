@@ -36,12 +36,12 @@ const EmailCopySection = () => {
         {copied ? (
           <>
             <Check size={16} />
-            <span>Copied!</span>
+            <span className='inter'>Copied!</span>
           </>
         ) : (
           <>
             <Copy size={16} />
-            <span>Copy</span>
+            <span className='inter'>Copy</span>
           </>
         )}
       </button>

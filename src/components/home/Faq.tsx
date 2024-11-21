@@ -122,12 +122,12 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="z-10 font-bold leading-tight"
         >
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[75px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[75px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block inter">
             Ready to Bring Your <br /> Vision to Life?
           </span>
 
           {/* mobile version */}
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden inter">
             Ready to Bring Your <br /> Vision to <br /> Life?
           </span>
         </motion.h1>
@@ -164,7 +164,7 @@ const Faq: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isParagraphInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[25px] sm:-mt-[45px] md:-mt-[80px] -mt-[30px] leading-normal"
+          className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[25px] sm:-mt-[45px] md:-mt-[80px] -mt-[30px] leading-normal inter"
         >
           If you're a business owner, reach out to us today <br />
           and discover our limited-time offer tailored for you!
@@ -190,7 +190,7 @@ const Faq: React.FC = () => {
           >
             <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
               group-hover:translate-y-[-3px]
-              group-hover:text-white">
+              group-hover:text-white inter">
               Reach Out
             </span>
           </motion.button>
