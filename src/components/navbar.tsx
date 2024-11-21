@@ -63,9 +63,9 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Contact Us Button */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex ">
       <button
-          className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
+          className="relative py-2  font-medium rounded-full px-7 group overflow-hidden
             text-white bg-black
             before:absolute before:inset-0
             before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
