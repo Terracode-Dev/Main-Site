@@ -14,12 +14,12 @@ const Work = () => {
   const features: Feature[] = [
     {
       title: 'Innovation',
-      description: <p>'We use powerful technologies like <span className='font-bold text-black'>Go, Rust, AI, and other industry standards</span> to create cutting-edge solutions that keep your business ahead in the digital world.'</p>,
+      description: <p className='inter'>'We use powerful technologies like <span className='font-bold text-black inter'>Go, Rust, AI, and other industry standards</span> to create cutting-edge solutions that keep your business ahead in the digital world.'</p>,
       icon: <Rocket className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Security',
-      description: <p>'Our solutions, built with <span className='font-bold text-black'>Go, Rust, and other trusted technologies,</span> ensure that your business and data are always secure.'</p>,
+      description: <p className='inter'>'Our solutions, built with <span className='font-bold text-black inter'>Go, Rust, and other trusted technologies,</span> ensure that your business and data are always secure.'</p>,
       icon: <Shield className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
@@ -85,10 +85,10 @@ const Work = () => {
 
 
       {/* Desktop Grid */}
-      <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 inter">
         {features.map((feature) => (
           <div
-            key={feature.title}
+            key={feature.title }
             className="p-6"
           >
             <div className="flex items-center justify-between pb-2 mb-4 border-b border-black">
@@ -118,7 +118,7 @@ const Work = () => {
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
                   {feature.icon}
                 </div>
-                <p className="pt-4 text-gray-600">{feature.description}</p>
+                <p className="pt-4 text-gray-600 inter">{feature.description}</p>
               </div>
             ))}
           </div>

@@ -84,7 +84,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Retro Grid Background */}
-      <RetroGrid />
+      <RetroGrid className='-z-10' />
 
       {/* Optional Particles for Background */}
       {/* <Particles
