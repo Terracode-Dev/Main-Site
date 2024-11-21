@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
             transition-all duration-300
             hover:scale-110 active:scale-95
             opacity-0 translate-y-12
-            animate-[fadeIn_0.8s_ease-in-out_0.5s_forwards]"
+            animate-[fadeIn_0.8s_ease-in-out_0.5s_forwards] items-center"
           onClick={() => setIsContactFormOpen(true)}
         >
           <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
