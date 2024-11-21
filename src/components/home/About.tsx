@@ -27,7 +27,7 @@ const HorizontalScrollCarousel = () => {
     <section ref={targetRef} className="relative h-[350vh]">
       <div className="sticky top-0 flex flex-col items-center justify-center h-screen">
         <div className="m-6 w-full max-w-7xl">
-          <div className="relative flex flex-col items-center justify-center px-6 py-20 bg-gray-100 overflow-hidden  rounded-3xl ">
+          <div className="relative flex flex-col items-center justify-center px-6 py-20 bg-[#F4F4F4] overflow-hidden  rounded-3xl ">
             {/* Animated Elements */}
             <motion.div
               style={{ y: yDown }}
@@ -62,7 +62,7 @@ const HorizontalScrollCarousel = () => {
               className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10"
             >
               {/* Title */}
-              <div className="text-4xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl">
+              <div className="text-4xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl inter">
                 <h1>Who are we?</h1>
               </div>
               {/* Paragraph with Blur */}
@@ -70,18 +70,18 @@ const HorizontalScrollCarousel = () => {
                 {/* Blur Layer */}
                 
                 {/* Text */}
-                <p className="relative text-xl text-gray-600 sm:text-2xl">
+                <p className="relative text-xl text-gray-600 sm:text-2xl inter">
                   "We’re a passionate team of
-                  <span className="text-orange-500"> designers</span> and
-                  <span className="text-orange-500"> developers</span>, based in
+                  <span className="text-orange-500 inter"> designers</span> and
+                  <span className="text-orange-500 inter"> developers</span>, based in
                   Sri Lanka, committed to building
-                  <span className="text-orange-500"> forward-thinking solutions.</span>"
+                  <span className="text-orange-500 inter"> forward-thinking solutions.</span>"
                 </p>
               </div>
               {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link to="/aboutus">
-                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white">
+                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter">
                     Meet The Team
                   </button>
                 </Link>
@@ -103,7 +103,7 @@ const HorizontalScrollCarousel = () => {
               </div>
               {/* Description */}
               <div className="lg:w-2/3 xl:w-1/4 text-gray-600 ">
-                <p className="text-justify">
+                <p className="text-justify inter">
                   "Boasting a strong team of engineers, we are dedicated to
                   building exceptional software products that cater precisely to
                   your business needs. Our commitment is to work closely with
@@ -122,7 +122,7 @@ const HorizontalScrollCarousel = () => {
 const Circle = () => {
   return (
     <div>
-      <div className="w-48 h-48 bg-orange-400 rounded-full -z-10" />
+      <div className="w-60 h-60 bg-orange-400 rounded-full -z-10" />
     </div>
   );
 };
@@ -132,9 +132,9 @@ const Triangle = () => {
     <div>
       <div
         className="
-          border-l-[120px] border-l-transparent
-          border-r-[120px] border-r-transparent
-          border-b-[220px] border-orange-400 -z-10 rotate-45"
+          border-l-[150px] border-l-transparent
+          border-r-[150px] border-r-transparent
+          border-b-[250px] border-[#FDA40A] -z-10 rotate-45"
       />
     </div>
   );
