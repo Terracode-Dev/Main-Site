@@ -37,7 +37,8 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
       {/* mobile view */}
-      <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -my-[30%] lg:hidden">
+      <div className=" flex flex-col justify-center h-screen overflow-hidden ">
         <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
@@ -54,8 +55,10 @@ const HorizontalScrollCarousel = () => {
           ))}
         </motion.div>
       </div>
+      </div>
       {/* desktop view */}
-      <div className="sticky flex flex-col justify-center hidden h-screen overflow-hidden top-24 lg:block">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -my-[4%] hidden lg:block">
+      <div className="flex flex-col justify-center h-screen overflow-hidden  ">
       <div className="md:text-[48px] text-[32px] pl-16">
           {our}<br />
           {ev}
@@ -71,6 +74,7 @@ const HorizontalScrollCarousel = () => {
             <Card card={card} key={card.id} />
           ))}
         </motion.div>
+      </div>
       </div>
     </section>
   );
