@@ -71,12 +71,13 @@ const HorizontalScrollCarousel = () => {
                 
                 {/* Text */}
                 <p className="relative text-xl text-gray-600 sm:text-2xl inter">
-                  "We’re a passionate team of
-                  <span className="text-orange-500"> designers</span> and
-                  <span className="text-orange-500"> developers</span>, based in
-                  Sri Lanka, committed to building
-                  <span className="text-orange-500"> forward-thinking solutions.</span>"
-                </p>
+                "We’re a passionate team of
+                <span className="text-orange-500 inter"> designers</span> and
+                <span className="text-orange-500 inter"> developers</span><span>, based in
+                Sri Lanka <img src='/LK.png' alt="Sri Lanka flag" className='object-cover inline-block' />, committed to building</span>
+                <span className="text-orange-500 inter"> forward-thinking solutions.</span>"
+              </p>
+
               </div>
               {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
