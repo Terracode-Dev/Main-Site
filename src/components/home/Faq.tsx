@@ -172,19 +172,28 @@ const Faq: React.FC = () => {
         
         {/* Button animation and contact form trigger */}
         <motion.button
-          ref={buttonRef}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7 group"
-          onClick={() => setIsContactFormOpen(true)}
-        >
-          <span className="relative inline-block transition-transform duration-300 ease-in-out group-hover:translate-y-[-3px]">
-            Reach Out
-          </span>
-        </motion.button>
+            ref={buttonRef}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
+              text-white bg-black
+              before:absolute before:inset-0
+              before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
+              before:opacity-0 before:transition-opacity before:duration-300
+              hover:before:opacity-100
+              hover:shadow-lg hover:shadow-[#EF3D00]/50
+              transition-all duration-300"
+            onClick={() => setIsContactFormOpen(true)}
+          >
+            <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
+              group-hover:translate-y-[-3px]
+              group-hover:text-white">
+              Reach Out
+            </span>
+          </motion.button>
 
         
         {/* Render ContactForm */}

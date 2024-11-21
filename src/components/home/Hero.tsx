@@ -31,7 +31,7 @@ export default function Hero() {
       <br />
       <div className="flex justify-center">
         <WordRotate
-          words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opertunities"]}
+          words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opportunities"]}
           className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent pb-4"
         />
       </div>
