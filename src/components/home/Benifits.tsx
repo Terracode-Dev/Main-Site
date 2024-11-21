@@ -18,17 +18,17 @@ const About = () => {
     <div className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10 lg:space-y-16">
 
       {/* Title */}
-      <div className="text-4xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
+      <div className="text-4xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl inter">
         <h1>Who are we?</h1>
       </div>
 
       {/* Paragraph */}
       <div className="w-3/4 md:px-10 xl:w-1/2">
-        <p className="text-xl text-gray-600 sm:text-2xl md:text-3xl">
+        <p className="text-xl text-gray-600 sm:text-2xl md:text-3xl inter">
         "We’re a passionate team of 
-        <span className='text-orange-500'> designers</span> and 
-        <span className='text-orange-500'> developers,</span> based in Sri Lanka, committed to building  
-        <span className='text-orange-500'> forward-thinking solutions.</span>"
+        <span className='text-orange-500 inter'> designers</span> and 
+        <span className='text-orange-500 inter'> developers,</span> based in Sri Lanka, committed to building  
+        <span className='text-orange-500 inter'> forward-thinking solutions.</span>"
         </p>
       </div>
 
@@ -37,7 +37,7 @@ const About = () => {
       <div >
         <Link to="/aboutus" >
         <button
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter`}
         >
           Meet The Team
         </button></Link>
@@ -45,7 +45,7 @@ const About = () => {
       <div >
         <Link to="/casestudy" >
         <button
-          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white `}
+          className={`w-full px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter `}
         >
           Let's Work Together
         </button></Link>
@@ -53,7 +53,7 @@ const About = () => {
     </div>
     </div>
     {/* 2 section */}
-    <div className='z-20 items-center justify-center hidden h-screen border-2 border-black'>
+    <div className='z-20 items-center justify-center hidden h-screen border-2 border-black inter'>
       <p>Design, but in a more efficient</p>
     </div>
   </div>

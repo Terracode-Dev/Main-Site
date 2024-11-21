@@ -135,7 +135,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[120] transition-opacity duration-300 ease-in-out ${
+      className={`fixed inset-0 z-[100] transition-opacity duration-300 ease-in-out ${
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >

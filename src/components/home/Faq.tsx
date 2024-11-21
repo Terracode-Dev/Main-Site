@@ -122,12 +122,12 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="z-10 font-bold leading-tight"
         >
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[75px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block inter">
             Ready to Bring Your <br /> Vision to Life?
           </span>
 
           {/* mobile version */}
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden inter">
             Ready to Bring Your <br /> Vision to <br /> Life?
           </span>
         </motion.h1>
@@ -138,7 +138,7 @@ const Faq: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isOverlappingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative -mt-16 max-sm:-mt-14 sm:-mt-24 md:mt-[-150px]  lg:mt-[-167px]"
+          className="relative -mt-16 max-sm:-mt-14 sm:-mt-16 md:mt-[-95px]  lg:mt-[-110px]"
         >
           {/* Image animation */}
           <motion.div
@@ -148,11 +148,11 @@ const Faq: React.FC = () => {
             transition={{ duration: 0.8, delay: 0 }}
             className="relative w-full max-w-[480px] mx-auto md:max-w-none md:w-auto"
           >
-            <div className="w-full aspect-[4/3]">
+            <div className=" aspect-[4/3]">
               <img 
                 src="/CTA 1.png" 
                 alt="Team image"
-                className="object-cover w-full h-full scale-120 sm:scale-[0.8]"
+                className="object-cover w-full  scale-120 sm:scale-[1]"
               />
             </div>
           </motion.div>
@@ -164,7 +164,7 @@ const Faq: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isParagraphInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[20px] sm:-mt-5 md:-mt-12  mt-2 leading-normal"
+          className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[25px] sm:-mt-[45px] md:-mt-[80px] -mt-[30px] leading-normal inter"
         >
           If you're a business owner, reach out to us today <br />
           and discover our limited-time offer tailored for you!
@@ -172,19 +172,28 @@ const Faq: React.FC = () => {
         
         {/* Button animation and contact form trigger */}
         <motion.button
-          ref={buttonRef}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="py-2 mt-4 font-medium text-orange-500 bg-black rounded-full px-7 group"
-          onClick={() => setIsContactFormOpen(true)}
-        >
-          <span className="relative inline-block transition-transform duration-300 ease-in-out group-hover:translate-y-[-3px]">
-            Reach Out
-          </span>
-        </motion.button>
+            ref={buttonRef}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
+              text-white bg-black
+              before:absolute before:inset-0
+              before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
+              before:opacity-0 before:transition-opacity before:duration-300
+              hover:before:opacity-100
+              hover:shadow-lg hover:shadow-[#EF3D00]/50
+              transition-all duration-300"
+            onClick={() => setIsContactFormOpen(true)}
+          >
+            <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
+              group-hover:translate-y-[-3px]
+              group-hover:text-white inter">
+              Reach Out
+            </span>
+          </motion.button>
 
         
         {/* Render ContactForm */}
