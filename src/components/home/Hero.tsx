@@ -1,10 +1,11 @@
-// import Particles from '../ui/particles';
+import Particles from '../ui/particles';
 import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Link as ScrollLink } from 'react-scroll';
 import WordRotate from '../ui/word-rotate';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const controls = useAnimation();
@@ -30,8 +31,8 @@ export default function Hero() {
       <br />
       <div className="flex justify-center">
         <WordRotate
-          words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opportunities"]}
-          className="animate-gradient bg-gradient-to-r from-black via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent pb-4"
+          words={["the future", "success", "the growth", " impact", "innovation","excellence","tommorow","change","prosperity","opertunities"]}
+          className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent pb-4 inter"
         />
       </div>
     </>
