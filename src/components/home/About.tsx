@@ -25,8 +25,8 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[350vh]">
-      <div className="sticky top-0 flex flex-col items-center justify-center h-screen">
-        <div className="m-6 w-full max-w-7xl">
+      <div className="sticky top-0 flex flex-col items-center justify-center mx-[5%]  h-screen">
+        <div className="m-6 w-full max-w-7xl ">
           <div className="relative flex flex-col items-center justify-center px-6 py-20 bg-[#F4F4F4] overflow-hidden  rounded-3xl ">
             {/* Animated Elements */}
             <motion.div
