@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="w-11/12 px-3 sm:w-3/4 lg:w-1/2">
         {/* i use font this method you can find this class index.css */}
           <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl inter">
-            We make sure your business is ready for the future with powerful, smart & A.I. solutions powered by the latest technologies.
+          We build custom software & A.I solutions that fit your business perfectly of any scale, stay ahead tomorrow with our tech & expertise at your service.
           </p>
         </div>
 

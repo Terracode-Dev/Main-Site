@@ -105,11 +105,10 @@ const HorizontalScrollCarousel = () => {
               {/* Description */}
               <div className="lg:w-2/3 xl:w-1/4 text-gray-600 ">
                 <p className="text-justify inter">
-                  "Boasting a strong team of engineers, we are dedicated to
-                  building exceptional software products that cater precisely to
-                  your business needs. Our commitment is to work closely with
-                  you, understanding your unique challenges, to deliver
-                  solutions that streamline processes and exceed expectations."
+                  "With a talented team of engineers as our backbone, 
+                  we build great tech precisely tailored to your business. 
+                  By understanding your challenges and working closely with you, 
+                  we deliver innovative solutions that keep you ahead in a competitive landscape."
                 </p>
               </div>
             </motion.div>
