@@ -173,11 +173,9 @@ const Faq: React.FC = () => {
         {/* Button animation and contact form trigger */}
         <motion.button
             ref={buttonRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 0 }}
+            animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 1, delay: 0.3 }}
             className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
               text-white bg-black
               before:absolute before:inset-0
@@ -189,7 +187,7 @@ const Faq: React.FC = () => {
             onClick={() => setIsContactFormOpen(true)}
           >
             <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
-              group-hover:translate-y-[-3px]
+            
               group-hover:text-white inter">
               Reach Out
             </span>
