@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
         onClick={() => setIsContactFormOpen(true)}
       >
         <span className="relative z-10 inter">
-          Reach Out
+          Talk with Us
         </span>
       </button>
       </div>
