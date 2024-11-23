@@ -23,13 +23,14 @@ const HorizontalScrollCarousel = () => {
         Our {"Expertise "} 
       </span>
       <span className="font-medium inter">
-          Ensure Your <br/> Business Stays Competitive in the
+          Ensure Your <br/> Business Stays Competitive in
       </span>
         </>);
       const ev: JSX.Element = (<>
+        <span className="font-medium inter"> the </span>
         <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium  inter">
         Evolving Digital Landscape
-      </span>
+        </span>
         </>);
       
   
