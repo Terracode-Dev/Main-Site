@@ -65,25 +65,24 @@ const Navbar: React.FC = () => {
       {/* Contact Us Button */}
       <div className="hidden md:flex ">
       <button
-          className="relative py-2  font-medium rounded-full px-7 group overflow-hidden
-            text-white bg-black
-            before:absolute before:inset-0
-            before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
-            before:opacity-0 before:transition-opacity before:duration-300
-            hover:before:opacity-100
-            hover:shadow-lg hover:shadow-[#EF3D00]/50
-            transition-all duration-300
-            hover:scale-110 active:scale-95
-            opacity-0 translate-y-12
-            animate-[fadeIn_0.8s_ease-in-out_0.5s_forwards] items-center"
-          onClick={() => setIsContactFormOpen(true)}
-        >
-          <span className="relative z-10 inline-block transition-all duration-300 ease-in-out 
-            group-hover:translate-y-[-3px]
-            group-hover:text-white">
-            Talk With Us
-          </span>
-        </button>
+        className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
+          text-white bg-black hover:bg-transparent
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          transition-all duration-300
+          hover:scale-110 active:scale-95
+          opacity-0 translate-y-12
+          animate-[fadeIn_0.8s_ease-in-out_0.5s_forwards]
+          items-center"
+        onClick={() => setIsContactFormOpen(true)}
+      >
+        <span className="relative z-10 inter">
+          Reach Out
+        </span>
+      </button>
       </div>
       <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
 
@@ -113,8 +112,8 @@ const Navbar: React.FC = () => {
           <ScrollLink to="projects" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
             Tech Stack
           </ScrollLink>
-          <ScrollLink to="faqs" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            FAQs
+          <ScrollLink to="qa" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
+            QA
           </ScrollLink>
 
           {/* Contact Us Button in mobile view */}

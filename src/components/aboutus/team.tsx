@@ -97,6 +97,9 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
 
   return (
     <div className="container min-h-screen px-2 mx-auto xl:py-8">
+      <div className='font-bold text-[32px] md:text-[48px] md:mb-10 ml-5'>
+        <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>The People</span> <span>Who</span> <br /> <span>Make It Happen</span>
+      </div>
       <div className="flex justify-center">
         <div className="grid xl:grid-cols-5 sm:grid-cols-3 lg:grid-cols-4 grid-cols-2 gap-5 lg:gap-x-1 xl:gap-x-[3%] p-4 max-w-[1400px] w-full justify-items-center">
           {teamMembers.map((member) => (
