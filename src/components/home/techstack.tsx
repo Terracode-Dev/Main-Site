@@ -1,29 +1,19 @@
 import { cn } from "@/lib/utils";
 import Marquee from "../ui/marquee";
-import { FaJs, FaReact } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
-import { FaGolang } from "react-icons/fa6";
-import { FaRust } from "react-icons/fa6";
-import { SiFlutter } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { FaLaravel } from "react-icons/fa";
-import { SiPhp } from "react-icons/si";
-import { FaPython } from "react-icons/fa";
-
 
 const reviews = [
-  { username: "javascript", img: <FaJs /> ,color:"hover:text-yellow-400" },
-  { username: "react", img: <FaReact />,color:"hover:text-blue-700"  },
-  { username: "nextjs", img: <RiNextjsFill /> ,color:"hover:text-slate-950" },
-  { username: "golang", img: <FaGolang /> ,color:"hover:text-blue-700" },
-  { username: "Rust", img: <FaRust /> ,color:"hover:text-orange-500" },
-  { sername: "Flutter",img: <SiFlutter />,color:"hover:text-blue-500"  },
-  { sername: "typescript",img: <SiTypescript />,color:"hover:text-blue-500"  },
-  { sername: "laravel",img: <FaLaravel />,color:"hover:text-red-500"  },
-  { sername: "php",img: <SiPhp />,color:"hover:text-blue-500"  },
-  { sername: "python",img:<FaPython />,color:"hover:text-blue-400"  },
+  { username: "javascript", img: "/js.png", color: "hover:text-yellow-400" },
+  { username: "react", img: "/React.png", color: "hover:text-blue-700" },
+  { username: "nextjs", img: "/Node.png", color: "hover:text-slate-950" },
+  { username: "golang", img: "/Go.png", color: "hover:text-blue-700" },
+  { username: "rust", img: "/Rust.png", color: "hover:text-orange-500" },
+  { username: "flutter", img: "/Flutter.png", color: "hover:text-blue-500" },
+  { username: "typescript", img: "/Ts.png", color: "hover:text-blue-500" },
+  { username: "laravel", img: "/Laravel.png", color: "hover:text-red-500" },
+  { username: "php", img: "/Php.png", color: "hover:text-blue-500" },
+  { username: "python", img: "/Python.png", color: "hover:text-blue-400" },
 ];
- 
+
 const firstRow = reviews.slice(0, reviews.length);
  
 const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
@@ -51,7 +41,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
 export function MarqueeDemo() {
   return (
     <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-background">
-      <Marquee pauseOnHover className="[--duration:20s] text-gray-600">
+      <Marquee pauseOnHover className="[--duration:50s] text-gray-600">
         {firstRow.map((review) => (
           <div className={review.color}>
             <ReviewCard key={review.username} {...review} /></div>

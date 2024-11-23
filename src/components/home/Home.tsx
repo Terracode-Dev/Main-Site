@@ -3,8 +3,8 @@ import Services from "./Services";
 import Projects from "./Projects";
 import Work from "./Work";
 import Faq from "./Faq";
+import QA from "./QA";
 import { Helmet } from "react-helmet-async";
-
 import Aboutus from "./About";
 
 const Home = () => {
@@ -57,14 +57,14 @@ const Home = () => {
       <section id="work" className="">
         <Work />
       </section>
-      {/*<section id="benitits" >
-        <Benifits />
-      </section>*/}
       <section id="projects" className="">
         <Projects />
       </section>
-      <section id="faqs" className=" xl:p-20">
+      <section id="faqs" className="xl:p-20">
         <Faq />
+      </section>
+      <section id="qa" className="">
+        <QA />
       </section>
     </div>
   );
