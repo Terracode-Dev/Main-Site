@@ -19,17 +19,18 @@ const HorizontalScrollCarousel = () => {
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium inter ">
-        Our {"Expertise "} 
-      </span>
-      <span className="font-medium inter">
+       <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium inter leading-[30px] md:leading-[53px]">
+          Our {"Expertise "}
+        </span>
+        <span className="font-medium inter leading-[30px] md:leading-[53px]">
           Ensure Your <br/> Business Stays Competitive in
-      </span>
-        </>);
+        </span>
+      </>);
+
       const ev: JSX.Element = (<>
-        <span className="font-medium inter"> the </span>
-        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium  inter">
-        Evolving Digital Landscape
+        <span className="font-medium inter leading-[53px]"> the </span>
+        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium inter leading-[30px] md:leading-[53px]">
+          Evolving Digital Landscape
         </span>
         </>);
       

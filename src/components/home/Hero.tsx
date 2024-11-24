@@ -27,7 +27,7 @@ export default function Hero() {
   }, [controls, inView]);
   const our1: JSX.Element = (
     <>
-      <span className='inter'>Build your business for</span>
+      <span className='inter md:leading-[75px]'>Build your business for</span>
       <br />
       <div className="flex justify-center">
         <WordRotate
@@ -53,7 +53,7 @@ export default function Hero() {
         {/* Paragraph */}
         <div className="w-11/12 px-3 sm:w-3/4 lg:w-1/2">
         {/* i use font this method you can find this class index.css */}
-          <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl inter">
+          <p className="text-base text-gray-600 sm:text-lg md:text-xl lg:text-2xl inter leading-[30px]">
           We build custom software & A.I solutions that fit your business perfectly of any scale, stay ahead tomorrow with our tech & expertise at your service.
           </p>
         </div>
