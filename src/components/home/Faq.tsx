@@ -84,7 +84,7 @@ const Faq: React.FC = () => {
               onClick={() => setIsContactFormOpen(true)}
           >
             <span className="relative z-10 inter transition-colors duration-300 group-hover:text-white">
-              Contact Us
+              Reach Out
             </span>
           </button>
         </motion.div>
