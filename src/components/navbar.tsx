@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
       <div className="hidden md:flex ">
       <button
         className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
-          text-white bg-black hover:bg-transparent
+          text-orange-500 bg-black hover:bg-transparent
           before:absolute before:inset-0
           before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
           before:opacity-0 before:transition-opacity before:duration-300
@@ -79,8 +79,8 @@ const Navbar: React.FC = () => {
           items-center"
         onClick={() => setIsContactFormOpen(true)}
       >
-        <span className="relative z-10 inter">
-          Reach Out
+        <span className="relative z-10 inter transition-colors duration-300 group-hover:text-white">
+          Talk with Us
         </span>
       </button>
       </div>
@@ -92,41 +92,83 @@ const Navbar: React.FC = () => {
       </button>
 
       {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div
-          ref={mobileMenuRef}
-          className="absolute left-0 z-[150] flex flex-col items-center w-full h-[500px] p-5 space-y-4 bg-white top-20 md:hidden"
+      <div
+        ref={mobileMenuRef}
+        className={`
+          fixed left-0 z-[150] flex flex-col items-center w-full h-[500px] p-5 space-y-4 bg-white top-20 md:hidden
+          transform transition-all duration-500 ease-in-out
+          ${menuOpen 
+            ? 'animate-slideInLeft opacity-100 translate-x-0' 
+            : 'animate-slideOutRight opacity-0 translate-x-full'
+          }
+        `}
+        style={{
+          animationDuration: '0.5s',
+          animationFillMode: 'forwards'
+        }}
+      >
+        <Link 
+          to="/" 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
         >
-          <Link to="/" className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            Home
-          </Link>
-          <ScrollLink to="services" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            Services
-          </ScrollLink>
-          <ScrollLink to="about" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            About
-          </ScrollLink>
-          <ScrollLink to="work" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            Work
-          </ScrollLink>
-          <ScrollLink to="projects" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            Tech Stack
-          </ScrollLink>
-          <ScrollLink to="qa" smooth={true} duration={500} className="text-gray-600 cursor-pointer hover:text-orange-600" onClick={closeMenu}>
-            QA
-          </ScrollLink>
-
-          {/* Contact Us Button in mobile view */}
-          <button
-            onClick={() => {
-              setIsContactFormOpen(true);
-              closeMenu();
-            }}
-            className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950 z-20">
-            Talk with Us
-          </button>
-        </div>
-      )}
+          Home
+        </Link>
+        <ScrollLink 
+          to="services" 
+          smooth={true} 
+          duration={500} 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
+        >
+          Services
+        </ScrollLink>
+        <ScrollLink 
+          to="about" 
+          smooth={true} 
+          duration={500} 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
+        >
+          About
+        </ScrollLink>
+        <ScrollLink 
+          to="work" 
+          smooth={true} 
+          duration={500} 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
+        >
+          Work
+        </ScrollLink>
+        <ScrollLink 
+          to="projects" 
+          smooth={true} 
+          duration={500} 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
+        >
+          Tech Stack
+        </ScrollLink>
+        <ScrollLink 
+          to="qa" 
+          smooth={true} 
+          duration={500} 
+          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300" 
+          onClick={closeMenu}
+        >
+          FAQs
+        </ScrollLink>
+        <button
+          onClick={() => {
+            setIsContactFormOpen(true);
+            closeMenu();
+          }}
+          className="px-4 py-2 text-white bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] cursor-pointer rounded-3xl hover:text-gray-950 z-20 transition-all duration-300"
+        >
+          Talk with Us
+        </button>
+      </div>
     </nav>
   );
 };

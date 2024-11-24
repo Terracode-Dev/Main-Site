@@ -82,11 +82,12 @@ const HorizontalScrollCarousel = () => {
               {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link to="/aboutus">
-                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter">
+                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl bg-transparent inter transition-all duration-500 ease-out hover:bg-gradient-to-r hover:from-[#EF3D00] hover:to-[#FDA40A] hover:text-white hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 focus:outline-none active:scale-105">
                     Meet The Team
                   </button>
                 </Link>
               </div>
+
             </motion.div>
 
             {/* Second Section */}
