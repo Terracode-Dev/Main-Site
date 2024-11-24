@@ -74,17 +74,17 @@ const Faq: React.FC = () => {
           
           <button
             className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
-              text-white bg-black hover:bg-transparent
+              text-orange-500 bg-black hover:bg-transparent
               before:absolute before:inset-0
               before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
               before:opacity-0 before:transition-opacity before:duration-300
               hover:before:opacity-100
               hover:shadow-lg hover:shadow-[#EF3D00]/50
               transition-all duration-300"
-            onClick={() => setIsContactFormOpen(true)}
+              onClick={() => setIsContactFormOpen(true)}
           >
-            <span className="relative z-10 inter">
-              Reach Out
+            <span className="relative z-10 inter transition-colors duration-300 group-hover:text-white">
+              Contact Us
             </span>
           </button>
         </motion.div>
