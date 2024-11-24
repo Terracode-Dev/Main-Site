@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import { db } from "@/firbase";
 import { collection, getDocs } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
@@ -23,14 +24,19 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
-  // Animation variants for the heading
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.3
       }
     }
   };
@@ -50,7 +56,14 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
     }
   };
 
-  // Rest of your existing useEffects and functions...
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   useEffect(() => {
     const fetchTeamMembers = async () => {
       try {
@@ -127,10 +140,11 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
   return (
     <div className="container min-h-screen px-2 mx-auto xl:py-8">
       <motion.div 
+        ref={ref}
         className="font-bold text-[32px] md:text-[48px] md:mb-10 ml-5"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={controls}
       >
         <motion.span 
           className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent inline-block"
