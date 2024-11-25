@@ -28,6 +28,8 @@ export const Casestudy_page = () => {
           {JSON.stringify(caseStudySchema)}
         </script>
         <meta property="og:title" content="Case Studies | Terracode" />
+        <meta property="og:site_name" content="Terracode" />
+
         <meta
           property="og:description"
           content="Explore our successful project implementations and success stories of our clients and what they have archieved with our amazing products."

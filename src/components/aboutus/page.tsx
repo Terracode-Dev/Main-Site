@@ -60,6 +60,8 @@ const Aboutus_page = () => {
         <script type="application/ld+json">
           {JSON.stringify(aboutUsSchema)}
         </script>
+        <meta property="og:site_name" content="Terracode" />
+
         <meta property="og:title" content="About Us | Terracode" />
         <meta
           property="og:description"

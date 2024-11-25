@@ -1,10 +1,12 @@
 // import Particles from '../ui/particles';
+import { useState } from 'react';
 import RetroGrid from '../ui/retro-grid';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Link as ScrollLink } from 'react-scroll';
 import WordRotate from '../ui/word-rotate';
+import ContactForm from "../contactus/Contact";
 // import { Link } from 'react-router-dom';
 
 export default function Hero() {
@@ -37,18 +39,39 @@ export default function Hero() {
       </div>
     </>
   );
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   return (
-    <div className="relative flex items-center justify-center p-8 sm:mb-[6%]  ">
+    <div className="relative flex items-center justify-center p-8 sm:mb-[6%] ">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 30 }}
         animate={controls}
-        className="flex flex-col items-center justify-center space-y-6 text-center lg:space-y-14"
+        className="flex flex-col items-center justify-center space-y-4 text-center lg:space-y-14 "
       >
         {/* Title */}
-        <div className="text-3xl font-medium sm:text-4xl lg:text-7xl xl:text-8xl">
+        <div className="font-medium text-5xl lg:text-7xl xl:text-8xl ">
           {our1}
         </div>
+        <div className="md:hidden flex ">
+      <button
+        className="relative py-2 font-medium rounded-full px-7 group overflow-hidden
+          text-orange-500 bg-black hover:bg-transparent
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          transition-all duration-300
+          hover:scale-110 active:scale-95
+          items-center justify-center"
+        onClick={() => setIsContactFormOpen(true)}
+      >
+        <span className="relative inter transition-colors duration-300 group-hover:text-white">
+          Talk with Us
+        </span>
+      </button>
+      </div>
+      <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
 
         {/* Paragraph */}
         <div className="w-11/12 px-3 sm:w-3/4 lg:w-1/2">
@@ -60,7 +83,7 @@ export default function Hero() {
 
         {/* Animated Button */}
         <div>
-          <button className="z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
+          <button className="hidden md:flex z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
             bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
             hover:scale-105
             sm:text-base md:text-lg rounded-3xl 
