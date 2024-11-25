@@ -25,11 +25,11 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="z-10 font-bold leading-tight"
         >
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[75px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block inter">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[75px]  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent hidden sm:block inter leading-[80px]">
             Ready to Bring Your <br /> Vision to Life?
           </span>
 
-          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden inter">
+          <span className="text-[30px] md:text-[50px] sm:text-[35px] lg:text-[60px] sm:mb-6  font-bold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:hidden inter leading-[40px]">
             Ready to Bring Your <br /> Vision to <br /> Life?
           </span>
         </motion.h1>
@@ -67,7 +67,7 @@ const Faq: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex flex-col items-center"
         >
-          <p className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[25px] sm:-mt-[45px] md:-mt-[80px] -mt-[30px] leading-normal inter">
+          <p className="text-[#2A2A2A] text-[14px] md:text-[22px] lg:text-[25px] sm:-mt-[45px] md:-mt-[80px] -mt-[30px] inter leading-[23px] md:leading-[35.2px]">
             If you're a business owner, reach out to us today <br />
             and discover our limited-time offer tailored for you!
           </p>
