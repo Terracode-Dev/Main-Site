@@ -16,7 +16,7 @@ interface ContactSubmission {
   emailData: string;
   messageData: string;
   services: string[];
-  createdAt: Timestamp; // Firebase Timestamp
+  createdAt: Timestamp;
   isRead: boolean;
 }
 
@@ -30,7 +30,7 @@ interface Column {
 const ContactSubmissions: React.FC = () => {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState<"all" | "unread" | "read">("all");
+  const [filter, setFilter] = useState<"all" | "unread" | "read">("unread");
 
   const columns: Column[] = [
     { key: "nameData", label: "Name", width: "15%" },
@@ -137,16 +137,6 @@ const ContactSubmissions: React.FC = () => {
         </div>
         <div className="flex gap-2 flex-wrap">
           <button
-            onClick={() => setFilter("all")}
-            className={`px-4 py-2 rounded-full ${
-              filter === "all"
-                ? "bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white"
-                : "border border-orange-400 text-orange-400"
-            }`}
-          >
-            All
-          </button>
-          <button
             onClick={() => setFilter("unread")}
             className={`px-4 py-2 rounded-full ${
               filter === "unread"
@@ -165,6 +155,16 @@ const ContactSubmissions: React.FC = () => {
             }`}
           >
             Read
+          </button>
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-2 rounded-full ${
+              filter === "all"
+                ? "bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white"
+                : "border border-orange-400 text-orange-400"
+            }`}
+          >
+            All
           </button>
         </div>
       </div>
