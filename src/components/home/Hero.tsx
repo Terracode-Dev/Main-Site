@@ -83,17 +83,17 @@ export default function Hero() {
 
         {/* Animated Button */}
         <div>
-          <button className="hidden md:flex z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
-            bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
-            hover:scale-105
-            sm:text-base md:text-lg rounded-3xl 
-            transition-all duration-500 
-            animate-shimmer
-            hover:shadow-lg hover:shadow-[#EF3D00]/50
-            before:absolute before:inset-0
-            before:bg-gradient-to-r before:from-[#FDA40A] before:to-[#EF3D00]
-            before:opacity-0 before:transition-opacity before:duration-300
-            hover:before:opacity-100">
+          <button className="z-5 px-6 py-3 text-sm text-white relative overflow-hidden group
+          bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
+          hover:scale-105
+          sm:text-base md:text-lg rounded-3xl 
+          transition-all duration-500 
+          animate-shimmer
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#FDA40A] before:to-[#EF3D00]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100">
             <ScrollLink 
               to="services" 
               smooth={true} 
