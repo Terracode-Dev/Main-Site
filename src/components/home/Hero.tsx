@@ -49,10 +49,10 @@ export default function Hero() {
         className="flex flex-col items-center justify-center space-y-4 text-center lg:space-y-14 "
       >
         {/* Title */}
-        <div className="font-medium text-4xl lg:text-7xl xl:text-8xl ">
+        <div className="font-medium text-5xl lg:text-7xl xl:text-8xl ">
           {our1}
         </div>
-        <div className="sm:hidden flex ">
+        <div className="md:hidden flex ">
       <button
         className="relative py-2 font-medium rounded-full px-7 group overflow-hidden
           text-orange-500 bg-black hover:bg-transparent
@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* Animated Button */}
         <div>
-          <button className="hidden sm:flex z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
+          <button className="hidden md:flex z-10 px-5 py-3 mt-4 text-sm text-white  overflow-hidden group
             bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
             hover:scale-105
             sm:text-base md:text-lg rounded-3xl 

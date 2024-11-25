@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className="md:hidden">
-        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Home</span><Logs /></div>}
+        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent font-bold">Home</span><Logs /></div>}
       </button>
 
       {/* Mobile Dropdown Menu */}
