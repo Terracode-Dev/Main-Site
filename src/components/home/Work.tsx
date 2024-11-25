@@ -14,12 +14,12 @@ const Work = () => {
   const features: Feature[] = [
     {
       title: 'Innovation',
-      description: <p>'We use powerful technologies like <span className='font-bold text-black'>Go, Rust, AI, and other industry standards</span> to create cutting-edge solutions that keep your business ahead in the digital world.'</p>,
+      description: <p className='inter'>'We use powerful technologies like <span className='font-bold text-black inter'>Go, Rust, AI, and other industry standards</span> to create cutting-edge solutions that keep your business ahead in the digital world.'</p>,
       icon: <Rocket className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
       title: 'Security',
-      description: <p>'Our solutions, built with <span className='font-bold text-black'>Go, Rust, and other trusted technologies,</span> ensure that your business and data are always secure.'</p>,
+      description: <p className='inter'>'Our solutions, built with <span className='font-bold text-black inter'>Go, Rust, and other trusted technologies,</span> ensure that your business and data are always secure.'</p>,
       icon: <Shield className="w-8 h-8 p-2 text-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-md" />,
     },
     {
@@ -78,17 +78,17 @@ const Work = () => {
   };
 
   return (
-    <div className="grid items-center justify-center px-4 py-16 mx-auto 3xl:gap-10 max-w-7xl sm:px-6 lg:px-8">
+    <div className="grid items-center justify-center px-4 my-[10%] py-16 mx-auto 3xl:gap-10 max-w-7xl sm:px-6 lg:px-8">
       <h2 className="md:mb-6 text-4xl 2xl:text-5xl font-bold text-center bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent h-20 ">
         Why work with Us?
       </h2>
 
 
       {/* Desktop Grid */}
-      <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div className="hidden gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 inter">
         {features.map((feature) => (
           <div
-            key={feature.title}
+            key={feature.title }
             className="p-6"
           >
             <div className="flex items-center justify-between pb-2 mb-4 border-b border-black">
@@ -101,7 +101,7 @@ const Work = () => {
       </div>
 
       {/* Mobile Carousel */}
-      <div className="relative grid md:hidden">
+      <div className="relative grid md:hidden ">
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -118,7 +118,7 @@ const Work = () => {
                   <h3 className="text-xl font-semibold">{feature.title}</h3>
                   {feature.icon}
                 </div>
-                <p className="pt-4 text-gray-600">{feature.description}</p>
+                <p className="pt-4 text-gray-600 inter">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -151,8 +151,21 @@ const Work = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <button className="px-6 py-3 text-white transition-colors bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] rounded-3xl hover:from-[#FDA40A] hover:to-[#EF3D00]">
-          Ready To Collaborate?
+      <button className="z-[100] px-6 py-3 text-sm text-white relative overflow-hidden group
+          bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
+          hover:scale-105
+          sm:text-base md:text-lg rounded-3xl 
+          transition-all duration-500 
+          animate-shimmer
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#FDA40A] before:to-[#EF3D00]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100"
+        >
+          <span className="relative z-10 block">
+            Ready To Collaborate?
+          </span>
         </button>
       </div>
     </div>

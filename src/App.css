@@ -1,0 +1,28 @@
+/* General styles for the navbar links */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #4a4a4a; /* Default color */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    cursor: pointer
+  }
+  
+  /* Hover effect: change color and show dot under text */
+  .nav-link:hover {
+    color: orange; /* Hover color */
+  }
+  
+  .nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;  /* Position the dot just below the text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;   /* Size of the dot */
+    height: 6px;  /* Size of the dot */
+    border-radius: 50%;  /* Make it circular */
+    background-color:orange;  /* Dot color */
+    cursor: pointer;
+  }
+  

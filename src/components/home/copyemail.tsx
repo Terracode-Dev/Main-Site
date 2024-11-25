@@ -20,7 +20,7 @@ const EmailCopySection = () => {
   };
 
   return (
-    <div className="flex w-1/2 gap-2">
+    <div className="flex w-1/2 gap-2 sm:flex-nowrap flex-wrap">
       <div className="flex-grow px-4 py-2 text-black bg-white rounded-2xl">
         <p className="select-all">{email}</p>
       </div>
@@ -36,12 +36,12 @@ const EmailCopySection = () => {
         {copied ? (
           <>
             <Check size={16} />
-            <span>Copied!</span>
+            <span className='inter'>Copied!</span>
           </>
         ) : (
           <>
             <Copy size={16} />
-            <span>Copy</span>
+            <span className='inter'>Copy</span>
           </>
         )}
       </button>

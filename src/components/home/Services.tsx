@@ -15,21 +15,22 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-80%"]);
+  const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-82%"]);
   const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
   const our: JSX.Element = (
     <>
-      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium ">
-        Our {"Expertise"} 
+      <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium inter ">
+        Our {"Expertise "} 
       </span>
-      <span className="font-medium">
-          Ensure Your <br/> Business Stays Competitive in the
+      <span className="font-medium inter">
+          Ensure Your <br/> Business Stays Competitive in
       </span>
         </>);
       const ev: JSX.Element = (<>
-        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium ">
+        <span className="font-medium inter"> the </span>
+        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium  inter">
         Evolving Digital Landscape
-      </span>
+        </span>
         </>);
       
   
@@ -37,14 +38,15 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
       {/* mobile view */}
-      <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden lg:hidden">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -mt-[5%] mb-[10%]  lg:hidden">
+      <div className=" flex flex-col py-[30%] -mb-[30%] sm:-mb-0 sm:py-0 sm:justify-center  h-[100vh] overflow-hidden ">
         <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
         </div>
         <div className="ml-4">
            {/* Learn More Button */}
-           {/* <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white`}>
+           {/* <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter`}>
             Learn More
           </button> */}
         </div>
@@ -54,15 +56,17 @@ const HorizontalScrollCarousel = () => {
           ))}
         </motion.div>
       </div>
+      </div>
       {/* desktop view */}
-      <div className="sticky flex flex-col justify-center hidden h-screen overflow-hidden top-24 lg:block">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -mt-[9%]  hidden lg:block">
+      <div className="flex flex-col justify-center h-screen overflow-hidden  ">
       <div className="md:text-[48px] text-[32px] pl-16">
           {our}<br />
           {ev}
         </div>
         <div className="">
            {/* Learn More Button */}
-           {/* <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute md:top-32 md:right-10 right-3 top-[355px] mt-8 mr-4">
+           {/* <button className="border border-black bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent md:text-[16px] text-[14px] font-medium py-2 px-6 rounded-full hover:scale-105 transition-transform absolute md:top-32 md:right-10 right-3 top-[355px] mt-8 mr-4 inter">
             Learn More
           </button> */}
           </div>
@@ -71,6 +75,7 @@ const HorizontalScrollCarousel = () => {
             <Card card={card} key={card.id} />
           ))}
         </motion.div>
+      </div>
       </div>
     </section>
   );
