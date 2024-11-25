@@ -37,7 +37,27 @@ const HorizontalScrollCarousel = () => {
   
 
   return (
-    <section ref={targetRef} className="relative h-[200vh] ">
+    <div>
+      <div>
+      <div className=" flex flex-col   sm:-mb-0 sm:py-0 sm:justify-center overflow-hidden sm:hidden">
+        <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
+        {our}<br/>
+        {ev}
+        </div>
+        <div className="ml-4">
+           {/* Learn More Button */}
+           {/* <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter`}>
+            Learn More
+          </button> */}
+        </div>
+        <div className="flex flex-col justify-center items-center   gap-10 mt-8  w-full h-full mb-[20%] cursor-grab active:cursor-grabbing">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
+          ))}
+        </div>
+      </div>
+      </div>
+    <section ref={targetRef} className="relative h-[200vh] hidden sm:block">
       {/* mobile view */}
       <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -mt-[5%] mb-[10%]  lg:hidden">
       <div className=" flex flex-col py-[30%] -mb-[30%] sm:-mb-0 sm:py-0 sm:justify-center  h-[100vh] overflow-hidden ">
@@ -79,6 +99,7 @@ const HorizontalScrollCarousel = () => {
       </div>
       </div>
     </section>
+    </div>
   );
 };
 
