@@ -104,7 +104,7 @@ const HorizontalScrollCarousel = () => {
                 />
               </div>
               {/* Description */}
-              <div className="lg:w-2/3 xl:w-1/4 text-gray-600 ">
+              <div className=" md:w-2/4 xl:w-1/4 text-gray-600 ">
                 <p className="text-justify inter">
 
                 "With a talented team of engineers as our backbone, 

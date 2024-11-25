@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="mb-4 space-y-4">
+          <div className="hidden sm:flex mb-4 space-y-4">
             <ul className="space-y-2">
               <li >
                 <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>

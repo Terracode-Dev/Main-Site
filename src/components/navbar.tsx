@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
         <ScrollLink to="projects" smooth={true} duration={500} className="nav-link">
           Tech Stack
         </ScrollLink>
-        <ScrollLink to="faqs" smooth={true} duration={500} className="nav-link">
+        <ScrollLink to="qa" smooth={true} duration={500} className="nav-link">
           FAQs
         </ScrollLink>
       </div>
@@ -74,8 +74,6 @@ const Navbar: React.FC = () => {
           hover:shadow-lg hover:shadow-[#EF3D00]/50
           transition-all duration-300
           hover:scale-110 active:scale-95
-          opacity-0 translate-y-12
-          animate-[fadeIn_0.8s_ease-in-out_0.5s_forwards]
           items-center"
         onClick={() => setIsContactFormOpen(true)}
       >
@@ -88,7 +86,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className="md:hidden">
-        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><Logs /></div>}
+        {menuOpen ? <X /> : <div className='flex items-center gap-4 p-4 bg-gray-100 rounded-xl'><span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">Home</span><Logs /></div>}
       </button>
 
       {/* Mobile Dropdown Menu */}
