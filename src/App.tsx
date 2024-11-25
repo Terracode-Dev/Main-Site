@@ -92,7 +92,9 @@ const AdminLogin = () => {
 
 function App() {
   const location = useLocation();
-  const isAdminRoute = location.pathname === "/admin";
+  const adminRoutes = ["/admin", "/admin-login"];
+  const isAdminRoute = adminRoutes.includes(location.pathname);
+  
 
   const globalSchemaMarkup = {
     "@context": "https://schema.org",
