@@ -34,6 +34,7 @@ const Home = () => {
           property="og:title"
           content="Terracode | Propelling Your Vision Forward"
         />
+        <meta property="og:site_name" content="Terracode" />
         <meta
           property="og:description"
           content="Terracode is a premier software development company based in Sri Lanka specializing in custom solutions for businesses, startups, and enterprises, We make sure your business is ready for the future with powerful, smart & A.I. solutions"
