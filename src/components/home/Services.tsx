@@ -39,25 +39,6 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className="relative h-[200vh] ">
       {/* mobile view */}
-      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -mt-[5%] mb-[10%]  lg:hidden">
-      <div className=" flex flex-col py-[30%] -mb-[30%] sm:-mb-0 sm:py-0 sm:justify-center  h-[100vh] overflow-hidden ">
-        <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
-        {our}<br/>
-        {ev}
-        </div>
-        <div className="ml-4">
-           {/* Learn More Button */}
-           {/* <button className={` text-nowrap w-fit  px-6 py-3 mt-4 text-sm rounded-3xl sm:text-base md:text-lg border border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white inter`}>
-            Learn More
-          </button> */}
-        </div>
-        <motion.div style={{ x: xhos1 }} className="flex gap-40 mt-8 ml-3 w-fit flex-nowrap cursor-grab active:cursor-grabbing">
-          {cards.map((card) => (
-            <Card card={card} key={card.id} />
-          ))}
-        </motion.div>
-      </div>
-      </div>
       {/* desktop view */}
       <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -mt-[9%]  hidden lg:block">
       <div className="flex flex-col justify-center h-screen overflow-hidden  ">
