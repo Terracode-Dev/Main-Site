@@ -1,13 +1,17 @@
 import Navbar from "./components/navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/home/Home";
 import { Casestudy_page } from "./components/casestudy/page";
 import Aboutus_page from "./components/aboutus/page";
 import Footer from "./components/footer";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import ScrollToTop from "./components/scroll";
+import ContactSubmissions from "@/components/fetchdata";
 
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname === '/admin';
+
   const globalSchemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -27,7 +31,6 @@ function App() {
     <HelmetProvider>
       <div>
         <Helmet>
-          {/* Global meta tags */}
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script type="application/ld+json">
@@ -35,19 +38,16 @@ function App() {
           </script>
         </Helmet>
 
-        <Navbar />
+        {!isAdminRoute && <Navbar />}
         <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
-          {/*<Route path="/projects" element={<Projects />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/login" element={<Login />} />*/}
+          <Route path="/admin" element={<ContactSubmissions />} />
         </Routes>
 
-        <Footer />
+        {!isAdminRoute && <Footer />}
       </div>
     </HelmetProvider>
   );
