@@ -9,10 +9,10 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import ScrollToTop from "./components/scroll";
 import ContactSubmissions from "@/components/fetchdata";
 
-// Hardcoded default credentials (replace with secure backend validation later)
+// Hardcoded default credentials
 const DEFAULT_ADMIN_CREDENTIALS = {
   username: "terracode",
-  password: "adminterracode",
+  password: "dev@2022",
 };
 
 // Mock authentication function
@@ -22,6 +22,7 @@ const isAuthenticated = () => {
 
 // ProtectedRoute component
 import { ReactElement } from "react";
+import JoinWithUs from "./sales";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
@@ -40,7 +41,7 @@ const AdminLogin = () => {
       password === DEFAULT_ADMIN_CREDENTIALS.password
     ) {
       localStorage.setItem("adminLoggedIn", "true");
-      window.location.href = "/admin"; // Redirect to admin page
+      window.location.href = "/admin";
     } else {
       setError("Invalid username or password");
     }
@@ -129,6 +130,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
+          <Route path="/sales" element={<JoinWithUs />} />
           <Route
             path="/admin"
             element={<ProtectedRoute element={<ContactSubmissions />} />}
