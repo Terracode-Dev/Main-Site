@@ -15,41 +15,45 @@ const reviews = [
 ];
 
 const firstRow = reviews.slice(0, reviews.length);
- 
+
 const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
   return (
     <figure
       className={cn(
-        "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl h-[100px]",
+        "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl",
+        "h-[100px] md:h-[120px] lg:h-[140px]", // Responsive heights
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <div className="flex flex-row items-center justify-center gap-2 h-[80px] w-[80px]">
-      {typeof img === "string" ? (
-          <img className="h-[80px] w-[80px]" alt="" src={img} />
+      <div className="flex flex-row items-center justify-center gap-2 h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]">
+        {typeof img === "string" ? (
+          <img
+            className="h-full w-full object-contain" // Ensures the image scales proportionally
+            alt=""
+            src={img}
+          />
         ) : (
-          <div className="text-6xl">{img}</div> // Render icon if `img` is JSX
+          <div className="text-5xl md:text-6xl">{img}</div> // Render icon if `img` is JSX
         )}
       </div>
     </figure>
   );
 };
- 
+
 export function MarqueeDemo() {
   return (
     <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-background">
       <Marquee pauseOnHover className="[--duration:50s] text-gray-600">
         {firstRow.map((review) => (
-          <div className={review.color}>
-            <ReviewCard key={review.username} {...review} /></div>
-          
+          <div className={review.color} key={review.username}>
+            <ReviewCard {...review} />
+          </div>
         ))}
       </Marquee>
-      <div className="absolute inset-y-0 left-0 w-1/3 pointer-events-none "></div>
-      
+      <div className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"></div>
     </div>
   );
 }
