@@ -39,7 +39,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <div>
       <div>
-      <div className=" flex flex-col   sm:-mb-0 sm:py-0 sm:justify-center overflow-hidden sm:hidden">
+      <div className=" flex flex-col mb-5  sm:-mb-0 sm:py-0 sm:justify-center overflow-hidden sm:hidden">
         <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
@@ -50,7 +50,7 @@ const HorizontalScrollCarousel = () => {
             Learn More
           </button> */}
         </div>
-        <div className="flex flex-col justify-center items-center   gap-10 mt-8  w-full h-full mb-[20%] cursor-grab active:cursor-grabbing">
+        <div className="flex flex-col mx-[10%]   gap-10 mt-8  w-full h-full mb-[20%] cursor-grab active:cursor-grabbing">
           {cards.map((card) => (
             <Card card={card} key={card.id} />
           ))}
