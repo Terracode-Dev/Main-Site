@@ -9,10 +9,10 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import ScrollToTop from "./components/scroll";
 import ContactSubmissions from "@/components/fetchdata";
 
-// Hardcoded default credentials (replace with secure backend validation later)
+// Hardcoded default credentials
 const DEFAULT_ADMIN_CREDENTIALS = {
   username: "terracode",
-  password: "operationsterracode",
+  password: "dev@2022",
 };
 
 // Mock authentication function
@@ -40,7 +40,7 @@ const AdminLogin = () => {
       password === DEFAULT_ADMIN_CREDENTIALS.password
     ) {
       localStorage.setItem("adminLoggedIn", "true");
-      window.location.href = "/admin"; // Redirect to admin page
+      window.location.href = "/admin";
     } else {
       setError("Invalid username or password");
     }
