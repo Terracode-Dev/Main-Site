@@ -22,6 +22,7 @@ const isAuthenticated = () => {
 
 // ProtectedRoute component
 import { ReactElement } from "react";
+import JoinWithUs from "./sales";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
@@ -129,6 +130,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
+          <Route path="/sales" element={<JoinWithUs />} />
           <Route
             path="/admin"
             element={<ProtectedRoute element={<ContactSubmissions />} />}
