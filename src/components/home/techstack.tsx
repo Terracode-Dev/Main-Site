@@ -21,11 +21,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
     <figure
       className={cn(
         "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl",
-        "h-[100px] md:h-[120px] lg:h-[140px]", // Responsive heights
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+        "h-[100px] md:h-[120px] lg:h-[140px]" // Responsive heights
       )}
     >
       <div className="flex flex-row items-center justify-center gap-2 h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]">

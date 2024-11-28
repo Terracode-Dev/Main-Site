@@ -48,7 +48,7 @@ const QA: React.FC = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-40xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             <span>Frequently Asked</span> <span className='bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent'>Questions</span>

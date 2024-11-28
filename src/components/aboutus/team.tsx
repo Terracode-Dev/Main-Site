@@ -199,10 +199,10 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
                   <div className="absolute p-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-md inset-x-2 bottom-2">
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col justify-center">
-                        <h3 className="font-semibold md:text-sm text-[9px] text-gray-900">
+                        <h3 className="font-semibold md:text-[13px] text-[11px] text-gray-900">
                           {member.name}
                         </h3>
-                        <p className="md:text-[8px] text-[8px] text-gray-600">
+                        <p className="md:text-[10px] text-[9px] text-gray-600">
                           {member.desc}
                         </p>
                       </div>

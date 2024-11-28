@@ -151,7 +151,7 @@ const cards = [
   
   {
     title: "Smart Automations",
-    description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analitics and proactive customer interaction tools.",
+    description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analytics and proactive customer interaction tools.",
     icon: "/AI.png",
     image: "/AI-1.png",
     bgColor: "bg-[#FDA40A]",
