@@ -12,7 +12,7 @@ import ContactSubmissions from "@/components/fetchdata";
 // Hardcoded default credentials (replace with secure backend validation later)
 const DEFAULT_ADMIN_CREDENTIALS = {
   username: "terracode",
-  password: "adminterracode",
+  password: "operationsterracode",
 };
 
 // Mock authentication function
