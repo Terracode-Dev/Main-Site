@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import ContactForm from "./contactus/Contact";
-import { Logs, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { X } from 'lucide-react';
 
 
 const Navbar: React.FC = () => {

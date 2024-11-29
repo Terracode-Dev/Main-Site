@@ -22,7 +22,7 @@ const isAuthenticated = () => {
 
 // ProtectedRoute component
 import { ReactElement } from "react";
-import JoinWithUs from "./sales";
+import JoinWithUs from "./components/sales";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
