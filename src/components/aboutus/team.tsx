@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import { db } from "@/firbase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { MoreVertical } from 'lucide-react';
 
 interface webInterface {
@@ -68,8 +68,9 @@ const TeamCards: React.FC<TeamCardsProps> = ({ onAllImagesLoaded }) => {
     const fetchTeamMembers = async () => {
       try {
         const teamCollection = collection(db, "developers");
-        const teamSnapshot = await getDocs(teamCollection);
-        const teamData = teamSnapshot.docs.map(doc => {
+        const teamQuery = query(teamCollection, orderBy("id", "asc"));
+        const teamSnapshot = await getDocs(teamQuery);
+        const teamData = teamSnapshot.docs.map(doc => {
           const data = doc.data();
           return {
             id: data.id,
