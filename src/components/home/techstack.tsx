@@ -21,18 +21,18 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
     <figure
       className={cn(
         "flex relative items-center justify-center md:w-40 lg:w-64 cursor-pointer overflow-hidden rounded-xl",
-        "h-[100px] md:h-[120px] lg:h-[140px]" // Responsive heights
+        "h-[100px] md:h-[120px] lg:h-[140px]" 
       )}
     >
       <div className="flex flex-row items-center justify-center gap-2 h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]">
         {typeof img === "string" ? (
           <img
-            className="h-full w-full object-contain" // Ensures the image scales proportionally
+            className="h-full w-full object-contain" 
             alt=""
             src={img}
           />
         ) : (
-          <div className="text-5xl md:text-6xl">{img}</div> // Render icon if `img` is JSX
+          <div className="text-5xl md:text-6xl">{img}</div> 
         )}
       </div>
     </figure>
@@ -41,7 +41,7 @@ const ReviewCard = ({ img }: { img: JSX.Element | string }) => {
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-background">
+    <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden bg-transparent">
       <Marquee pauseOnHover className="[--duration:50s] text-gray-600">
         {firstRow.map((review) => (
           <div className={review.color} key={review.username}>
@@ -53,3 +53,4 @@ export function MarqueeDemo() {
     </div>
   );
 }
+

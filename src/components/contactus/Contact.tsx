@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db } from "@/firbase"; 
+import { db } from "@/firbase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 interface ContactFormProps {
@@ -31,13 +31,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
     if (isOpen) {
       setMounted(true);
       document.body.style.overflow = "hidden";
-      document.documentElement.style.scrollbarGutter = "stable";
-      document.body.classList.add('hide-scrollbar');
     }
     return () => {
       document.body.style.overflow = "unset";
-      document.documentElement.style.scrollbarGutter = "auto";
-      document.body.classList.remove('hide-scrollbar');
     };
   }, [isOpen]);
 
@@ -139,26 +135,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >
-      <style>{`
-        .hide-scrollbar {
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-        
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        
-        .modal-content {
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-        
-        .modal-content::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
-
       <div
         className={`absolute inset-0 bg-black transition-opacity duration-300 ease-in-out ${
           mounted ? "opacity-60 backdrop-blur-md" : "opacity-0"
@@ -199,78 +175,73 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
           </div>
 
           <div className="p-6 md:p-8 space-y-6">
+            <input
+              type="text"
+              placeholder="Name"
+              className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500]"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              disabled={isSubmitting}
+            />
+            {nameError && <p className="text-red-500 text-sm">{nameError}</p>}
+
+            <input
+              type="email"
+              placeholder="E-mail address"
+              className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500]"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isSubmitting}
+            />
+            {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+
             <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500]"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                disabled={isSubmitting}
-              />
-              {nameError && <p className="text-red-500 text-sm">{nameError}</p>}
+              <h3 className="text-xl font-semibold text-left md:text-2xl">
+                Select the Services
+              </h3>
 
-              <input
-                type="email"
-                placeholder="E-mail address"
-                className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500]"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isSubmitting}
-              />
-              {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-left md:text-2xl">
-                  Select the Services<br />
-                  that Fit Your Needs
-                </h3>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {services.map((service) => (
-                    <button
-                      key={service.id}
-                      onClick={(e) => handleServiceSelect(service.id, e)}
-                      className={`px-4 py-2 rounded-full border transition-colors text-xs leading-tight text-center max-w-xs ${
-                        selectedServices.includes(service.id)
-                          ? "bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white border-none"
-                          : "text-orange-400 border-orange-400 hover:bg-gray-100"
-                      } ${
-                        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-                      }`}
-                      disabled={isSubmitting}
-                    >
-                      {service.label}
-                    </button>
-                  ))}
-                </div>
-                {serviceError && (
-                  <p className="text-red-500 text-sm">{serviceError}</p>
-                )}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {services.map((service) => (
+                  <button
+                    key={service.id}
+                    onClick={(e) => handleServiceSelect(service.id, e)}
+                    className={`px-4 py-2 rounded-full border transition-colors text-xs leading-tight text-center max-w-xs ${
+                      selectedServices.includes(service.id)
+                        ? "bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white border-none"
+                        : "text-orange-400 border-orange-400 hover:bg-gray-100"
+                    } ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+                    disabled={isSubmitting}
+                  >
+                    {service.label}
+                  </button>
+                ))}
               </div>
+              {serviceError && (
+                <p className="text-red-500 text-sm">{serviceError}</p>
+              )}
+            </div>
 
-              <textarea
-                placeholder="Describe Your Needs"
-                rows={3}
-                className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500] resize-none"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+            <textarea
+              placeholder="Describe Your Needs"
+              rows={3}
+              className="w-full border-b-2 border-gray-300 p-2 focus:outline-none focus:border-[#FFA500] resize-none"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              disabled={isSubmitting}
+            />
+
+            <div className="flex justify-start mt-4">
+              <button
+                onClick={handleSubmit}
+                className={`px-8 py-2 rounded-full sm:text-base md:text-lg border transition-colors ${
+                  isSubmitting
+                    ? "bg-gray-400 text-white"
+                    : "text-orange-400 border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white"
+                }`}
                 disabled={isSubmitting}
-              />
-
-              <div className="flex justify-start mt-4">
-                <button
-                  onClick={handleSubmit}
-                  className={`px-8 py-2 rounded-full sm:text-base md:text-lg border transition-colors ${
-                    isSubmitting
-                      ? "bg-gray-400 text-white"
-                      : "text-orange-400 border-orange-500 hover:bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] hover:text-white"
-                  }`}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </button>
-              </div>
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
             </div>
           </div>
         </div>
