@@ -14,12 +14,13 @@ const Footer = () => {
           <div className="mb-3 space-y-4">
             <div className="flex items-center">
               <span className="text-2xl font-bold md:text-4xl">
-                <span className="text-white">TERRA</span><br/>
+                <span className="text-white">TERRA</span><br />
                 <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
               </span>
             </div>
-            <span className='text-sm'>"propelling your vision forward"</span>
+            <span className="text-sm md:mt-2 md:block">"propelling your vision forward"</span>
           </div>
+
 
           {/* Links Section */}
           <div className="hidden sm:flex mb-4 space-y-4">
@@ -90,7 +91,7 @@ const Footer = () => {
         <div className="p-8 mt-10 border-t border-gray-800">
           <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
             <div className="text-sm text-gray-400">
-               TerraCode 2024, All rights reserved.
+               Terracode 2024, All rights reserved.
             </div>
             <div className="flex gap-4 text-sm text-gray-400">
               <a href="#" className="transition-colors hover:text-white">
