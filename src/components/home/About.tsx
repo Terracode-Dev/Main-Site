@@ -105,13 +105,13 @@ const HorizontalScrollCarousel = () => {
               </div>
               {/* Description */}
               <div className=" md:w-2/4 xl: text-gray-600 ">
-                <p className="text-center inter font-normal text-lg sm:text-2xl">
+              <p className="text-center inter font-normal text-lg sm:text-2xl" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' }}>
 
                 "With a <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">talented team of engineers </span> as our backbone, 
                 we build <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">great tech</span> precisely tailored to your business. 
                 By understanding<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> your challenges and working closely</span>  with you, 
                 we deliver<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> innovative solutions</span> that keep you ahead in a<span className="font-semibold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> competitive landscape</span>"
-  </p>
+              </p>
               </div>
             </motion.div>
           </div>
