@@ -18,6 +18,7 @@ const Footer = () => {
                 <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
               </span>
             </div>
+            <span className='text-sm'>"propelling your vision forward"</span>
           </div>
 
           {/* Links Section */}
