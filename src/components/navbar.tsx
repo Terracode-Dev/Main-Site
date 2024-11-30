@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('');
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
 
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
       }
 
       // Active section determination
-      const sections = ['home', 'services', 'about', 'work', 'projects', 'qa'];
+      const sections = ['hero', 'services', 'about', 'work', 'projects', 'qa'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -60,6 +60,7 @@ const Navbar: React.FC = () => {
       }
     `;
   };
+
 
   // Rest of your existing methods (toggleMenu, closeMenu, etc.)
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -198,7 +199,7 @@ const Navbar: React.FC = () => {
       >
         <Link
           to="/"
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'hero' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           Home
@@ -207,7 +208,7 @@ const Navbar: React.FC = () => {
           to="services"
           smooth={true}
           duration={500}
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'services' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           Services
@@ -216,7 +217,7 @@ const Navbar: React.FC = () => {
           to="about"
           smooth={true}
           duration={500}
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'about' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           About
@@ -225,7 +226,7 @@ const Navbar: React.FC = () => {
           to="work"
           smooth={true}
           duration={500}
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'work' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           Work
@@ -234,7 +235,7 @@ const Navbar: React.FC = () => {
           to="projects"
           smooth={true}
           duration={500}
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'projects' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           Tech Stack
@@ -243,7 +244,7 @@ const Navbar: React.FC = () => {
           to="qa"
           smooth={true}
           duration={500}
-          className="text-gray-600 cursor-pointer hover:text-orange-600 transition-all duration-300"
+          className={`cursor-pointer transition-all duration-300 ${activeSection === 'qa' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           FAQs
