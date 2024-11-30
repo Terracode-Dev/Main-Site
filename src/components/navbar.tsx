@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import ContactForm from "./contactus/Contact";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import '../App.css';
 import { X } from 'lucide-react';
 
@@ -9,51 +9,63 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [activeSection, setActiveSection] = useState('home');
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
 
-  // Ensure menu is closed on initial page load
-  useEffect(() => {
-    setMenuOpen(false);
-  }, []);
-
-  // Navbar scroll visibility effect
+  // Scroll and active section effect
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Only apply hide/show logic for desktop (md breakpoint and above)
-      if (window.innerWidth >= 300) {
-        // Hide navbar when scrolling down
+      // Navbar visibility logic
+      if (window.innerWidth >= 200) {
         if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
           setIsVisible(false);
-        } 
-        // Show navbar when scrolling up
-        else if (currentScrollY < lastScrollY.current) {
+        } else if (currentScrollY < lastScrollY.current) {
           setIsVisible(true);
         }
-
-        // Update last scroll position
         lastScrollY.current = currentScrollY;
+      }
+
+      // Active section determination
+      const sections = ['home', 'services', 'about', 'work', 'projects', 'qa'];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const elementTop = element.offsetTop;
+          const elementHeight = element.offsetHeight;
+          
+          if (scrollPosition >= elementTop && scrollPosition < elementTop + elementHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
     };
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Toggle the menu open/close
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  // Helper function to determine nav link classes
+  const getNavLinkClass = (sectionName: string) => {
+    return `
+      nav-link 
+      ${activeSection === sectionName 
+        ? 'active-nav-link' 
+        : ''
+      }
+    `;
+  };
 
-  // Close the menu
+  // Rest of your existing methods (toggleMenu, closeMenu, etc.)
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // Close menu when clicking outside the mobile menu
+  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
@@ -80,7 +92,7 @@ const Navbar: React.FC = () => {
         zIndex: 1000,
       }}
     >
-      {/* Logo */}
+      {/* Logo - rest remains the same */}
       <div className="flex flex-col -space-y-2 text-xl font-bold md:text-2xl">
         <span className="text-black">TERRA</span>
         <span className="bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent">CODE.</span>
@@ -88,12 +100,58 @@ const Navbar: React.FC = () => {
 
       {/* Desktop Menu */}
       <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
-        <Link to="/" className="nav-link">Home</Link>
-        <ScrollLink to="services" smooth={true} duration={500} className="nav-link">Services</ScrollLink>
-        <ScrollLink to="about" smooth={true} duration={500} className="nav-link">About</ScrollLink>
-        <ScrollLink to="work" smooth={true} duration={500} className="nav-link">Work</ScrollLink>
-        <ScrollLink to="projects" smooth={true} duration={500} className="nav-link">Tech Stack</ScrollLink>
-        <ScrollLink to="qa" smooth={true} duration={500} className="nav-link">FAQs</ScrollLink>
+        <Link 
+          to="/" 
+          className={getNavLinkClass('hero')}
+          onClick={() => setActiveSection('hero')}
+        >
+          Home
+        </Link>
+        <ScrollLink 
+          to="services" 
+          smooth={true} 
+          duration={500} 
+          className={getNavLinkClass('services')}
+          onClick={() => setActiveSection('services')}
+        >
+          Services
+        </ScrollLink>
+        <ScrollLink 
+          to="about" 
+          smooth={true} 
+          duration={500} 
+          className={getNavLinkClass('about')}
+          onClick={() => setActiveSection('about')}
+        >
+          About
+        </ScrollLink>
+        <ScrollLink 
+          to="work" 
+          smooth={true} 
+          duration={500} 
+          className={getNavLinkClass('work')}
+          onClick={() => setActiveSection('work')}
+        >
+          Work
+        </ScrollLink>
+        <ScrollLink 
+          to="projects" 
+          smooth={true} 
+          duration={500} 
+          className={getNavLinkClass('projects')}
+          onClick={() => setActiveSection('projects')}
+        >
+          Tech Stack
+        </ScrollLink>
+        <ScrollLink 
+          to="qa" 
+          smooth={true} 
+          duration={500} 
+          className={getNavLinkClass('qa')}
+          onClick={() => setActiveSection('qa')}
+        >
+          FAQs
+        </ScrollLink>
       </div>
 
       {/* Contact Us Button */}
