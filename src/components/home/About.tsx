@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[350vh]">
-      <div className="sticky top-0 flex flex-col items-center justify-center mx-[5%]  h-screen">
+      <div className=" sticky top-0 flex flex-col items-center justify-center mx-[5%] mt-[10%]  sm:h-screen ">
         <div className="m-6 w-full max-w-7xl ">
           <div className="relative flex flex-col items-center justify-center px-6 py-20 bg-[#F4F4F4] overflow-hidden  rounded-3xl ">
             {/* Animated Elements */}
@@ -62,7 +62,7 @@ const HorizontalScrollCarousel = () => {
               className="z-20 flex flex-col items-center space-y-6 text-center md:space-y-10"
             >
               {/* Title */}
-              <div className="text-4xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl inter">
+              <div className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl inter">
                 <h1>Who are we?</h1>
               </div>
               {/* Paragraph with Blur */}
@@ -70,7 +70,7 @@ const HorizontalScrollCarousel = () => {
                 {/* Blur Layer */}
                 
                 {/* Text */}
-                <p className="relative text-xl text-gray-600 sm:text-2xl inter">
+                <p className="relative text-lg text-gray-600 sm:text-2xl inter">
                 "We’re a passionate team of
                 <span className="text-orange-500 inter"> designers</span> and
                 <span className="text-orange-500 inter"> developers</span><span>, based in
@@ -93,24 +93,24 @@ const HorizontalScrollCarousel = () => {
             {/* Second Section */}
             <motion.div
               style={{ y: yUp3 }}
-              className="z-20 flex flex-col items-center justify-center text-center space-y-6 md:space-y-0 md:flex-row md:items-start"
+              className="z-20 flex flex-col items-center justify-center text-center space-y-6 md:space-y-0 md:flex-row  md:items-center gap-10 "
             >
               {/* Logo */}
               <div className="flex justify-center md:justify-start md:px-10">
-                <img
-                  src="/Group 1.png"
-                  alt="Terracode"
-                  className="w-[150px] sm:w-[200px] xl:w-[250px]"
-                />
+              <img
+                src="/Group 1.png"
+                alt="Terracode"
+                className="w-[100px] sm:w-[200px] xl:w-[250px] filter drop-shadow-2xl shadow-black"
+              />
               </div>
               {/* Description */}
-              <div className=" md:w-2/4 xl:w-1/4 text-gray-600 ">
-                <p className="text-justify inter">
+              <div className=" md:w-2/4 xl: text-gray-600 ">
+                <p className="text-center inter font-normal text-lg sm:text-2xl">
 
-                "With a talented team of engineers as our backbone, 
-                we build great tech precisely tailored to your business. 
-                By understanding your challenges and working closely with you, 
-                we deliver innovative solutions that keep you ahead in a competitive landscape"
+                "With a <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">talented team of engineers </span> as our backbone, 
+                we build <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">great tech</span> precisely tailored to your business. 
+                By understanding<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> your challenges and working closely</span>  with you, 
+                we deliver<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> innovative solutions</span> that keep you ahead in a<span className="font-semibold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> competitive landscape</span>"
   </p>
               </div>
             </motion.div>

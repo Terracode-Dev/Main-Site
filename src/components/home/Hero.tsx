@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* Animated Button */}
         <div>
-          <button className="hidden sm:block z-5 px-6 py-3 text-sm text-white relative overflow-hidden group
+          <button className="hidden md:block z-5 px-6 py-3 text-sm text-white relative overflow-hidden group
           bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
           hover:scale-105
           sm:text-base md:text-lg rounded-3xl 
