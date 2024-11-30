@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
         fixed top-0 left-0 right-0 
         transition-transform duration-300 
         ${isVisible ? 'translate-y-0' : '-translate-y-full'}
-        bg-white
+        bg-whit
       `}
       style={{
         zIndex: 1000,
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden px-8 py-4 space-x-6 bg-gray-100 rounded-xl md:flex">
+      <div className="hidden px-8 py-4 space-x-6 backdrop-blur-sm bg-gray-100/70 rounded-xl md:flex">
         <Link 
           to="/" 
           className={getNavLinkClass('hero')}
