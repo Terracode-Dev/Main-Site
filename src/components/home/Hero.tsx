@@ -41,7 +41,7 @@ export default function Hero() {
   );
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   return (
-    <div className="relative flex items-center justify-center p-8 sm:my-[6%] ">
+    <div className="relative flex items-center justify-center p-8 sm:my-[7%] mt-[20%] ">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 30 }}

@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
       const currentScrollY = window.scrollY;
       
       // Only apply hide/show logic for desktop (md breakpoint and above)
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 300) {
         // Hide navbar when scrolling down
         if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
           setIsVisible(false);
