@@ -5,15 +5,46 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import { X } from 'lucide-react';
 
-
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
 
   // Ensure menu is closed on initial page load
   useEffect(() => {
     setMenuOpen(false);
+  }, []);
+
+  // Navbar scroll visibility effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Only apply hide/show logic for desktop (md breakpoint and above)
+      if (window.innerWidth >= 768) {
+        // Hide navbar when scrolling down
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          setIsVisible(false);
+        } 
+        // Show navbar when scrolling up
+        else if (currentScrollY < lastScrollY.current) {
+          setIsVisible(true);
+        }
+
+        // Update last scroll position
+        lastScrollY.current = currentScrollY;
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Toggle the menu open/close
@@ -37,7 +68,18 @@ const Navbar: React.FC = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="z-10 flex items-center justify-between px-5 py-5 lg:px-20 relative w-full">
+    <nav 
+      className={`
+        z-10 flex items-center justify-between px-5 py-5 lg:px-20 
+        fixed top-0 left-0 right-0 
+        transition-transform duration-300 
+        ${isVisible ? 'translate-y-0' : '-translate-y-full'}
+        bg-white
+      `}
+      style={{
+        zIndex: 1000,
+      }}
+    >
       {/* Logo */}
       <div className="flex flex-col -space-y-2 text-xl font-bold md:text-2xl">
         <span className="text-black">TERRA</span>
