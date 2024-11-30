@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
 
       // Active section determination
       const sections = ['hero', 'services', 'about', 'work', 'projects', 'qa'];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -55,9 +55,8 @@ const Navbar: React.FC = () => {
     return `
       nav-link 
       ${activeSection === sectionName 
-        ? 'active-nav-link' 
-        : ''
-      }
+        ? 'text-orange-600 font-bold' 
+        : 'text-gray-600 hover:text-black hover:font-semibold'}
     `;
   };
 
