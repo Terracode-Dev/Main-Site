@@ -7,7 +7,7 @@ const SnowFlowerEffect: React.FC = () => {
 
   useEffect(() => {
     // Generate an array for snowflakes
-    const flakes = Array.from({ length: 50 }, (_, i) => i);
+    const flakes = Array.from({ length: 20 }, (_, i) => i);
     setSnowflakes(flakes);
   }, []);
 
