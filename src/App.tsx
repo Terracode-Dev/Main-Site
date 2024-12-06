@@ -23,6 +23,8 @@ const isAuthenticated = () => {
 // ProtectedRoute component
 import { ReactElement } from "react";
 import JoinWithUs from "./components/sales";
+import SnowEffect from "./components/Snow/SnowEffect";
+import SnowFlowerEffect from "./components/Snow/SnowEffect";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
@@ -125,8 +127,11 @@ function App() {
         </Helmet>
 
         {!isAdminRoute && <Navbar />}
+        <SnowFlowerEffect/>
         <ScrollToTop />
+        
         <Routes>
+        
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
