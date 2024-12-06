@@ -23,7 +23,7 @@ const isAuthenticated = () => {
 // ProtectedRoute component
 import { ReactElement } from "react";
 import JoinWithUs from "./components/sales";
-import SnowEffect from "./components/Snow/SnowEffect";
+
 import SnowFlowerEffect from "./components/Snow/SnowEffect";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
