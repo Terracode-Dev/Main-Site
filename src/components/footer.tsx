@@ -31,12 +31,12 @@ const Footer = () => {
               <li >
                 <Link to={""} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>
               </li>
-              <li >
+              {/* <li >
                 <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
               <li >
                 <Link to={""} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
