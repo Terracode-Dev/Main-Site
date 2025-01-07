@@ -127,7 +127,7 @@ function App() {
         </Helmet>
 
         {!isAdminRoute && <Navbar />}
-        <SnowFlowerEffect/>
+        {/* <SnowFlowerEffect/> */}
         <ScrollToTop />
         
         <Routes>
