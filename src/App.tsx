@@ -24,7 +24,7 @@ const isAuthenticated = () => {
 import { ReactElement } from "react";
 import JoinWithUs from "./components/sales";
 
-import SnowFlowerEffect from "./components/Snow/SnowEffect";
+// import SnowFlowerEffect from "./components/Snow/SnowEffect";
 
 const ProtectedRoute = ({ element }: { element: ReactElement }) => {
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
