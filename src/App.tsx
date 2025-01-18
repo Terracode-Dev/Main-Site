@@ -8,6 +8,8 @@ import Footer from "./components/footer";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import ScrollToTop from "./components/scroll";
 import ContactSubmissions from "@/components/fetchdata";
+import JoinWithUs from "./components/sales";
+import Sales_dashbord from "./components/Sales_Pannel/Dashbord/dashbord";
 
 // Hardcoded default credentials
 const DEFAULT_ADMIN_CREDENTIALS = {
@@ -15,16 +17,27 @@ const DEFAULT_ADMIN_CREDENTIALS = {
   password: "dev@2022",
 };
 
-// Mock authentication function
+const DEFAULT_SALES_CREDENTIALS = {
+  username: "terracodesales",
+  password: "sales@2022",
+};
+
+// Authentication functions
 const isAuthenticated = () => {
-  return localStorage.getItem("adminLoggedIn") === "true";
+  return localStorage.getItem("adminLoggedIn") === "true" || localStorage.getItem("salesLoggedIn") === "true";
+};
+
+const isSalesAuthenticated = () => {
+  return localStorage.getItem("salesLoggedIn") === "true";
 };
 
 // ProtectedRoute component
 import { ReactElement } from "react";
-import JoinWithUs from "./components/sales";
 
-const ProtectedRoute = ({ element }: { element: ReactElement }) => {
+const ProtectedRoute = ({ element, authType = "admin" }: { element: ReactElement; authType?: string }) => {
+  if (authType === "sales") {
+    return isSalesAuthenticated() ? element : <Navigate to="/sales-login" replace />;
+  }
   return isAuthenticated() ? element : <Navigate to="/admin-login" replace />;
 };
 
@@ -61,7 +74,7 @@ const AdminLogin = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
               required
             />
           </div>
@@ -74,7 +87,7 @@ const AdminLogin = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
               required
             />
           </div>
@@ -84,7 +97,69 @@ const AdminLogin = () => {
           >
             Login
           </button>
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </form>
+      </div>
+    </div>
+  );
+};
 
+// Sales Login Component
+const SalesLogin = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    if (
+      username === DEFAULT_SALES_CREDENTIALS.username &&
+      password === DEFAULT_SALES_CREDENTIALS.password
+    ) {
+      localStorage.setItem("salesLoggedIn", "true");
+      window.location.href = "/sales-dashbord";
+    } else {
+      setError("Invalid username or password");
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-6 rounded shadow-md w-96">
+        <h2 className="text-2xl font-bold mb-4 text-center">Sales Panel <span className="bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-clip-text text-transparent">Login</span></h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              Username
+            </label>
+            <input
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] text-white py-2 px-4 rounded hover:from-[#D32D00] hover:to-[#C78507] transform transition-transform duration-300 hover:scale-105"
+          >
+            Login
+          </button>
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </form>
       </div>
@@ -95,8 +170,9 @@ const AdminLogin = () => {
 function App() {
   const location = useLocation();
   const adminRoutes = ["/admin", "/admin-login"];
+  const salesRoutes = ["/sales-dashbord", "/sales-login"];
   const isAdminRoute = adminRoutes.includes(location.pathname);
-  
+  const isSalesRoute = salesRoutes.includes(location.pathname);
 
   const globalSchemaMarkup = {
     "@context": "https://schema.org",
@@ -124,7 +200,7 @@ function App() {
           </script>
         </Helmet>
 
-        {!isAdminRoute && <Navbar />}
+        {!isAdminRoute && !isSalesRoute && <Navbar />}
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -136,9 +212,14 @@ function App() {
             element={<ProtectedRoute element={<ContactSubmissions />} />}
           />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/sales-login" element={<SalesLogin />} />
+          <Route
+            path="/sales-dashbord"
+            element={<ProtectedRoute element={<Sales_dashbord />} authType="sales" />}
+          />
         </Routes>
 
-        {!isAdminRoute && <Footer />}
+        {!isAdminRoute && !isSalesRoute && <Footer />}
       </div>
     </HelmetProvider>
   );

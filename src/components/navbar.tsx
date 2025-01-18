@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
       className={`
         z-10 flex items-center justify-between px-5 py-5 lg:px-20 
         fixed top-0 left-0 right-0 
-        transition-transform duration-300 
+        transition-transform duration-3 00 
         ${isVisible ? 'translate-y-0' : '-translate-y-full'}
         bg-white
       `}
