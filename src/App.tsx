@@ -33,6 +33,7 @@ const isSalesAuthenticated = () => {
 
 // ProtectedRoute component
 import { ReactElement } from "react";
+import Home1 from "./components/Sales_Pannel/Dashbord/DHome";
 
 const ProtectedRoute = ({ element, authType = "admin" }: { element: ReactElement; authType?: string }) => {
   if (authType === "sales") {
@@ -170,7 +171,15 @@ const SalesLogin = () => {
 function App() {
   const location = useLocation();
   const adminRoutes = ["/admin", "/admin-login"];
-  const salesRoutes = ["/sales-dashbord", "/sales-login"];
+  const salesRoutes = [
+    "/sales-dashbord",
+    "/sales-login",
+    "/sales-dashbord/home",
+    "/sales-dashbord/inbox",
+    "/sales-dashbord/calendar",
+    "/sales-dashbord/search",
+    "/sales-dashbord/settings"
+  ];
   const isAdminRoute = adminRoutes.includes(location.pathname);
   const isSalesRoute = salesRoutes.includes(location.pathname);
 
@@ -217,8 +226,20 @@ function App() {
           <Route path="/sales-login" element={<SalesLogin />} />
           <Route
             path="/sales-dashbord"
-            element={<ProtectedRoute element={<Sales_dashbord />} authType="sales" />}
-          />
+            element={
+              <ProtectedRoute 
+                element={<Sales_dashbord />} 
+                authType="sales" 
+              />
+            }
+          >
+            <Route index element={<Home1 />} />
+            <Route path="inbox" element={<div>Inbox Content</div>} />
+            <Route path="calendar" element={<div>Calendar Content</div>} />
+            <Route path="search" element={<div>Search Content</div>} />
+            <Route path="settings" element={<div>Settings Content</div>} />
+          </Route>
+          
         </Routes>
 
         {!isAdminRoute && !isSalesRoute && <Footer />}
