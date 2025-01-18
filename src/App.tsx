@@ -202,7 +202,9 @@ function App() {
 
         {!isAdminRoute && !isSalesRoute && <Navbar />}
         <ScrollToTop />
+        
         <Routes>
+        
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />

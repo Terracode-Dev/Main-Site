@@ -16,7 +16,7 @@ const HorizontalScrollCarousel = () => {
   });
 
   const xhos1 = useTransform(scrollYProgress, [0, 1], ["2%", "-82%"]);
-  const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-45%"]);
+  const xhos2 = useTransform(scrollYProgress, [0, 1], ["2%", "-50%"]);
   const our: JSX.Element = (
     <>
        <span className="animate-flowing-gradient bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-[length:200%] bg-clip-text text-transparent font-medium inter leading-[30px] md:leading-[53px]">
@@ -37,9 +37,9 @@ const HorizontalScrollCarousel = () => {
   
 
   return (
-    <div>
+    <div className="">
       <div>
-      <div className=" flex flex-col mb-5  sm:-mb-0 sm:py-0 sm:justify-center overflow-hidden sm:hidden">
+      <div className=" flex flex-col    sm:py-0 sm:justify-center overflow-hidden   lg:hidden">
         <div className="md:text-[25px] lg:text-[45px] text-[25px] ml-4 ">
         {our}<br/>
         {ev}
@@ -50,14 +50,21 @@ const HorizontalScrollCarousel = () => {
             Learn More
           </button> */}
         </div>
-        <div className="flex flex-col mx-[10%]   gap-10 mt-8  w-full h-full mb-[20%] cursor-grab active:cursor-grabbing">
+        <div className="sm:grid sm:grid-cols-2 mx-5  hidden sm:block sm:gap-10 mt-8   ">
           {cards.map((card) => (
             <Card card={card} key={card.id} />
           ))}
         </div>
+        {cards.map((card) => (
+        <div className={`grid grid-cols-1  gap-10 sm:hidden ${card.item} sm:gap-10 mt-8  w-full    `}>
+          
+            <Card card={card} key={card.id} />
+          
+        </div>
+      ))}
       </div>
       </div>
-    <section ref={targetRef} className="relative h-[200vh] hidden sm:block">
+    <section ref={targetRef} className="relative h-[200vh] hidden lg:block">
       {/* mobile view */}
       <div className="sticky top-0 flex justify-center items-center overflow-hidden py-5 -mt-[5%] mb-[10%]  lg:hidden">
       <div className=" flex flex-col py-[30%] -mb-[30%] sm:-mb-0 sm:py-0 sm:justify-center  h-[100vh] overflow-hidden ">
@@ -79,7 +86,7 @@ const HorizontalScrollCarousel = () => {
       </div>
       </div>
       {/* desktop view */}
-      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -mt-[9%]  hidden lg:block">
+      <div className="sticky top-0 flex justify-center items-center overflow-hidden py-3 -my-[9%]  hidden lg:block">
       <div className="flex flex-col justify-center h-screen overflow-hidden  ">
       <div className="md:text-[48px] text-[32px] pl-16">
           {our}<br />
@@ -112,15 +119,18 @@ interface CardProps {
     image: string;
     bgColor: string;
     sty: string;
+    color: string;
+    item: string;
+    pos: string;
   };
 }
 
 const Card = ({ card }: CardProps) => {
   return (
+    <div>
     <div
       key={card.id}
-      className={`flex flex-col xl:w-[452px] xl:h-[350px] w-[260px] h-[220px] ${card.bgColor} rounded-2xl relative
-                         hover:scale-[1.02] transition-transform duration-300`}
+      className={`flex flex-col xl:w-[452px] xl:h-[350px] w-[270px] h-[220px] hidden sm:block rounded-2xl relative hover:scale-[1.02] transition-transform duration-300  ${card.color}  `}
     >
       <div className="p-4">
         {/* Icon */}
@@ -133,6 +143,23 @@ const Card = ({ card }: CardProps) => {
       </div>
       <img src={card.image} alt={card.title} className={card.sty} />
     </div>
+    {/* // Mobiile view */}
+    <div
+      key={card.id}
+      className={`${card.bgColor} sm:hidden`}
+    >
+      <div className={`p-4 flex flex-col ${card.pos} `}>
+        {/* Icon */}
+        <img src={card.icon} alt="Icon" className="xl:w-[60px] w-[28px] xl:mt-7 mt-2" />
+        {/* Title */}
+        <h1 className="xl:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
+        <div className="flex items-start line-clamp-4 mt-2 w-[70%]">
+          <p className="xl:text-[16px] text-[10px] text-white">{card.description}</p>
+        </div>
+      </div>
+      <img src={card.image} alt={card.title} className={card.sty} />
+    </div>
+    </div>
   );
 };
 
@@ -144,8 +171,11 @@ const cards = [
     description: "Optimize your business operations with our custom  ERP, IMS, and CRM systems, designed to meet your unique business needs seamlessly.",
     icon: "/Vector 3.png",
     image: "Enterprise.png",
-    bgColor: "bg-[#F67005]",
+    color: "bg-[#F67005]",
+    bgColor: "flex flex-col justify-star  w-[80%]  h-[220px] rounded-r-2xl relative hover:scale-[1.02] transition-transform duration-300 bg-[#F67005]",
     id: 3,
+    item:"justify-items-start",
+    pos:"items-start",
     sty: "absolute xl:right-[-125px] right-[-88px] lg:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
   },
   
@@ -154,17 +184,23 @@ const cards = [
     description: "Elevate your business with AI automation that streamlines business operations through intelligent resource management,analytics and proactive customer interaction tools.",
     icon: "/AI.png",
     image: "/AI-1.png",
-    bgColor: "bg-[#FDA40A]",
+    color: "bg-[#FDA40A]",
+    bgColor: "flex flex-col  ml-[10%] h-[220px] rounded-l-2xl relative hover:scale-[1.02] transition-transform duration-300 bg-[#FDA40A]",
     id: 2,
-    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-1 top-0 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
+    item:"justify-items-end",
+    pos:"items-end",
+    sty: "absolute xl:right-[-125px] sm:left-auto sm:right-[-78px] left-[-78px] xl:top-1 -top-2 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
   },
   {
     title: "Mobile Applications",
     description: "Connect with customers through custom apps that transform ideas into reality, improving engagement and accessibility on all platforms.",
     icon: "/Vector.png",
     image: "/App.png",
-    bgColor: "bg-[#F67005] bg",
+    color: "bg-[#F67005]",
+    bgColor: "flex flex-col w-[80%] w-[270px] h-[220px] rounded-r-2xl relative hover:scale-[1.02] transition-transform duration-300 bg-[#F67005]",
     id: 1,
+    item:"justify-items-start",
+    pos:"items-start",
     sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px]",
   },
   {
@@ -172,9 +208,12 @@ const cards = [
     description: "Establish your online presence with our fast, secure, and responsive websites designed to attract and convert visitors effectively.",
     icon: "/Vector4.png",
     image: "/Web.png",
-    bgColor: "bg-[#FDA40A]",
+    color: "bg-[#FDA40A]  ",
+    bgColor: "flex flex-col ml-[10%] h-[220px] rounded-l-2xl relative hover:scale-[1.02] transition-transform duration-300 bg-[#FDA40A]",
     id: 4,
-    sty: "absolute xl:right-[-125px] right-[-78px] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px] scale-100 md:scale-150",
+    item:"justify-items-end",
+    pos:"items-end",
+    sty: "absolute xl:right-[-125px]   sm:left-auto sm:right-[-78px] left-[-60px] sm:scale-x-[1] xl:top-8 top-4 xl:w-[320px] xl:h-[350px] w-[200px] h-[230px] scale-100 scale-x-[-1] md:scale-150",
   },
   
 ];
