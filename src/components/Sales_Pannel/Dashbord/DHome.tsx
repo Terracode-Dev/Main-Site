@@ -15,7 +15,7 @@ const Home1 = () => {
   ];
 
   const recentOrders = [
-    { id: '1', customer: 'John Doe', amount: 1200, status: 'Completed' },
+    // { id: '1', customer: 'John Doe', amount: 1200, status: 'Completed' },
     { id: '2', customer: 'Jane Smith', amount: 850, status: 'Pending' },
     { id: '3', customer: 'Bob Johnson', amount: 2300, status: 'Completed' },
     { id: '4', customer: 'Alice Brown', amount: 950, status: 'Processing' }
