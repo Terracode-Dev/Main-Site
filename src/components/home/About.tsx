@@ -63,31 +63,41 @@ const HorizontalScrollCarousel = () => {
             >
               {/* Title */}
               <div className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl inter">
-                <h1>Who are we?</h1>
+                <h1>Who we are?</h1>
               </div>
               {/* Paragraph with Blur */}
               <div className="relative w-3/4 md:px-10 xl:w-1/2">
                 {/* Blur Layer */}
-                
+
                 {/* Text */}
                 <p className="relative text-lg text-gray-600 sm:text-2xl inter">
-                "We’re a passionate team of
-                <span className="text-orange-500 inter"> designers</span> and
-                <span className="text-orange-500 inter"> developers</span><span>, based in
-                Sri Lanka <img src='/LK.png' alt="Sri Lanka flag" className='object-cover inline-block' />, committed to building</span>
-                <span className="text-orange-500 inter"> forward-thinking solutions.</span>"
-              </p>
-
+                  "We’re a passionate team of
+                  <span className="text-orange-500 inter"> designers</span> and
+                  <span className="text-orange-500 inter"> developers</span>
+                  <span>
+                    , based in Sri Lanka{" "}
+                    <img
+                      src="/LK.png"
+                      alt="Sri Lanka flag"
+                      className="object-cover inline-block"
+                    />
+                    , committed to building
+                  </span>
+                  <span className="text-orange-500 inter">
+                    {" "}
+                    forward-thinking solutions.
+                  </span>
+                  "
+                </p>
               </div>
               {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 {/* <Link to="/aboutus"> */}
-                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl bg-transparent inter transition-all duration-500 ease-out hover:bg-gradient-to-r hover:from-[#EF3D00] hover:to-[#FDA40A] hover:text-white hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 focus:outline-none active:scale-105">
-                    Meet The Team
-                  </button>
+                <button className="hidden px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl bg-transparent inter transition-all duration-500 ease-out hover:bg-gradient-to-r hover:from-[#EF3D00] hover:to-[#FDA40A] hover:text-white hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 focus:outline-none active:scale-105">
+                  Meet The Team
+                </button>
                 {/* </Link> */}
               </div>
-
             </motion.div>
 
             {/* Second Section */}
@@ -97,21 +107,43 @@ const HorizontalScrollCarousel = () => {
             >
               {/* Logo */}
               <div className="flex justify-center md:justify-start md:px-10">
-              <img
-                src="/Group 1.png"
-                alt="Terracode"
-                className="w-[100px] sm:w-[200px] xl:w-[250px] filter drop-shadow-2xl shadow-black"
-              />
+                <img
+                  src="/Group 1.png"
+                  alt="Terracode"
+                  className="w-[100px] sm:w-[200px] xl:w-[250px] filter drop-shadow-2xl shadow-black"
+                />
               </div>
               {/* Description */}
               <div className=" md:w-2/4 xl: text-gray-600 ">
-              <p className="text-center inter font-normal text-lg sm:text-2xl" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)' }}>
-
-                "With a <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">talented team of engineers </span> as our backbone, 
-                we build <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">great tech</span> precisely tailored to your business. 
-                By understanding<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> your challenges and working closely</span>  with you, 
-                we deliver<span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> innovative solutions</span> that keep you ahead in a<span className="font-semibold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent "> competitive landscape</span>"
-              </p>
+                <p
+                  className="text-center inter font-normal text-lg sm:text-2xl"
+                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)" }}
+                >
+                  "With a{" "}
+                  <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">
+                    talented team of engineers{" "}
+                  </span>{" "}
+                  as our backbone, we build{" "}
+                  <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">
+                    great tech
+                  </span>{" "}
+                  precisely tailored to your business. By understanding
+                  <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">
+                    {" "}
+                    your challenges and working closely
+                  </span>{" "}
+                  with you, we deliver
+                  <span className="font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">
+                    {" "}
+                    innovative solutions
+                  </span>{" "}
+                  that keep you ahead in a
+                  <span className="font-semibold bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent ">
+                    {" "}
+                    competitive landscape
+                  </span>
+                  "
+                </p>
               </div>
             </motion.div>
           </div>
