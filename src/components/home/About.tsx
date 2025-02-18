@@ -63,7 +63,7 @@ const HorizontalScrollCarousel = () => {
             >
               {/* Title */}
               <div className="text-2xl font-medium bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] bg-clip-text text-transparent sm:text-5xl inter">
-                <h1>Who we are?</h1>
+                <h1>Who We Are?</h1>
               </div>
               {/* Paragraph with Blur */}
               <div className="relative w-3/4 md:px-10 xl:w-1/2">
