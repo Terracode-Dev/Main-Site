@@ -10,6 +10,7 @@ import ScrollToTop from "./components/scroll";
 import ContactSubmissions from "@/components/fetchdata";
 import JoinWithUs from "./components/sales";
 import Sales_dashbord from "./components/Sales_Pannel/Dashbord/dashbord";
+import Portfolio from "./components/project_pannel/portfolio";
 
 // Hardcoded default credentials
 const DEFAULT_ADMIN_CREDENTIALS = {
@@ -218,6 +219,7 @@ function App() {
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
           <Route path="/sales" element={<JoinWithUs />} />
+          <Route path="/dgitialportfolio" element={<Portfolio />} />
           <Route
             path="/admin"
             element={<ProtectedRoute element={<ContactSubmissions />} />}

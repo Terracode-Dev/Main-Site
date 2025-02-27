@@ -131,12 +131,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] transition-opacity duration-300 ease-in-out ${
+      className={`fixed inset-0 z-[100] transition-opacity duration-300 ease-in-out  ${
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >
       <div
-        className={`absolute inset-0 bg-black transition-opacity duration-300 ease-in-out ${
+        className={`absolute inset-0 bg-black  transition-opacity duration-300 ease-in-out ${
           mounted ? "opacity-60 backdrop-blur-md" : "opacity-0"
         }`}
         onClick={handleOverlayClick}
