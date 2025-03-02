@@ -129,8 +129,8 @@ const Navbar: React.FC = () => {
           to="work" 
           smooth={true} 
           duration={500} 
-          className={getNavLinkClass('work')}
-          onClick={() => setActiveSection('work')}
+          className={getNavLinkClass('portfolio')}
+          onClick={() => setActiveSection('portfolio')}
         >
           Work
         </ScrollLink>

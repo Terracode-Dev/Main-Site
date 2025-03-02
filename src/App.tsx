@@ -219,7 +219,7 @@ function App() {
           <Route path="/aboutus" element={<Aboutus_page />} />
           <Route path="/casestudy" element={<Casestudy_page />} />
           <Route path="/sales" element={<JoinWithUs />} />
-          <Route path="/dgitialportfolio" element={<Portfolio />} />
+          <Route path="/digitalportfolio" element={<Portfolio />} />
           <Route
             path="/admin"
             element={<ProtectedRoute element={<ContactSubmissions />} />}

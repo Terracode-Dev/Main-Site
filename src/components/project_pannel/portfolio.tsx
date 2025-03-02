@@ -11,65 +11,73 @@ type Project = {
   shortDescription: string;
   imageUrl: string;
   projectUrl?: string;
+  status?: string;
 };
 
 // Sample project data
 const projects: Project[] = [
   {
     id: 1,
-    title: "Business Website",
-    description: "This is a detailed description for Project 1. It explains the technologies used, challenges overcome, and the value delivered to the client.",
-    shortDescription: "A modern website for House Of Vision(Pvt)Ltd.",
+    title: "Business Website Solution",
+    description: "A modern website for House Of Vision (Pvt) Ltd.",
+    shortDescription: "A modern website for House Of Vision (Pvt) Ltd.",
     imageUrl: "Hov web.png",
-    projectUrl: "https://www.houseofvision.lk/"
+    projectUrl: "https://www.houseofvision.lk/",
+    status: "done"
   },
   {
     id: 2,
-    title: "IMS Project",
+    title: "Inventory Management System",
     description: "A comprehensive and feature-rich inventory management system designed for seamless order processing, automated invoice generation, and in-depth transaction analytics. Equipped with QR code scanning and generation capabilities, it ensures efficient tracking, accuracy, and streamlined operations for optimal business performance.",
-    shortDescription: "inventontory management system for House Of Vision (Pvt) Ltd.",
+    shortDescription: "Inventory management system for House Of Vision (Pvt) Ltd.",
     imageUrl: "IMS.png",
-    projectUrl: "#"
+    projectUrl: "#",
+    status: "done"
   },
   {
     id: 3,
-    title: "CMS Project",
+    title: "Content Management System",
     description: "A powerful and intuitive content management system tailored for cleaning service businesses. Featuring dynamic slider management, seamless order tracking, efficient quotation management, and robust user management, it ensures a streamlined and organized digital experience for both clients and administrators.",
     shortDescription: "Content Management System for a Cleaning Service Provider.",
     imageUrl: "CMS.png",
-    projectUrl: "#"
+    projectUrl: "#",
+    status: "done"
   },
   {
     id: 4,
-    title: "DMS Project",
-    description: "A comprehensive and intelligent data management system designed for organizations handling city-wide data, including services and businesses. Equipped with advanced data storage, insightful analytics, and robust user management, it enables efficient data organization, seamless access to insights, and smarter decision-making.",
-    shortDescription: "Data management system ",
-    imageUrl: "Transit.png",
-    projectUrl: "#"
+    title: "Data Management System",
+    description: "A comprehensive and intelligent DMS designed for organizations handling city-wide data.A comprehensive and intelligent data management system designed for organizations handling city-wide data, including services and businesses. Equipped with advanced data storage, insightful analytics, and robust user management, it enables efficient data organization, seamless access to insights, and smarter decision-making.",
+    shortDescription: "Data management system",
+    imageUrl: "polls.jpg",
+    projectUrl: "#",
+    status: "done"
   },
   {
     id: 5,
     title: "Ejudicase",
     description: "A powerful cross-platform mobile application designed to help users find and connect with lawyers within a 6km radius of their current location. Featuring seamless registration, advanced search filters, internal messaging, real-time notifications, and more, Ejudicase ensures quick and convenient access to legal professionals anytime, anywhere.",
-    shortDescription: "Mobile application for searching for lawyers and atorneys ",
+    shortDescription: "Mobile application for searching for lawyers and attorneys",
     imageUrl: "ejudi.png",
-    projectUrl: "#"
+    projectUrl: "#",
+    status: "done"
   },
   {
     id: 6,
-    title: "Inpro Website",
-    description: "A powerful cross-platform mobile application designed to help users find and connect with lawyers within a 6km radius of their current location. Featuring seamless registration, advanced search filters, internal messaging, real-time notifications, and more, Ejudicase ensures quick and convenient access to legal professionals anytime, anywhere.",
-    shortDescription: "Buisness website for Inpro",
+    title: "Business Website Solution",
+    description: "A modern website for Inpro Industries (Pvt) Ltd.",
+    shortDescription: "A modern website for Inpro Industries (Pvt) Ltd.",
     imageUrl: "inpro.png",
-    projectUrl: "#"
+    projectUrl: "https://www.inproindustries.lk/",
+    status: "done"
   },
   {
-    id:7,
-    title: "Website",
-    description: "A powerful cross-platform mobile application designed to help users find and connect with lawyers within a 6km radius of their current location. Featuring seamless registration, advanced search filters, internal messaging, real-time notifications, and more, Ejudicase ensures quick and convenient access to legal professionals anytime, anywhere.",
-    shortDescription: "Buisness website",
-    imageUrl: "polls.jpg",
-    projectUrl: "#"
+    id: 7,
+    title: "Transit",
+    description: "Equipped with advanced algorithms, the system intelligently suggests the best combinations of transport modes to provide users with the most efficient routes. Key features include seamless booking, single-ticket generation for entire journeys (regardless of multiple transport services), analytics and dashboards for transport providers, and integrated payment handling. This project aims to deliver a smarter, more connected travel experience for users while empowering transport providers with actionable insights.",
+    shortDescription: "Platform for booking single tickets for entire journeys in Transport Services.",
+    imageUrl: "Transit.png",
+    projectUrl: "#",
+    status: "ongoing"
   }
 ];
 
@@ -304,6 +312,9 @@ const Portfolio: React.FC = () => {
                     >
                       <h3 className="text-xl font-bold">{project.title}</h3>
                       <p className="text-sm text-gray-600 mt-1">{project.shortDescription}</p>
+                      {project.status === "ongoing" && (
+                        <p className="text-sm text-orange-500 mt-1">Ongoing</p>
+                      )}
                     </motion.div>
                   </div>
                   <motion.div 
@@ -318,8 +329,15 @@ const Portfolio: React.FC = () => {
                     <div className="text-center">
                       <p className="mb-4">{project.description}</p>
                       {isClickable && (
-                        <div className="text-center">
-                        </div>
+                        <button
+                          className="mt-4 px-6 py-2 bg-white text-[#EF3D00] rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                          onClick={(e) => {
+                            e.stopPropagation(); 
+                            handleCardClick(project.projectUrl);
+                          }}
+                        >
+                          Visit Site
+                        </button>
                       )}
                     </div>
                   </motion.div>
