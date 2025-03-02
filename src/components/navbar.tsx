@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       
       // Navbar visibility logic
       if (window.innerWidth >= 200) {
@@ -125,15 +126,13 @@ const Navbar: React.FC = () => {
         >
           About
         </ScrollLink>
-        <ScrollLink 
-          to="work" 
-          smooth={true} 
-          duration={500} 
-          className={getNavLinkClass('portfolio')}
-          onClick={() => setActiveSection('portfolio')}
+        <Link 
+          to="digitalportfolio"   
+          className={getNavLinkClass('digitalportfolio')}
+          onClick={() => setActiveSection('digitalportfolio')}
         >
           Work
-        </ScrollLink>
+        </Link>
         <ScrollLink 
           to="projects" 
           smooth={true} 

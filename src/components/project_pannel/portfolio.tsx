@@ -86,7 +86,7 @@ const fadeInVariants = {
   hidden: { opacity: 0 },
   visible: { 
     opacity: 1,
-    transition: { duration: 0.8 }
+    transition: { duration: 1, ease: "easeInOut" } 
   }
 };
 
@@ -95,9 +95,9 @@ const containerVariants = {
   visible: { 
     opacity: 1,
     transition: { 
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-      duration: 0.5
+      staggerChildren: 0.3, 
+      delayChildren: 0.2, 
+      duration: 0.6,
     }
   }
 };
@@ -107,7 +107,7 @@ const itemVariants = {
   visible: { 
     y: 0, 
     opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" } 
   }
 };
 
@@ -116,13 +116,13 @@ const iconVariants = {
   visible: { 
     scale: 1, 
     opacity: 1,
-    transition: { duration: 0.5, type: "spring", stiffness: 200 }
+    transition: { duration: 0.6, type: "spring", stiffness: 300, damping: 10 } 
   },
   hover: { 
     scale: 1.2,
     rotate: 5,
     color: "#FDA40A",
-    transition: { duration: 0.3 }
+    transition: { duration: 0.4, ease: "easeInOut" } 
   }
 };
 
@@ -131,7 +131,7 @@ const textVariants = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" } 
   }
 };
 
@@ -169,10 +169,7 @@ const Portfolio: React.FC = () => {
           <motion.span variants={textVariants}>
             Empowering Businesses with <br />
           </motion.span>
-          <motion.span
-            initial={{ backgroundPosition: "100% 0" }}
-            animate={{ backgroundPosition: "0% 0" }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          <motion.span 
             className="animate-gradient bg-gradient-to-r from-[#EF3D00] via-[#FDA40A] to-[#EF3D00] bg-[length:200%] bg-clip-text text-transparent"
           >
             Digital Excellence
@@ -205,6 +202,7 @@ const Portfolio: React.FC = () => {
             <motion.div
               variants={iconVariants}
               whileHover="hover"
+              transition={{ type: "spring", stiffness: 300, damping: 10 }} 
             >
               <FontAwesomeIcon icon={faUsers} className="text-4xl text-[#EF3D00] mb-2" />
             </motion.div>
@@ -222,6 +220,7 @@ const Portfolio: React.FC = () => {
             <motion.div
               variants={iconVariants}
               whileHover="hover"
+              transition={{ type: "spring", stiffness: 300, damping: 10 }} 
             >
               <FontAwesomeIcon icon={faCalendarCheck} className="text-4xl text-[#EF3D00] mb-2" />
             </motion.div>
@@ -239,6 +238,7 @@ const Portfolio: React.FC = () => {
             <motion.div
               variants={iconVariants}
               whileHover="hover"
+              transition={{ type: "spring", stiffness: 300, damping: 10 }} 
             >
               <FontAwesomeIcon icon={faStar} className="text-4xl text-[#EF3D00] mb-2" />
             </motion.div>
@@ -296,16 +296,18 @@ const Portfolio: React.FC = () => {
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.4, ease: "easeInOut" } 
                   }}
                 >
                   {/* Static content */}
                   <div className="absolute inset-0 rounded-lg">
+                    <div className=''>
                     <img
                       src={project.imageUrl}
                       alt={project.title}
-                      className="w-full h-64 object-cover border-8 border-white rounded-lg"
+                      className="w-full h-64 object-cover "
                     />
+                    </div>
                     <motion.div 
                       className="p-4 text-center"
                       variants={textVariants}
@@ -324,7 +326,7 @@ const Portfolio: React.FC = () => {
                       y: hoveredCard === project.id ? 0 : "100%",
                       opacity: hoveredCard === project.id ? 0.95 : 0
                     }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }} 
                   >
                     <div className="text-center">
                       <p className="mb-4">{project.description}</p>
