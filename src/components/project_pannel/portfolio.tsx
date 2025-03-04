@@ -16,17 +16,9 @@ type Project = {
 
 // Sample project data
 const projects: Project[] = [
+
   {
     id: 1,
-    title: "Business Website Solution",
-    description: "A modern website for House Of Vision (Pvt) Ltd.",
-    shortDescription: "A modern website for House Of Vision (Pvt) Ltd.",
-    imageUrl: "Hov web.png",
-    projectUrl: "https://www.houseofvision.lk/",
-    status: "done"
-  },
-  {
-    id: 2,
     title: "Inventory Management System",
     description: "A comprehensive and feature-rich inventory management system designed for seamless order processing, automated invoice generation, and in-depth transaction analytics. Equipped with QR code scanning and generation capabilities, it ensures efficient tracking, accuracy, and streamlined operations for optimal business performance.",
     shortDescription: "Inventory management system for House Of Vision (Pvt) Ltd.",
@@ -35,7 +27,7 @@ const projects: Project[] = [
     status: "done"
   },
   {
-    id: 3,
+    id: 2,
     title: "Content Management System",
     description: "A powerful and intuitive content management system tailored for cleaning service businesses. Featuring dynamic slider management, seamless order tracking, efficient quotation management, and robust user management, it ensures a streamlined and organized digital experience for both clients and administrators.",
     shortDescription: "Content Management System for a Cleaning Service Provider.",
@@ -44,7 +36,7 @@ const projects: Project[] = [
     status: "done"
   },
   {
-    id: 4,
+    id: 3,
     title: "Data Management System",
     description: "A comprehensive and intelligent DMS designed for organizations handling city-wide data.A comprehensive and intelligent data management system designed for organizations handling city-wide data, including services and businesses. Equipped with advanced data storage, insightful analytics, and robust user management, it enables efficient data organization, seamless access to insights, and smarter decision-making.",
     shortDescription: "Data management system",
@@ -53,16 +45,16 @@ const projects: Project[] = [
     status: "done"
   },
   {
-    id: 5,
-    title: "Ejudicase",
-    description: "A powerful cross-platform mobile application designed to help users find and connect with lawyers within a 6km radius of their current location. Featuring seamless registration, advanced search filters, internal messaging, real-time notifications, and more, Ejudicase ensures quick and convenient access to legal professionals anytime, anywhere.",
-    shortDescription: "Mobile application for searching for lawyers and attorneys",
-    imageUrl: "ejudi.png",
-    projectUrl: "#",
+    id: 4,
+    title: "Business Website Solution",
+    description: "A modern website for House Of Vision (Pvt) Ltd.",
+    shortDescription: "A modern website for House Of Vision (Pvt) Ltd.",
+    imageUrl: "Hov web.png",
+    projectUrl: "https://www.houseofvision.lk/",
     status: "done"
   },
   {
-    id: 6,
+    id: 5,
     title: "Business Website Solution",
     description: "A modern website for Inpro Industries (Pvt) Ltd.",
     shortDescription: "A modern website for Inpro Industries (Pvt) Ltd.",
@@ -70,6 +62,16 @@ const projects: Project[] = [
     projectUrl: "https://www.inproindustries.lk/",
     status: "done"
   },
+  {
+    id: 6,
+    title: "Ejudicase",
+    description: "A powerful cross-platform mobile application designed to help users find and connect with lawyers within a 6km radius of their current location. Featuring seamless registration, advanced search filters, internal messaging, real-time notifications, and more, Ejudicase ensures quick and convenient access to legal professionals anytime, anywhere.",
+    shortDescription: "Mobile application for searching for lawyers and attorneys",
+    imageUrl: "ejudi.png",
+    projectUrl: "#",
+    status: "done"
+  },
+
   {
     id: 7,
     title: "Transit",
