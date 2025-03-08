@@ -220,15 +220,13 @@ const Navbar: React.FC = () => {
         >
           About
         </ScrollLink>
-        <ScrollLink
-          to="work"
-          smooth={true}
-          duration={500}
+        <Link
+          to="digitalportfolio"
           className={`cursor-pointer transition-all duration-300 ${activeSection === 'work' ? 'active-nav-link' : ''}`}
           onClick={closeMenu}
         >
           Work
-        </ScrollLink>
+        </Link>
         <ScrollLink
           to="projects"
           smooth={true}
