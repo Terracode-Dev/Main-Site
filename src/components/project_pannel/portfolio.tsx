@@ -14,7 +14,7 @@ type Project = {
   status?: string;
 };
 
-// Sample project data
+// Project data
 const projects: Project[] = [
 
   {
