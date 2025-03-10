@@ -253,7 +253,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsContactFormOpen }) => {
               className={getNavLinkClass('digital-portfolio')}
               onClick={() => handleNavigation('digital-portfolio')}
             >
-              Projects
+              Our Projects
             </button>
             <ScrollLink
               to="qa"
@@ -296,7 +296,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsContactFormOpen }) => {
               className={getNavLinkClass('digital-portfolio')}
               onClick={() => handleNavigation('digital-portfolio')}
             >
-              Projects
+             Our Projects
             </button>
             <button
               className={getNavLinkClass('qa')}
@@ -412,7 +412,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsContactFormOpen }) => {
               className={`cursor-pointer transition-all duration-300 ${activeSection === 'digital-portfolio' ? 'active-nav-link' : ''}`}
               onClick={() => handleNavigation('digital-portfolio')}
             >
-              Projects
+              Our Projects
             </button>
             <ScrollLink
               to="qa"
@@ -458,7 +458,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsContactFormOpen }) => {
               className={`cursor-pointer transition-all duration-300 ${activeSection === 'digital-portfolio' ? 'active-nav-link' : ''}`}
               onClick={() => handleNavigation('digital-portfolio')}
             >
-              Projects
+             Our Projects
             </button>
             <button
               className={`cursor-pointer transition-all duration-300 ${activeSection === 'qa' ? 'active-nav-link' : ''}`}
