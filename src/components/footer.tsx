@@ -25,12 +25,12 @@ const Footer = () => {
           {/* Links Section */}
           <div className="hidden sm:flex mb-4 space-y-4">
             <ul className="space-y-2">
-              <li >
+              {/* <li >
                 <Link to={""} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
               <li >
                 <Link to={""} className="text-gray-300 transition-colors hover:text-orange-400">case studies </Link>
-              </li>
+              </li> */}
               {/* <li >
                 <Link to={"/aboutus"} className="text-gray-300 transition-colors hover:text-orange-400">about us </Link>
               </li>
@@ -88,21 +88,22 @@ const Footer = () => {
         </div>
         </div>
         {/* Bottom Bar */}
-        <div className="p-8 mt-10 border-t border-gray-800">
-          <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
-            <div className="text-sm text-gray-400">
-               Terracode 2024, All rights reserved.
-            </div>
-            <div className="flex gap-4 text-sm text-gray-400">
-              <a href="#" className="transition-colors hover:text-white">
-                Privacy policy
-              </a>
-              <a href="#" className="transition-colors hover:text-white">
-                Terms & conditions
-              </a>
-            </div>
+     {/* Bottom Bar */}
+      <div className="p-8 mt-10 border-t border-gray-800">
+        <div className="flex flex-col items-center justify-between space-y-4 sm:flex-row sm:space-y-0">
+          <div className="text-sm text-gray-400">
+            © Terracode {new Date().getFullYear()}, All rights reserved.
+          </div>
+          <div className="flex gap-4 text-sm text-gray-400">
+            <a href="#" className="transition-colors hover:text-white">
+              Privacy policy
+            </a>
+            <a href="#" className="transition-colors hover:text-white">
+              Terms & conditions
+            </a>
           </div>
         </div>
+      </div>
       </div>
       
     </footer>

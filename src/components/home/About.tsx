@@ -82,9 +82,9 @@ const HorizontalScrollCarousel = () => {
               {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 {/* <Link to="/aboutus"> */}
-                  <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl bg-transparent inter transition-all duration-500 ease-out hover:bg-gradient-to-r hover:from-[#EF3D00] hover:to-[#FDA40A] hover:text-white hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 focus:outline-none active:scale-105">
+                  {/* <button className="px-6 py-3 text-sm text-orange-400 border border-orange-500 rounded-3xl bg-transparent inter transition-all duration-500 ease-out hover:bg-gradient-to-r hover:from-[#EF3D00] hover:to-[#FDA40A] hover:text-white hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 focus:outline-none active:scale-105">
                     Meet The Team
-                  </button>
+                  </button> */}
                 {/* </Link> */}
               </div>
 
@@ -97,11 +97,11 @@ const HorizontalScrollCarousel = () => {
             >
               {/* Logo */}
               <div className="flex justify-center md:justify-start md:px-10">
-              <img
+              {/* <img
                 src="/Group 1.png"
                 alt="Terracode"
                 className="w-[100px] sm:w-[200px] xl:w-[250px] filter drop-shadow-2xl shadow-black"
-              />
+              /> */}
               </div>
               {/* Description */}
               <div className=" md:w-2/4 xl: text-gray-600 ">

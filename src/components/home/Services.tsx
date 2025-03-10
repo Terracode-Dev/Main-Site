@@ -154,7 +154,7 @@ const Card = ({ card }: CardProps) => {
         {/* Title */}
         <h1 className="xl:text-[34px] text-[20px] text-white mt-2">{card.title}</h1>
         <div className="flex items-start line-clamp-4 mt-2 w-[70%]">
-          <p className="xl:text-[16px] text-[10px] text-white">{card.description}</p>
+          <p className="xl:text-[16px] text-[12px] text-white">{card.description}</p>
         </div>
       </div>
       <img src={card.image} alt={card.title} className={card.sty} />
