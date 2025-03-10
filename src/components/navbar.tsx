@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import ContactForm from "./contactus/Contact";
 import { Link} from 'react-router-dom';
 import '../App.css';
 import { X } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+
+interface NavbarProps {
+  setIsContactFormOpen: (isOpen: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setIsContactFormOpen }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('hero');
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
 
@@ -154,27 +157,28 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Contact Us Button */}
+      
       <div className="hidden md:flex">
-        <button
-          className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
-            text-orange-500 bg-black hover:bg-transparent
-            before:absolute before:inset-0
-            before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
-            before:opacity-0 before:transition-opacity before:duration-300
-            hover:before:opacity-100
-            hover:shadow-lg hover:shadow-[#EF3D00]/50
-            transition-all duration-300
-            hover:scale-110 active:scale-95
-            items-center"
-          onClick={() => setIsContactFormOpen(true)}
-        >
-          <span className="relative z-10 inter transition-colors duration-300 group-hover:text-white">
-            Talk with Us
-          </span>
-        </button>
-      </div>
-      <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
-
+      <button
+        className="relative py-2 mt-4 font-medium rounded-full px-7 group overflow-hidden
+          text-orange-500 bg-black hover:bg-transparent
+          before:absolute before:inset-0
+          before:bg-gradient-to-r before:from-[#EF3D00] before:to-[#FDA40A]
+          before:opacity-0 before:transition-opacity before:duration-300
+          hover:before:opacity-100
+          hover:shadow-lg hover:shadow-[#EF3D00]/50
+          transition-all duration-300
+          hover:scale-110 active:scale-95
+          items-center"
+        onClick={() => setIsContactFormOpen(true)}
+      >
+        <span className="relative z-10 inter transition-colors duration-300 group-hover:text-white">
+          Talk with Us
+        </span>
+      </button>
+    </div>
+      
+      
       {/* Mobile Menu Button */}
       <button onClick={toggleMenu} className="md:hidden">
         {menuOpen ? <X /> : <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-xl">

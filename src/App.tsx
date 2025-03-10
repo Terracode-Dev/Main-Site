@@ -35,6 +35,7 @@ const isSalesAuthenticated = () => {
 // ProtectedRoute component
 import { ReactElement } from "react";
 import Home1 from "./components/Sales_Pannel/Dashbord/DHome";
+import ContactForm from "./components/contactus/Contact";
 
 const ProtectedRoute = ({ element, authType = "admin" }: { element: ReactElement; authType?: string }) => {
   if (authType === "sales") {
@@ -170,6 +171,7 @@ const SalesLogin = () => {
 };
 
 function App() {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const location = useLocation();
   const adminRoutes = ["/admin", "/admin-login"];
   const salesRoutes = [
@@ -209,8 +211,10 @@ function App() {
             {JSON.stringify(globalSchemaMarkup)}
           </script>
         </Helmet>
-
-        {!isAdminRoute && !isSalesRoute && <Navbar />}
+        <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
+        {!isAdminRoute && !isSalesRoute && (
+  <Navbar setIsContactFormOpen={setIsContactFormOpen} />
+)}
         <ScrollToTop />
         
         <Routes>
