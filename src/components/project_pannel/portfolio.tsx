@@ -49,7 +49,7 @@ const projects: Project[] = [
     title: "Business Website Solution",
     description: "A modern website for House Of Vision (Pvt) Ltd.",
     shortDescription: "A modern website for House Of Vision (Pvt) Ltd.",
-    imageUrl: "Hov web.png",
+    imageUrl: "Hov Web.png",
     projectUrl: "https://www.houseofvision.lk/",
     status: "done"
   },

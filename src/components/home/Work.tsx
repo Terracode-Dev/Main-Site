@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Rocket, Shield, Users, Settings, Scale, Clock } from 'lucide-react';
+import ContactForm from '../contactus/Contact';
 
 interface Feature {
   title: string;
@@ -10,6 +11,7 @@ interface Feature {
 const Work = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const features: Feature[] = [
     {
@@ -76,6 +78,7 @@ const Work = () => {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
 
   return (
     <div className="grid items-center justify-center px-4  py-16 mx-auto 3xl:gap-10 max-w-7xl sm:px-6 lg:px-8">
@@ -151,7 +154,7 @@ const Work = () => {
       </div>
 
       <div className="mt-12 text-center">
-      <button className="z-[100] px-6 py-3 text-sm text-white relative overflow-hidden group
+      <button className="z-[] px-6 py-3 text-sm text-white relative overflow-hidden group
           bg-gradient-to-r from-[#EF3D00] to-[#FDA40A] 
           hover:scale-105
           sm:text-base md:text-lg rounded-3xl 
@@ -162,11 +165,13 @@ const Work = () => {
           before:bg-gradient-to-r before:from-[#FDA40A] before:to-[#EF3D00]
           before:opacity-0 before:transition-opacity before:duration-300
           hover:before:opacity-100"
+          onClick={() => setIsContactFormOpen(true)}
         >
           <span className="relative z-10 block">
             Ready To Collaborate?
           </span>
         </button>
+        <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
       </div>
     </div>
   );
