@@ -1,6 +1,6 @@
 
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import EmailCopySection from './home/copyemail';
 
 const Footer = () => {
