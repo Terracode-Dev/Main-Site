@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faCalendarCheck, faStar } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 
+
 // Define the type for the project data
 type Project = {
   id: number;
